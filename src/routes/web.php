@@ -11,9 +11,6 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
 //認証系
 Auth::routes();
 
