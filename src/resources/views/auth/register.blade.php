@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','ユーザー登録')
+@section('title','アカウント作成')
 
 @include('layouts.nav')
 
