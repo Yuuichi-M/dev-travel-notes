@@ -7,21 +7,30 @@
     </a>
 
     <ul class="navbar-nav ml-auto">
-        <li class="nav-item mt-1 mr-1">
-            <h3><a class="nav-link" title="アカウント作成" href=" {{ route('register') }}"><i class="fas fa-user-circle text-dark"></i></a></h3>
-        </li>
 
+        @guest
+        <li class="nav-item mt-1 mr-1">
+            <h3><a class="nav-link" title="アカウント作成" href=" {{ route('register') }}"><i class="fas fa-user-edit text-dark"></i></a></h3>
+        </li>
+        @endguest
+
+        @guest
         <li class="nav-item mt-1 mr-1">
             <h3><a class="nav-link" title="ログイン" href="{{ route('login') }}"><i class="fas fa-sign-in-alt text-dark"></i></a></h3>
         </li>
+        @endguest
 
+        @auth
         <li class="nav-item mt-1 mr-1">
-            <h3><a class="nav-link" title="マイページ" href=""><i class="fas fa-house-user text-dark"></i></a></h3>
+            <h3><a class="nav-link" title="マイページ" href=""><i class="fas fa-user-circle text-dark"></i></a></h3>
         </li>
+        @endauth
 
+        @auth
         <li class="nav-item mt-1 mr-1">
             <h3><a class="nav-link" title="投稿" href=""><i class="fas fa-pen text-dark"></i></a></h3>
         </li>
+        @endauth
 
         <!-- Dropdown -->
         <li class="nav-item dropdown mt-1">
@@ -32,26 +41,35 @@
 
             <div class="dropdown-menu dropdown-menu-right dropdown-primary " aria-labelledby="navbarDropdownMenuLink">
 
+                @guest
                 <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="{{ route('register') }}">
                     アカウント作成
                 </a>
+                @endguest
 
+                @guest
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="{{ route('login') }}">
                     ログイン
                 </a>
+                @endguest
 
+                @auth
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="">
                     投稿する
                 </a>
+                @endauth
 
+                @auth
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="">
                     マイページ
                 </a>
-                <div class="dropdown-divider"></div>
+                @endauth
 
+                <!--
+                <div class="dropdown-divider"></div>
                 <form class="form-inline ml-auto pl-4">
                     <input type="text" class="form-control" type="search" placeholder="検索" aria-label="Search">
                     <span class="input-group-btn">
@@ -60,11 +78,14 @@
                         </button>
                     </span>
                 </form>
+                -->
 
+                @auth
                 <div class="dropdown-divider"></div>
                 <button form="logout-button" class="dropdown-item text-danger mt-3 mb-2" type="submit">
                     ログアウト
                 </button>
+                @endauth
 
             </div>
         </li>
