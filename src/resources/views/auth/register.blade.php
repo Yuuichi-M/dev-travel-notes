@@ -11,11 +11,14 @@
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
             <div class="card mt-4">
+
                 <h2 class="card-header font-weight-bold text-center border-bottom pb-4 pt-4 text-dark lighten-5">
                     <a class="text-decoration-none" title="アカウント作成" href="{{ route('register') }}">
                         <i class="fas fa-user-edit deep-orange-text" style="font-size: 35px"></i>
-                        <span class="text-dark">アカウント作成</span></a>
+                        <span class="text-dark">アカウント作成</span>
+                    </a>
                 </h2>
+
                 <div class="card-body text-center">
                     <div class="card-text">
 
