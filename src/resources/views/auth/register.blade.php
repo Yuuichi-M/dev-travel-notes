@@ -12,7 +12,9 @@
 
             <div class="card mt-4">
                 <h2 class="card-header font-weight-bold text-center border-bottom pb-4 pt-4 text-dark lighten-5">
-                    <i class="fas fa-user-edit deep-orange-text mr-1" style="font-size: 35px"></i>アカウント作成
+                    <a class="text-decoration-none" title="アカウント作成" href="{{ route('register') }}">
+                        <i class="fas fa-user-edit deep-orange-text" style="font-size: 35px"></i>
+                        <span class="text-dark">アカウント作成</span></a>
                 </h2>
                 <div class="card-body text-center">
                     <div class="card-text">
@@ -66,12 +68,12 @@
                                 </div>
 
                             </div>
-                            <button class="btn btn-block mt-3 mb-3 btn-deep-orange text-white" type="submit">はじめる</button>
+                            <button class="btn btn-block mt-3 mb-3 btn-deep-orange text-white" title="アカウント登録" type="submit">はじめる</button>
 
                         </form>
 
-                        <div class="mt-0">
-                            <a href="{{ route('login') }}" class="card-text">ログインはこちら</a>
+                        <div class="mt-1 mb-1">
+                            アカウントをお持ちの方は<a href="{{ route('login') }} class=" card-text">こちら</a>から
                         </div>
 
                     </div>
