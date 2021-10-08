@@ -54,7 +54,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="password">パスワード<span class="text-danger">(※)</label>
+                                    <label for="password">パスワード<span class="text-danger">(※)</span></label>
                                     <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" required>
                                     <small>半角英数字8文字以上を入力してください。</small>
                                     @error('password')
@@ -65,7 +65,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="password_confirmation">パスワード(確認)<span class="text-danger">(※)</label>
+                                    <label for="password_confirmation">パスワード(確認)<span class="text-danger">(※)</span></label>
                                     <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" required>
                                     <small>確認のためパスワードを再度入力してください。</small>
                                 </div>

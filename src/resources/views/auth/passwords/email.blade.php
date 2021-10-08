@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'パスワード再設定')
+@section('title', 'パスワードリセット')
 
 @include('layouts.nav')
 
