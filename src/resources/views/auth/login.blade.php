@@ -21,7 +21,7 @@
 
                 <div class="card-body text-center">
                     <div class="card-text">
-                        <form method="POST" action="{{ route('login') }}">
+                        <form method="POST" action="{{ route('login') }}" class="p-3">
                             @csrf
 
                             <div class="md-form">
@@ -50,12 +50,16 @@
 
                             <input type="hidden" name="remember" id="remember" value="on">
 
-                            <button class="btn btn-block mt-3 mb-3 btn-deep-orange text-white" title="ログイン" type="submit">ログイン</button>
+                            <button class="btn btn-block mt-3 mb-4 btn-deep-orange text-white" title="ログイン" type="submit">ログイン</button>
 
                         </form>
 
                         <div class="mt-1 mb-1">
-                            アカウント登録は<a href="{{ route('register') }} class=" card-text">こちら</a>から
+                            パスワードを忘れた方は<a href="{{ route('password.request') }}">こちら</a>
+                        </div>
+
+                        <div class="mt-1 mb-1">
+                            アカウント未登録の方は<a href="{{ route('register') }}">こちら</a>
                         </div>
 
                     </div>

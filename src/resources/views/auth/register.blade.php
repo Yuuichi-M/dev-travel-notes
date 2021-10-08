@@ -22,7 +22,7 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('register') }}" class="p-3">
                             @csrf
                             <div style="text-align: initial;">
                                 <div class="form-group row">
@@ -71,12 +71,15 @@
                                 </div>
 
                             </div>
-                            <button class="btn btn-block mt-3 mb-3 btn-deep-orange text-white" title="アカウント登録" type="submit">はじめる</button>
+
+                            <button class="btn btn-block mt-3 mb-4 btn-deep-orange text-white" title="アカウント登録" type="submit">
+                                はじめる
+                            </button>
 
                         </form>
 
                         <div class="mt-1 mb-1">
-                            アカウントをお持ちの方は<a href="{{ route('login') }} class=" card-text">こちら</a>から
+                            アカウントをお持ちの方は<a href="{{ route('login') }}">こちら</a>
                         </div>
 
                     </div>
