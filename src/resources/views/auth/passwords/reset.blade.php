@@ -12,15 +12,15 @@
 
             <div class="card mt-4">
 
-                <h2 class="card-header font-weight-bold text-center border-bottom pb-4 pt-4 text-dark lighten-5">
-                    <i class="fas fa-id-card-alt deep-orange-text" style="font-size: 38px"></i>
-                    <span class="text-dark">パスワード再設定</span>
-                </h2>
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
+                    <i class="fas fa-id-card-alt text-white" style="font-size: 25px"></i>
+                    <span class="text-white">パスワード再設定</span>
+                </h4>
 
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" action="{{ route('password.update') }}" class="p-3">
+                        <form method="POST" action="{{ route('password.update') }}" class="p-3 mb-1">
                             @csrf
 
                             <div style="text-align: initial;">
@@ -61,7 +61,7 @@
 
                             </div>
 
-                            <button class="btn btn-block mt-3 mb-4 btn-deep-orange text-white" title="新しいパスワードを送信" type="submit">
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="パスワード再設定" type="submit">
                                 送信
                             </button>
 

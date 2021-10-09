@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand nabvar-light navbar-fixed-top shadow-none">
+<nav class="navbar navbar-expand nabvar-light navbar-fixed-top shadow-sm">
 
-    <a class="navbar-brand text-dark font-weight-bold mb-1" title="ホーム" href="/">
-        <i class="fas fa-torii-gate deep-orange-text ml-1" style="font-size: 23px"></i>
+    <a class="navbar-brand text-dark font-weight-bold ml-3" title="ホーム" href="/">
+        <i class="fas fa-torii-gate deep-orange-text" style="font-size: 21px"></i>
         <span class="text-dark" style="font-size: 21px">{{ config('app.name') }}</span>
 
     </a>
@@ -9,26 +9,26 @@
     <ul class="navbar-nav ml-auto">
 
         @guest
-        <li class="nav-item mt-1 mr-1">
-            <h3><a class="nav-link" title="アカウント作成" href=" {{ route('register') }}"><i class="fas fa-user-edit text-dark"></i></a></h3>
+        <li class="nav-item mt-2">
+            <h4><a class="nav-link" title="アカウント作成" href=" {{ route('register') }}"><i class="fas fa-user-edit text-dark"></i></a></h4>
         </li>
         @endguest
 
         @guest
-        <li class="nav-item mt-1 mr-1">
-            <h3><a class="nav-link" title="ログイン" href="{{ route('login') }}"><i class="fas fa-sign-in-alt text-dark"></i></a></h3>
+        <li class="nav-item mt-2">
+            <h4><a class="nav-link" title="ログイン" href="{{ route('login') }}"><i class="fas fa-sign-in-alt text-dark"></i></a></h4>
         </li>
         @endguest
 
         @auth
-        <li class="nav-item mt-1 mr-1">
-            <h3><a class="nav-link" title="マイページ" href=""><i class="fas fa-user-circle text-dark"></i></a></h3>
+        <li class="nav-item mt-2">
+            <h4><a class="nav-link" title="マイページ" href=""><i class="fas fa-user-circle text-dark"></i></a></h4>
         </li>
         @endauth
 
         @auth
-        <li class="nav-item mt-1 mr-1">
-            <h3><a class="nav-link" title="投稿" href=""><i class="fas fa-pen text-dark"></i></a></h3>
+        <li class="nav-item mt-2">
+            <h4><a class="nav-link" title="投稿" href="{{ route('articles.create') }}"><i class="fas fa-pen text-dark"></i></a></h4>
         </li>
         @endauth
 
@@ -56,8 +56,8 @@
 
                 @auth
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="">
-                    投稿する
+                <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="{{ route('articles.create') }}">
+                    投稿
                 </a>
                 @endauth
 

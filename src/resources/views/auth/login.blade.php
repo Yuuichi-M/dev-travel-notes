@@ -12,16 +12,14 @@
 
             <div class="card mt-4">
 
-                <h2 class="card-header font-weight-bold text-center border-bottom pb-4 pt-4 text-dark lighten-5">
-                    <a class="text-decoration-none" title="アカウント作成" href="{{ route('register') }}">
-                        <i class="fas fa-sign-in-alt deep-orange-text" style="font-size: 38px"></i>
-                        <span class="text-dark">ログイン</span>
-                    </a>
-                </h2>
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
+                    <i class="fas fa-sign-in-alt text-white" style="font-size: 25px"></i>
+                    <span class="text-white">ログイン</span>
+                </h4>
 
                 <div class="card-body text-center">
                     <div class="card-text">
-                        <form method="POST" action="{{ route('login') }}" class="p-3">
+                        <form method="POST" action="{{ route('login') }}" class="p-3 mb-1">
                             @csrf
 
                             <div class="md-form">
@@ -50,15 +48,17 @@
 
                             <input type="hidden" name="remember" id="remember" value="on">
 
-                            <button class="btn btn-block mt-3 mb-4 btn-deep-orange text-white" title="ログイン" type="submit">ログイン</button>
+                            <div>
+                                パスワードを忘れた方は<a href="{{ route('password.request') }}">こちら</a>
+                            </div>
+
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-3 text-white" title="ログイン" type="submit">
+                                ログイン
+                            </button>
 
                         </form>
 
-                        <div class="mt-1 mb-1">
-                            パスワードを忘れた方は<a href="{{ route('password.request') }}">こちら</a>
-                        </div>
-
-                        <div class="mt-1 mb-1">
+                        <div>
                             アカウント未登録の方は<a href="{{ route('register') }}">こちら</a>
                         </div>
 
