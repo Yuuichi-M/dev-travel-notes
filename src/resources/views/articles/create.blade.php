@@ -22,7 +22,6 @@
                     <div class="card-text">
 
                         <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data" class="p-3 mb-1">
-                            @csrf
 
                             @include('articles.form')
 

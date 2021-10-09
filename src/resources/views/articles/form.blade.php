@@ -1,23 +1,67 @@
 @csrf
-<div class="md-form">
-    <label for="title">タイトル</label>
-    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" required value="{{ old('title') }}">
+<div style="text-align: initial;">
 
-    @error('title')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
+    <!--
+    <div>投稿画像</div>
+    <div style=color:red;>(注)jpeg,png形式 サイズ:2MB未満</div>
+    <span class="article-image-form image-picker">
+        <input type="file" name="article-image" class="d-none" accept="image/png,image/jpeg,image/gif" id="article-image" />
+        <label for="article-image" class="d-inline-block" role="button">
+            <img src="/images/item-image-default.png" style="object-fit: cover; width: 200px; height: 150px;">
+        </label>
     </span>
+    -->
+
+    @error('article-image')
+    <div style="color: #E4342E;" role="alert">
+        <strong>{{ $message }}</strong>
+    </div>
     @enderror
 
-</div>
-<div class="form-group">
-    <label for="summary"></label>
-    <textarea name="summary" class="form-control @error('summary') is-invalid @enderror" cols="50" rows="8" name="summary" id="summary" required placeholder="感想をシェアしよう">{{ old('summary') }}</textarea>
+    <div class="md-form">
+        <label for="title">タイトル</label>
+        <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ old('title') }}">
+        <small>30文字以内で入力してください</small>
 
-    @error('summary')
-    <span class="invalid-feedback" role="alert">
-        <strong>{{ $message }}</strong>
-    </span>
-    @enderror
+        @error('title')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
 
+    </div>
+
+    <div class="md-form">
+        <label for="url">参考URL</label>
+        <input type="text" name="url" id="url" class="form-control @error('url') is-invalid @enderror" value="{{old('url')}}">
+        <small>公式HPや紹介サイト、マップ等のURLを入力してください</small>
+
+        @error('url')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+
+    </div>
+
+    <div class="mt-1 mb-3">
+        <select name="category_id" class="browser-default custom-select">
+            <option selected>所在地</option>
+            @foreach(config('pref') as $category_id => $prefecture)
+            <option value="{{ $category_id }}" {{ old('category_id') === $category_id ? "selected" : ""}}>{{ $prefecture }}</option>
+            @endforeach
+        </select>
+        <small>プルダウンよりお選びください</small>
+    </div>
+
+    <div class="form-group">
+        <label for="summary"></label>
+        <textarea name="summary" class="form-control @error('summary') is-invalid @enderror" cols="50" rows="8" name="summary" id="summary" required placeholder="感想をシェアしよう">{{ old('summary') }}</textarea>
+
+        @error('summary')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
 </div>
