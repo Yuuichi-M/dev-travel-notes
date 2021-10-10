@@ -13,7 +13,7 @@
 
             <div class="card mt-4 rounded">
 
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-pen text-white" style="font-size: 25px"></i>
                     <span class="text-white">投稿</span>
                 </h4>

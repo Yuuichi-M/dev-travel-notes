@@ -10,18 +10,24 @@
             <img src="/images/item-image-default.png" style="object-fit: cover; width: 200px; height: 150px;">
         </label>
     </span>
-    -->
 
     @error('article-image')
     <div style="color: #E4342E;" role="alert">
         <strong>{{ $message }}</strong>
     </div>
     @enderror
+    -->
+
+    <div class="form-group row">
+        <p class="col-md-12 text-center text-dark">
+            <span class="text-danger">(※)</span>は入力必須項目です。
+        </p>
+    </div>
 
     <div class="md-form">
-        <label for="title">タイトル</label>
+        <label for="title">タイトル<span class="text-danger">(※)</span></label>
         <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ old('title') }}">
-        <small>30文字以内で入力してください</small>
+        <small>100文字以内で入力してください</small>
 
         @error('title')
         <span class="invalid-feedback" role="alert">
@@ -45,8 +51,8 @@
     </div>
 
     <div class="mt-1 mb-3">
+        <label for="prefecture" style="font-size: 16px">所在地</label>
         <select name="category_id" class="browser-default custom-select">
-            <option selected>所在地</option>
             @foreach(config('pref') as $category_id => $prefecture)
             <option value="{{ $category_id }}" {{ old('category_id') === $category_id ? "selected" : ""}}>{{ $prefecture }}</option>
             @endforeach
