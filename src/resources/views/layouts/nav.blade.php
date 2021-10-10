@@ -3,7 +3,6 @@
     <a class="navbar-brand text-dark font-weight-bold ml-3" title="ホーム" href="/">
         <i class="fas fa-torii-gate deep-orange-text" style="font-size: 21px"></i>
         <span class="text-dark" style="font-size: 21px">{{ config('app.name') }}</span>
-
     </a>
 
     <ul class="navbar-nav ml-auto">
