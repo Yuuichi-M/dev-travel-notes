@@ -13,8 +13,8 @@
             <div class="card mt-4">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
-                    <i class="fas fa-user-edit text-white" style="font-size: 25px"></i>
-                    <span class="text-white">アカウント作成</span>
+                    <i class="fas fa-user-edit text-white" style="font-size: 24px"></i>
+                    <span class="text-white">REGISTER</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -76,7 +76,8 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="アカウント登録" type="submit">
-                                はじめる
+                                Let's Start
+                                <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
                         </form>

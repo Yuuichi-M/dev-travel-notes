@@ -1,3 +1,4 @@
+    <!--
     <footer class="footer w-100 p-auto m-auto deep-orange lighten-1">
         <div class="container text-center">
             <p class="text-white mb-0 text-wight">
@@ -6,3 +7,4 @@
             </p>
         </div>
     </footer>
+-->

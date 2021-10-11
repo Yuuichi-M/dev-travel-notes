@@ -26,7 +26,7 @@ class ArticleRequest extends FormRequest
         return [
             'title' => 'required|string|max:100',
             'url' => 'string|url',
-            'category_id' => 'required|string|max:2',
+            'category_id' => 'string|max:2',
             'summary' => 'string|max:10000',
             'article_img' => 'file|image',
         ];

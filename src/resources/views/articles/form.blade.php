@@ -1,4 +1,3 @@
-@csrf
 <div style="text-align: initial;">
 
     <!--
@@ -39,7 +38,7 @@
 
     <div class="md-form">
         <label for="url">参考URL</label>
-        <input type="text" name="url" id="url" class="form-control @error('url') is-invalid @enderror" value="{{old('url')}}">
+        <input type="text" name="url" id="url" class="form-control @error('url') is-invalid @enderror" value="{{ old('url') }}">
         <small>公式HPや紹介サイト、マップ等のURLを入力してください</small>
 
         @error('url')

@@ -13,8 +13,8 @@
             <div class="card mt-4">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
-                    <i class="fas fa-id-card-alt text-white" style="font-size: 25px"></i>
-                    <span class="text-white">パスワード再設定</span>
+                    <i class="fas fa-key text-white" style="font-size: 24px"></i>
+                    <span class="text-white">RESET PASSWD</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -62,7 +62,8 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="パスワード再設定" type="submit">
-                                送信
+                                send
+                                <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
                         </form>
