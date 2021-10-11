@@ -12,9 +12,9 @@
 
             <div class="card mt-4">
 
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-sign-in-alt text-white" style="font-size: 25px"></i>
-                    <span class="text-white">ログイン</span>
+                    <span class="text-white">LOG&nbsp;IN</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -53,7 +53,8 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-3 text-white" title="ログイン" type="submit">
-                                ログイン
+                                Log in
+                                <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
                         </form>

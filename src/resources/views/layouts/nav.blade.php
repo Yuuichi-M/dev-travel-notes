@@ -1,33 +1,33 @@
 <nav class="navbar navbar-expand nabvar-light navbar-fixed-top shadow-sm">
 
-    <a class="navbar-brand text-dark font-weight-bold ml-3" title="ホーム" href="/">
-        <i class="fas fa-torii-gate deep-orange-text" style="font-size: 21px"></i>
-        <span class="text-dark" style="font-size: 21px">{{ config('app.name') }}</span>
+    <a class="navbar-brand text-dark font-weight-bold ml-2" title="ホーム" href="/">
+        <i class="fas fa-shoe-prints deep-orange-text" style="font-size: 23px"></i>
+        <span class="deep-orange-text" style="font-size: 20px">{{ config('app.name') }}</span>
     </a>
 
     <ul class="navbar-nav ml-auto">
 
         @guest
         <li class="nav-item mt-2">
-            <h4><a class="nav-link" title="アカウント作成" href=" {{ route('register') }}"><i class="fas fa-user-edit text-dark"></i></a></h4>
+            <h4><a class="nav-link" title="アカウント作成" href=" {{ route('register') }}"><i class="fas fa-user-edit deep-orange-text"></i></a></h4>
         </li>
         @endguest
 
         @guest
         <li class="nav-item mt-2">
-            <h4><a class="nav-link" title="ログイン" href="{{ route('login') }}"><i class="fas fa-sign-in-alt text-dark"></i></a></h4>
+            <h4><a class="nav-link" title="ログイン" href="{{ route('login') }}"><i class="fas fa-sign-in-alt deep-orange-text"></i></a></h4>
         </li>
         @endguest
 
         @auth
         <li class="nav-item mt-2">
-            <h4><a class="nav-link" title="マイページ" href=""><i class="fas fa-user-circle text-dark"></i></a></h4>
+            <h4><a class="nav-link" title="マイページ" href=""><i class="fas fa-address-book deep-orange-text"></i></a></h4>
         </li>
         @endauth
 
         @auth
         <li class="nav-item mt-2">
-            <h4><a class="nav-link" title="投稿" href="{{ route('articles.create') }}"><i class="fas fa-pen text-dark"></i></a></h4>
+            <h4><a class="nav-link" title="投稿" href="{{ route('articles.create') }}"><i class="fas fa-paper-plane deep-orange-text"></i></a></h4>
         </li>
         @endauth
 

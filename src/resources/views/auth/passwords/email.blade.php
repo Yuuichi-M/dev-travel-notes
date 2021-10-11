@@ -13,8 +13,8 @@
             <div class="card mt-4">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
-                    <i class="fas fa-envelope text-white" style="font-size: 25px"></i>
-                    <span class="text-white">パスワードを忘れた方</span>
+                    <i class="fas fa-envelope text-white" style="font-size: 24px"></i>
+                    <span class="text-white">RESET PASSWD</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -42,7 +42,8 @@
                         </div>
 
                         <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="パスワードリセット" type="submit">
-                            メール送信
+                            <i class="far fa-envelope"></i>
+                            Send email
                         </button>
 
                     </form>
