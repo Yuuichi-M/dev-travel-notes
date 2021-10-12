@@ -50,10 +50,12 @@
     </div>
 
     <div class="mt-1 mb-3">
-        <label for="prefecture" style="font-size: 16px">所在地</label>
-        <select name="category_id" class="browser-default custom-select">
-            @foreach(config('pref') as $category_id => $prefecture)
-            <option value="{{ $category_id }}" {{ old('category_id') === $category_id ? "selected" : ""}}>{{ $prefecture }}</option>
+        <label for="category_id" style="font-size: 16px">所在地</label>
+        <select name="category_id" class="browser-default custom-select @error('category_id') is-invalid @enderror">
+            @foreach($prefectures as $prefecture)
+            <option value="{{ $prefecture->id }}" {{old('category_id') == $prefecture->id ? 'selected' : ''}}>
+                {{$prefecture->prefecture}}
+            </option>
             @endforeach
         </select>
         <small>プルダウンよりお選びください</small>

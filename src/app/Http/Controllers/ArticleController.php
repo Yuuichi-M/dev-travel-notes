@@ -25,15 +25,19 @@ class ArticleController extends Controller
     //投稿画面
     public function create()
     {
-        return view('articles.create');
+        //所在地取得
+        $prefectures = Category::orderBy('sort_no')->get();
+        return view('articles.create')->with('prefectures', $prefectures);
     }
 
     //投稿機能
     public function store(ArticleRequest $request, Article $article)
     {
+        //dd($request->all());
+
         $article->user_id = Auth::id();
         $article->fill($request->all());
         $article->save();
-        return redirect()->route('/');
+        return redirect()->route('articles.index');
     }
 }
