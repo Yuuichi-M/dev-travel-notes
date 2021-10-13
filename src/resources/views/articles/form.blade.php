@@ -1,3 +1,4 @@
+@csrf
 <div style="text-align: initial;">
 
     <!--
