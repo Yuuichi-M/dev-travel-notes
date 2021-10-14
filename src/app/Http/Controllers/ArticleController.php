@@ -17,7 +17,7 @@ class ArticleController extends Controller
     public function index()
     {
         //n+1問題解消　create_atを降順で並び替え　ページネーション9
-        $articles = article::with('user')->orderBy('created_at', 'desc')->paginate(9);
+        $articles = article::with('user')->orderBy('id', 'desc')->paginate(9);
         //category　n+1問題解消
         $categories = article::with('category')->limit(5)->get();
         //カテゴリー取得
@@ -48,5 +48,18 @@ class ArticleController extends Controller
     {
         $prefectures = Category::orderBy('sort_no')->get();
         return view('articles.edit', ['article' => $article])->with('prefectures', $prefectures);
+    }
+
+    public function update(ArticleRequest $request, Article $article)
+    {
+        $article->fill($request->all());
+        $article->save();
+        return redirect()->route('articles.index');
+    }
+
+    public function destroy(Article $article)
+    {
+        $article->delete();
+        return redirect()->route('articles.index');
     }
 }

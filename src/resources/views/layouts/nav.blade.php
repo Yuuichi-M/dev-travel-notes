@@ -67,18 +67,6 @@
                 </a>
                 @endauth
 
-                <!--
-                <div class="dropdown-divider"></div>
-                <form class="form-inline ml-auto pl-4">
-                    <input type="text" class="form-control" type="search" placeholder="検索" aria-label="Search">
-                    <span class="input-group-btn">
-                        <button class="btn btn--outline-dark my-2 my-sm-0" type="submit">
-                            <i class="fas fa-search"></i>
-                        </button>
-                    </span>
-                </form>
-                -->
-
                 @auth
                 <div class="dropdown-divider"></div>
                 <button form="logout-button" class="dropdown-item text-danger mt-3 mb-2" type="submit">
