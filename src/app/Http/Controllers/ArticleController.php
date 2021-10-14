@@ -44,12 +44,14 @@ class ArticleController extends Controller
         return redirect()->route('articles.index');
     }
 
+    //投稿編集画面
     public function edit(Article $article)
     {
         $prefectures = Category::orderBy('sort_no')->get();
         return view('articles.edit', ['article' => $article])->with('prefectures', $prefectures);
     }
 
+    //投稿編集処理
     public function update(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
@@ -57,9 +59,17 @@ class ArticleController extends Controller
         return redirect()->route('articles.index');
     }
 
+    //投稿記事削除
     public function destroy(Article $article)
     {
         $article->delete();
         return redirect()->route('articles.index');
+    }
+
+    //記事詳細画面
+    public function show(Article $article)
+    {
+        $prefectures = Category::orderBy('sort_no')->get();
+        return view('articles.show', ['article' => $article])->with('prefectures', $prefectures);
     }
 }

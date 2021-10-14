@@ -17,13 +17,12 @@
                     {{ $article->user->name }}
                 </div>
 
-                <div class="font-weight-lighter">
+                <div class="font-weight-lighter card-text">
                     {{ $article->created_at->format('Y/m/d H:i') }}
                 </div>
 
             </div>
 
-            @if( Auth::id() === $article->user_id )
             <!-- dropdown -->
             <div class="ml-auto card-text">
                 <div class="dropdown">
@@ -36,17 +35,26 @@
 
                     <div class="dropdown-menu dropdown-menu-right">
 
+                        <a class="dropdown-item text-dark" href="{{ route('articles.show', ['article' => $article]) }}">
+                            詳細を表示する
+                            <i class="fas fa-book-open ml-1"></i>
+                        </a>
+
+                        @auth
+                        <div class="dropdown-divider"></div>
+
                         <a class="dropdown-item text-dark" href="{{ route("articles.edit", ['article' => $article]) }}">
-                            記事を更新する
+                            投稿を編集する
                             <i class="fas fa-edit ml-1"></i>
                         </a>
 
                         <div class="dropdown-divider"></div>
 
                         <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
-                            記事を削除する
+                            投稿を削除する
                             <i class="fas fa-trash-alt ml-1"></i>
                         </a>
+                        @endauth
 
                     </div>
                 </div>
@@ -100,14 +108,13 @@
                 </div>
             </div>
             <!-- modal -->
-            @endif
 
         </div>
         <div class="card-body pt-0 pb-2">
 
-            <h3 class="h4 card-title">
+            <h4 class="card-title border-bottom">
                 {{ $article->title }}
-            </h3>
+            </h4>
 
             <div class="card-text">{{ $article->category->prefecture }}</div>
 
