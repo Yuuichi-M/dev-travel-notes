@@ -10,10 +10,10 @@
     @foreach($articles as $article)
     <div class="card mt-3">
         <div class="card-body d-flex flex-row">
-            <i class="fas fa-user-circle fa-3x mr-1"></i>
+            <i class="fas fa-user-circle fa-3x mr-1 text-dark"></i>
             <div>
 
-                <div class="font-weight-bold">
+                <div class="font-weight-bold text-dark">
                     {{ $article->user->name }}
                 </div>
 
@@ -119,12 +119,7 @@
                 URL : <a href="{{ $article->url }}" target="_blank">{{ $article->url }}</a>
             </div>
 
-            <div class="card-body pb-1 pt-1 pl-0">
-                <div class="card-text">
-                    <article-like>
-                    </article-like>
-                </div>
-            </div>
+            @include('articles.like')
 
         </div>
     </div>
