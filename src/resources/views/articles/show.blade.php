@@ -18,11 +18,11 @@
                     <span class="text-white">ARTICLE DETAIL</span>
                 </h4>
 
-                <div class="card-body d-flex flex-row p-3">
+                <div class="card-body d-flex flex-row p-3 text-dark">
                     <i class="fas fa-user-circle fa-3x mr-1"></i>
                     <div>
 
-                        <div class="font-weight-bold">
+                        <div class="font-weight-bold text-dark">
                             {{ $article->user->name }}
                         </div>
 
@@ -134,12 +134,7 @@
                                 {!! nl2br(e( $article->summary )) !!}
                             </div>
 
-                            <div class="card-body pb-1 pt-1 pl-0">
-                                <div class="card-text">
-                                    <article-like>
-                                    </article-like>
-                                </div>
-                            </div>
+                            @include('articles.like')
 
                         </div>
                     </div>

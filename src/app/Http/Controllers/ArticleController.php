@@ -77,4 +77,29 @@ class ArticleController extends Controller
         $prefectures = Category::orderBy('sort_no')->get();
         return view('articles.show', ['article' => $article])->with('prefectures', $prefectures);
     }
+
+    //いいね機能　いいね
+    public function like(Request $request, Article $article)
+    {
+        //detachで先に削除(重複防止)
+        $article->likes()->detach($request->user()->id);
+        //attachで新規登録
+        $article->likes()->attach($request->user()->id);
+
+        return [
+            'id' => $article->id,
+            'countLikes' => $article->count_likes,
+        ];
+    }
+
+    //いいね機能　いいね解除
+    public function unlike(Request $request, Article $article)
+    {
+        $article->likes()->detach($request->user()->id);
+
+        return [
+            'id' => $article->id,
+            'countLikes' => $article->count_likes,
+        ];
+    }
 }
