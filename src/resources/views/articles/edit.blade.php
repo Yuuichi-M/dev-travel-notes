@@ -60,7 +60,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-
                                 </div>
 
                                 <div class="md-form">
@@ -73,7 +72,6 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
-
                                 </div>
 
                                 <div class="mt-1 mb-3">
@@ -87,6 +85,8 @@
                                     </select>
                                     <small>プルダウンよりお選びください</small>
                                 </div>
+
+                                @include('articles.tag')
 
                                 <div class="form-group">
                                     <label for="summary"></label>
