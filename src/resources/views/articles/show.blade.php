@@ -2,9 +2,9 @@
 
 @section('title', '記事一覧')
 
-@section('content')
-
 @include('layouts.nav')
+
+@section('content')
 
 <div class="container">
 
@@ -117,11 +117,11 @@
                 <div class="card-body">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
-                            <h4 class="card-title border-bottom">
+                            <h4 class="card-title">
                                 {{ $article->title }}
                             </h4>
 
-                            <div class=" card-text">
+                            <div class="card-text">
                                 <i class="fas fa-map-marker-alt deep-orange-text"></i>
                                 {{ $article->category->prefecture }}
                             </div>
@@ -132,6 +132,13 @@
 
                             <div class="text-dark mt-3">
                                 {!! nl2br(e( $article->summary )) !!}
+                            </div>
+
+                            <div class="card-body pb-1 pt-1 pl-0">
+                                <div class="card-text">
+                                    <article-like>
+                                    </article-like>
+                                </div>
                             </div>
 
                         </div>
