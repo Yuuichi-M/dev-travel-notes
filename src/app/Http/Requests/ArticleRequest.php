@@ -29,6 +29,7 @@ class ArticleRequest extends FormRequest
             'category_id' => 'string|max:2',
             'summary' => 'string|max:10000',
             'article_img' => 'file|image',
+            'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
         ];
     }
 
@@ -40,6 +41,17 @@ class ArticleRequest extends FormRequest
             'category_id' => '所在地',
             'summary' => '本文',
             'article_img' => 'イメージ',
+            'tags' => 'タグ',
         ];
+    }
+
+    //タグ機能　5個まで保存可能
+    public function passedValidation()
+    {
+        $this->tags = collect(json_decode($this->tags))
+            ->slice(0, 5)
+            ->map(function ($requestTag) {
+                return $requestTag->text;
+            });
     }
 }

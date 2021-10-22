@@ -44,6 +44,12 @@ class Article extends Model
         return $this->likes->count();
     }
 
+    //記事モデルとタグモデルのリレーション 多対多
+    public function tags(): BelongsToMany
+    {
+        return $this->belongsToMany('App\Tag')->withTimestamps();
+    }
+
     //所在地表示
     public function category()
     {

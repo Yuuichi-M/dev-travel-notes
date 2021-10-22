@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App\Category;
 use App\Article;
+use App\Tag;
 use App\User;
 use App\Http\Requests\ArticleRequest;
 use App\Http\Controllers\Controller;
@@ -46,6 +47,13 @@ class ArticleController extends Controller
         $article->user_id = Auth::id();
         $article->fill($request->all());
         $article->save();
+
+        //タグ登録
+        $request->tags->each(function ($tagName) use ($article) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            $article->tags()->attach($tag);
+        });
+
         return redirect()->route('articles.index');
     }
 
@@ -53,7 +61,15 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $prefectures = Category::orderBy('sort_no')->get();
-        return view('articles.edit', ['article' => $article])->with('prefectures', $prefectures);
+        //登録タグ取得
+        $tagNames = $article->tags->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+
+        return view('articles.edit', [
+            'article' => $article,
+            'tagNames' => $tagNames,
+        ])->with('prefectures', $prefectures);
     }
 
     //投稿編集処理
@@ -61,6 +77,14 @@ class ArticleController extends Controller
     {
         $article->fill($request->all());
         $article->save();
+
+        //登録タグ編集
+        $article->tags()->detach();
+        $request->tags->each(function ($tagName) use ($article) {
+            $tag = Tag::firstOrCreate(['name' => $tagName]);
+            $article->tags()->attach($tag);
+        });
+
         return redirect()->route('articles.index');
     }
 
