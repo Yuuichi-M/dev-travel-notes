@@ -36,7 +36,14 @@ class ArticleController extends Controller
     {
         //所在地取得
         $prefectures = Category::orderBy('sort_no')->get();
-        return view('articles.create')->with('prefectures', $prefectures);
+        //すべてのタグ情報取得(自動補正用)
+        $allTagNames = Tag::all()->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+
+        return view('articles.create', [
+            'allTagNames' => $allTagNames,
+        ])->with('prefectures', $prefectures);
     }
 
     //投稿機能
@@ -61,14 +68,19 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $prefectures = Category::orderBy('sort_no')->get();
-        //登録タグ取得
+        //タグ取得
         $tagNames = $article->tags->map(function ($tag) {
+            return ['text' => $tag->name];
+        });
+        //すべてのタグ情報を取得(自動補正用)
+        $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];
         });
 
         return view('articles.edit', [
             'article' => $article,
             'tagNames' => $tagNames,
+            'allTagNames' => $allTagNames,
         ])->with('prefectures', $prefectures);
     }
 
