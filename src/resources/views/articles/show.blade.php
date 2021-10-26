@@ -134,9 +134,9 @@
                                 {!! nl2br(e( $article->summary )) !!}
                             </div>
 
-                            @include('articles.articleTag')
-
                             @include('articles.like')
+
+                            @include('articles.articleTag')
 
                         </div>
                     </div>

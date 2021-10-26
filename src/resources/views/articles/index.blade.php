@@ -119,9 +119,9 @@
                 URL : <a href="{{ $article->url }}" target="_blank">{{ $article->url }}</a>
             </div>
 
-            @include('articles.articleTag')
-
             @include('articles.like')
+
+            @include('articles.articleTag')
 
         </div>
     </div>
