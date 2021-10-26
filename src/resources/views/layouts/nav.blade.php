@@ -21,7 +21,7 @@
 
         @auth
         <li class="nav-item mt-2">
-            <h4><a class="nav-link" title="マイページ" href=""><i class="fas fa-address-book deep-orange-text"></i></a></h4>
+            <h4><a class="nav-link" title="マイページ" href="{{ route("users.show", ["name" => Auth::user()->name]) }}"><i class="fas fa-address-book deep-orange-text"></i></a></h4>
         </li>
         @endauth
 
@@ -31,6 +31,7 @@
         </li>
         @endauth
 
+        @auth
         <!-- Dropdown -->
         <li class="nav-item dropdown mt-1">
 
@@ -38,41 +39,17 @@
                 <h2><i class="fas fa-bars deep-orange-text"></i></h2>
             </a>
 
-            <div class="dropdown-menu dropdown-menu-right dropdown-primary " aria-labelledby="navbarDropdownMenuLink">
+            <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
 
-                @guest
-                <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="{{ route('register') }}">
-                    アカウント作成
-                </a>
-                @endguest
-
-                @guest
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="{{ route('login') }}">
-                    ログイン
-                </a>
-                @endguest
-
-                @auth
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="{{ route('articles.create') }}">
-                    投稿
-                </a>
-                @endauth
-
-                @auth
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item text-dark ml-3 mt-1" type="button" href="">
+                <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">
                     マイページ
-                </a>
-                @endauth
+                </button>
 
-                @auth
                 <div class="dropdown-divider"></div>
-                <button form="logout-button" class="dropdown-item text-danger mt-3 mb-2" type="submit">
+
+                <button form="logout-button" class="dropdown-item" type="submit">
                     ログアウト
                 </button>
-                @endauth
 
             </div>
         </li>
@@ -81,6 +58,7 @@
             @csrf
         </form>
         <!-- Dropdown -->
+        @endauth
 
     </ul>
 
