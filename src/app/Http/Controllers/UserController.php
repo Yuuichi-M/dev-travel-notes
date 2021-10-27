@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Article;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -11,9 +12,12 @@ class UserController extends Controller
     {
         //ユーザーモデル取得($nameと一致するモデル)
         $user = User::where('name', $name)->first();
+        //記事モデル取得(N+1問題解消)
+        $articles = Article::with('user')->orderBy('id', 'desc')->paginate(9);
 
         return view('users.show', [
             'user' => $user,
+            'articles' => $articles,
         ]);
     }
 

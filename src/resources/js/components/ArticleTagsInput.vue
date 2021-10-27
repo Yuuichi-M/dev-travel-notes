@@ -50,7 +50,6 @@ export default {
 <style lang="css" scoped>
 .vue-tags-input {
   max-width: inherit;
-  border-radius: 30px;
 }
 </style>
 <style lang="css">
