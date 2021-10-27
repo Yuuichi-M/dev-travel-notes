@@ -1,7 +1,7 @@
 <template>
   <div>
     <button
-      class="btn-sm shadow-none border border-dark p-2"
+      class="btn-sm shadow-none border border-wight p-2"
       :class="buttonColor"
       @click="clickFollow"
     >
@@ -33,10 +33,10 @@ export default {
   },
   computed: {
     buttonColor() {
-      return this.isFollowedBy ? "bg-dark text-white" : "bg-white text-dark";
+      return this.isFollowedBy ? "bg-muted text-body" : "bg-dark text-white";
     },
     buttonIcon() {
-      return this.isFollowedBy ? "far fa-check-circle" : "fas fa-plus-circle";
+      return this.isFollowedBy ? "fas fa-check" : "fas fa-plus";
     },
     buttonText() {
       return this.isFollowedBy ? "フォロー中" : "フォロー　";
