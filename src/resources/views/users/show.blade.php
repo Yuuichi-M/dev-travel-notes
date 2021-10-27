@@ -12,6 +12,7 @@
                 <div class="card-body">
                     <div class="d-flex flex-row">
 
+                        <!--ユーザーアイコン-->
                         <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
                             <i class="fas fa-user-circle fa-3x"></i>
                         </a>
@@ -23,26 +24,50 @@
                         @endif
 
                     </div>
-                    <h2 class="card-title m-0">
 
+                    <!--ユーザー名-->
+                    <h2 class="card-title m-0">
                         <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
                             {{ $user->name }}
                         </a>
-
                     </h2>
+
                 </div>
+
+                <!--フォロー数カウント-->
                 <div class="card-body">
                     <div class="card-text">
+
                         <a href="" class="text-muted mr-2">
                             {{ $user->count_followings }}フォロー中
                         </a>
+
                         <a href="" class="text-muted">
                             {{ $user->count_followers }}フォロワー
                         </a>
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <ul class="nav nav-tabs nav-justified mt-3 grey lighten-4">
+        <li class="nav-item">
+            <a class="nav-link active deep-orange-text" href="{{ route('users.show', ['name' => $user->name]) }}">
+                投稿一覧
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link deep-orange-text" href="">
+                いいね一覧
+            </a>
+        </li>
+    </ul>
+
+    @foreach($user->articles as $article)
+    @include('articles.articleList')
+    @endforeach
+
 </div>
 @endsection
