@@ -52,20 +52,22 @@
         </div>
     </div>
 
-    <ul class="nav nav-tabs nav-justified mt-3 grey lighten-4">
+    <ul class="nav nav-tabs nav-justified mt-3">
         <li class="nav-item">
-            <a class="nav-link active deep-orange-text" href="{{ route('users.show', ['name' => $user->name]) }}">
+            <a class="nav-link active text-white deep-orange lighten-2" href="{{ route('users.show', ['name' => $user->name]) }}">
+                <i class="far fa-paper-plane mr-1"></i>
                 投稿一覧
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link deep-orange-text" href="">
+            <a class="nav-link deep-orange-text mr-1" href="">
+                <i class="fas fa-heart mr-1"></i>
                 いいね一覧
             </a>
         </li>
     </ul>
 
-    @foreach($user->articles as $article)
+    @foreach($articles as $article)
     @include('articles.articleList')
     @endforeach
 
