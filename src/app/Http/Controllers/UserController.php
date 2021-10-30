@@ -12,10 +12,24 @@ class UserController extends Controller
     {
         //ユーザーモデル取得($nameと一致するモデル)
         $user = User::where('name', $name)->first();
-        //記事モデル取得(N+1問題解消)
-        $articles = Article::with('user')->orderBy('id', 'desc')->paginate(9);
+        //記事モデル取得
+        $articles = $user->articles->sortByDesc('id');
 
         return view('users.show', [
+            'user' => $user,
+            'articles' => $articles,
+        ]);
+    }
+
+    //いいね一覧表示
+    public function likes(string $name)
+    {
+        //ユーザーモデル取得($nameと一致するモデル)
+        $user = User::where('name', $name)->first();
+        //記事モデル取得
+        $articles = $user->likes->sortByDesc('id');
+
+        return view('users.likes', [
             'user' => $user,
             'articles' => $articles,
         ]);
