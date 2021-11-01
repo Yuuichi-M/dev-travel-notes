@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    //マイページ
     public function show(string $name)
     {
         //ユーザーモデル取得($nameと一致するモデル)
@@ -32,6 +33,32 @@ class UserController extends Controller
         return view('users.likes', [
             'user' => $user,
             'articles' => $articles,
+        ]);
+    }
+
+    //フォロー中のユーザー表示
+    public function followings(string $name)
+    {
+        $user = User::where('name', $name)->first();
+
+        $followings = $user->followings->sortByDesc('id');
+
+        return view('users.followings', [
+            'user' => $user,
+            'followings' => $followings,
+        ]);
+    }
+
+    //フォロワー表示
+    public function followers(string $name)
+    {
+        $user = User::where('name', $name)->first();
+
+        $followers = $user->followers->sortByDesc('id');
+
+        return view('users.followers', [
+            'user' => $user,
+            'followers' => $followers,
         ]);
     }
 
