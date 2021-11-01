@@ -33,6 +33,9 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}', 'UserController@show')->name('show');
     //いいね一覧表示
     Route::get('/{name}/likes', 'UserController@likes')->name('likes');
+    //フォロー中ユーザー・フォロワー表示
+    Route::get('/{name}/followings', 'UserController@followings')->name('followings');
+    Route::get('/{name}/followers', 'UserController@followers')->name('followers');
     //フォロー機能
     Route::middleware('auth')->group(function () {
         Route::put('/{name}/follow', 'UserController@follow')->name('follow');
