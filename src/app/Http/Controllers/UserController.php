@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UserRequest;
 
 class UserController extends Controller
 {
@@ -19,6 +21,17 @@ class UserController extends Controller
         return view('users.show', [
             'user' => $user,
             'articles' => $articles,
+        ]);
+    }
+
+    //ユーザー情報変更画面
+    public function edit(string $name)
+    {
+        //ユーザーモデル取得($nameと一致するモデル)
+        $user = User::where('name', $name)->first();
+
+        return view('users.edit', [
+            'user' => $user,
         ]);
     }
 
