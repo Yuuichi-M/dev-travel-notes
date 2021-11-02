@@ -31,6 +31,8 @@ Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
 //マイページ
 Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}', 'UserController@show')->name('show');
+    //ユーザー情報変更画面
+    Route::get('/{name}/edit', 'UserController@edit')->name('edit')->middleware('auth');
     //いいね一覧表示
     Route::get('/{name}/likes', 'UserController@likes')->name('likes');
     //フォロー中ユーザー・フォロワー表示
