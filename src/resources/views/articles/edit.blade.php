@@ -15,7 +15,7 @@
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-edit text-white" style="font-size: 24px"></i>
-                    <span class="text-white">ARTICLE EDIT</span>
+                    <span class="text-white">Edit Post</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -101,8 +101,13 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="更新" type="submit">
-                                <i class="far fa-arrow-alt-circle-right text-white"></i>
                                 update
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+
+                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                                <i class="fas fa-arrow-left text-dark"></i>
+                                Return
                             </button>
 
                         </form>

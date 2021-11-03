@@ -14,8 +14,8 @@
             <div class="card mt-4 rounded">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
-                    <i class="fas fa-edit text-white" style="font-size: 24px"></i>
-                    <span class="text-white">PROFILE EDIT</span>
+                    <i class="fas fa-user-edit text-white mr-1" style="font-size: 24px"></i>
+                    <span class="text-white" style="font-size: 24px">Edit Profile</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -72,8 +72,13 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="更新" type="submit">
-                                <i class="far fa-arrow-alt-circle-right text-white"></i>
                                 update
+                                <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+
+                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">
+                                <i class="fas fa-arrow-left text-dark"></i>
+                                Return
                             </button>
 
                         </form>

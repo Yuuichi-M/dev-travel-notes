@@ -14,8 +14,8 @@
             <div class="card mt-4 rounded">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
-                    <i class="fas fa-book-open text-white" style="font-size: 24px"></i>
-                    <span class="text-white">ARTICLE DETAIL</span>
+                    <i class="fas fa-book-open text-white mr-1" style="font-size: 24px"></i>
+                    <span class="text-white" style="font-size: 24px">Detail</span>
                 </h4>
 
                 <div class="card-body d-flex flex-row p-3 text-dark">
@@ -141,7 +141,13 @@
                         </div>
                     </div>
 
+                    <button class="btn btn-block grey lighten-4 rounded-pill mt-4 mb-1 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                        <i class="fas fa-arrow-left text-dark"></i>
+                        Return
+                    </button>
+
                 </div>
+
             </div>
         </div>
     </div>
