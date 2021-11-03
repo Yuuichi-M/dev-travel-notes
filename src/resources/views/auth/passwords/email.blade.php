@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'パスワードリセット')
+@section('title', 'パスワード再設定メール送信')
 
 @include('layouts.nav')
 
@@ -13,8 +13,8 @@
             <div class="card mt-4">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
-                    <i class="fas fa-envelope text-white" style="font-size: 24px"></i>
-                    <span class="text-white">RESET PASSWD</span>
+                    <i class="fas fa-envelope text-white mr-1" style="font-size: 24px"></i>
+                    <span class="text-white" style="font-size: 24px">Send E-mail</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -29,21 +29,31 @@
 
                         @csrf
 
-                        <div class="md-form">
-                            <label for="email">メールアドレス</label>
-                            <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                        <div class="card-text" style="text-align: initial;">
 
-                            @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                            @enderror
+                            <div class="md-form">
+                                <label for="email">メールアドレス</label>
+                                <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <small>登録済みのメールアドレスを入力してください。</small>
+
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
+                            </div>
 
                         </div>
 
                         <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="パスワードリセット" type="submit">
-                            <i class="far fa-envelope"></i>
                             Send email
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+
+                        <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                            <i class="fas fa-arrow-left text-dark"></i>
+                            Return
                         </button>
 
                     </form>

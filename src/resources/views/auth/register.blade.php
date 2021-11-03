@@ -13,8 +13,8 @@
             <div class="card mt-4">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
-                    <i class="fas fa-user-edit text-white" style="font-size: 24px"></i>
-                    <span class="text-white">REGISTER</span>
+                    <i class="far fa-user text-white mr-1" style="font-size: 24px"></i>
+                    <span class="text-white" style="font-size: 24px">Sign Up</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -76,14 +76,19 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="アカウント登録" type="submit">
-                                Let's Start
+                                Register
                                 <i class="fas fa-arrow-right text-white"></i>
+                            </button>
+
+                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                                <i class="fas fa-arrow-left text-dark"></i>
+                                Return
                             </button>
 
                         </form>
 
                         <div>
-                            アカウントをお持ちの方は<a href="{{ route('login') }}">こちら</a>
+                            アカウントをお持ちの方は<a href="{{ route('login') }}" class="deep-orange-text">こちら</a>
                         </div>
 
                     </div>
