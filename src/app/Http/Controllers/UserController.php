@@ -46,10 +46,11 @@ class UserController extends Controller
         // $user->email = $request->email;
         // $user->self_introduction = $request->self_introduction;
         $user = Auth::user();
+
         $user->fill($request->all());
         $user->save();
 
-        return redirect()->route('articles.index')->with('status', 'プロフィールを変更しました。');
+        return redirect()->route('users.show', ["name" => Auth::user()->name]);
     }
 
     //いいね一覧表示
