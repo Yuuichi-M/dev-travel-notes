@@ -2,16 +2,6 @@
     <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
         <div class="card mt-3">
 
-            <div class="row">
-                <div class="col-8 offset-2">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-                </div>
-            </div>
-
             <div class="card-body">
                 <div class="d-flex flex-row">
 
@@ -122,17 +112,21 @@
                     </a>
                 </h2>
 
+                <div class="card-text mt-3">
+                    {{ $user->self_introduction }}
+                </div>
+
             </div>
 
             <!--フォロー数カウント-->
             <div class="card-body">
                 <div class="card-text">
 
-                    <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-muted mr-2">
+                    <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-dark mr-2">
                         {{ $user->count_followings }}フォロー中
                     </a>
 
-                    <a href="{{ route('users.followers', ['name' => $user->name]) }}" class="text-muted">
+                    <a href="{{ route('users.followers', ['name' => $user->name]) }}" class="text-dark">
                         {{ $user->count_followers }}フォロワー
                     </a>
 
