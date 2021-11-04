@@ -21,7 +21,7 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" action="{{ route('articles.update',  ['article' => $article]) }}" class="p-3 mb-1">
+                        <form method="POST" class="p-3 mb-1" action="{{ route('articles.update',  ['article' => $article]) }}">
                             @method('PATCH')
                             @csrf
 
