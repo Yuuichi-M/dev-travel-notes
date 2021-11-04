@@ -21,8 +21,8 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" action="" class="p-3 mb-1">
-                            @method('PATCH')
+                        <form method="POST" class="p-3 mb-1" action="{{ route('users.update', ["name" => Auth::user()->name] )}}">
+                            @method('PUT')
                             @csrf
 
                             <div style="text-align: initial;">
@@ -68,6 +68,7 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
+
                                 </div>
                             </div>
 

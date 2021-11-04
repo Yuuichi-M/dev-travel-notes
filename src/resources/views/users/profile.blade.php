@@ -1,6 +1,17 @@
 <div class="row justify-content-center">
     <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
         <div class="card mt-3">
+
+            <div class="row">
+                <div class="col-8 offset-2">
+                    @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                    @endif
+                </div>
+            </div>
+
             <div class="card-body">
                 <div class="d-flex flex-row">
 

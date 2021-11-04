@@ -30,9 +30,26 @@ class UserController extends Controller
         //ユーザーモデル取得($nameと一致するモデル)
         $user = User::where('name', $name)->first();
 
+        if ($user->id !== Auth::id()) {
+            return redirect('articles.index');
+        }
+
         return view('users.edit', [
             'user' => $user,
         ]);
+    }
+
+    //ユーザー情報変更処理
+    public function update(UserRequest $request, User $user)
+    {
+        // $user->name = $request->input('name');
+        // $user->email = $request->email;
+        // $user->self_introduction = $request->self_introduction;
+        $user = Auth::user();
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect()->route('articles.index')->with('status', 'プロフィールを変更しました。');
     }
 
     //いいね一覧表示
