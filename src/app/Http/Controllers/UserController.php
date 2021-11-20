@@ -31,7 +31,7 @@ class UserController extends Controller
         $user = User::where('name', $name)->first();
 
         if ($user->id !== Auth::id()) {
-            return redirect('articles.index');
+            return redirect('login');
         }
 
         return view('users.edit', [
@@ -42,9 +42,6 @@ class UserController extends Controller
     //ユーザー情報変更処理
     public function update(UserRequest $request, User $user)
     {
-        // $user->name = $request->input('name');
-        // $user->email = $request->email;
-        // $user->self_introduction = $request->self_introduction;
         $user = Auth::user();
 
         $user->fill($request->all());
