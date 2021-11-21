@@ -33,8 +33,8 @@
                     </follow-button>
                     @endif
 
-                    @if( Auth::id() === $user->id )
                     <!-- dropdown -->
+                    @if( Auth::id() === $user->id )
                     <div class="ml-auto card-text">
                         <div class="dropdown">
 
