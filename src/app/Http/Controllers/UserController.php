@@ -47,7 +47,8 @@ class UserController extends Controller
         $user->fill($request->all());
         $user->save();
 
-        return redirect()->route('users.show', ["name" => Auth::user()->name]);
+        return redirect()->route('users.show', ["name" => Auth::user()->name])
+            ->with('status', 'プロフィールを変更しました。');
     }
 
     //いいね一覧表示

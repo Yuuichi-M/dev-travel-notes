@@ -33,6 +33,14 @@
                                     </p>
                                 </div>
 
+                                <div class="avatar-form image-picker text-center">
+                                    <input type="file" name="avatar" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
+                                    <label for="avatar" class="d-inline-block">
+                                        <img src="/image/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
+                                    </label>
+                                    <div class="small">プロフィール画像をアップロードできます。</div>
+                                </div>
+
                                 <div class="md-form">
                                     <label for="name">名前<span class="text-danger">(※)</span></label>
                                     <input class="form-control @error('name') is-invalid @enderror" type="text" id="name" name="name" required value="{{ $user->name ?? old('name') }}">
@@ -49,7 +57,7 @@
                                 <div class="md-form">
                                     <label for="email">メールアドレス<span class="text-danger">(※)</span></label>
                                     <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" required value="{{ $user->email ?? old('email') }}">
-                                    <small>今回は仮のメールアドレスを入力ください。</small>
+                                    <small>メールアドレスを入力ください。</small>
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
