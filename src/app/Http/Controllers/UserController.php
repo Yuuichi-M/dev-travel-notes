@@ -7,6 +7,11 @@ use App\Article;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\UserRequest;
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image;
+
 
 class UserController extends Controller
 {
@@ -43,12 +48,55 @@ class UserController extends Controller
     public function update(UserRequest $request, User $user)
     {
         $user = Auth::user();
-
         $user->fill($request->all());
+
+        //アバター画像保存処理
+        if ($request->has('avatar')) {
+            //保存先指定(現在はStorage)
+            $fileName = $this->saveAvatar($request->file('avatar'));
+            //ファイル名をDBへ保存
+            $user->avatar_file_name = $fileName;
+        }
+
         $user->save();
 
         return redirect()->route('users.show', ["name" => Auth::user()->name])
             ->with('status', 'プロフィールを変更しました。');
+    }
+
+
+    /**
+     * アバター画像をリサイズして保存
+     *
+     * @param UploadedFile $file アップロードされたアバター画像 Intervention Imageのインスタンス生成
+     * @return string ファイル名
+     */
+    private function saveAvatar(UploadedFile $file): string
+    {
+        //一時ファイルを生成してパスを取得
+        $tempPath = $this->makeTempPath();
+        //画像をリサイズ(Intervention Image)->一時ファイルに保存
+        Image::make($file)->fit(125, 125)->save($tempPath);
+        //Storageファサードを使用して画像をディスクに保存
+        $filePath = Storage::disk('public')
+            ->putFile('avatars', new File($tempPath));
+
+        return basename($filePath);
+    }
+
+    /**
+     * 一時的なファイルを生成してパスを返します。
+     *
+     * @return string ファイルパス
+     */
+    private function makeTempPath(): string
+    {
+        ///tmpに一時ファイルが生成->ファイルポインタが返る
+        $tmp_fp = tmpfile();
+        //ファイルのメタ情報を取得(ファイルポインタを指定)
+        $meta   = stream_get_meta_data($tmp_fp);
+        //メタ情報からURI(ファイルのパス)を取得し、返す。
+        return $meta["uri"];
     }
 
     //いいね一覧表示

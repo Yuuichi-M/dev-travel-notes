@@ -28,20 +28,20 @@ class UserRequest extends FormRequest
     public function rules()
     {
         return [
+            'avatar' => ['file', 'image'],
             'name' => ['required', 'string', 'max:16'],
             'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())],
             'self_introduction' => ['string', 'max:500'],
-            'avatar_file_name' => ['image'],
         ];
     }
 
     public function attributes()
     {
         return [
+            'avatar' => 'プロフィール画像',
             'name' => 'タイトル',
             'email' => 'メールアドレス',
             'self_introduction' => '自己紹介',
-            'avatar_file_name' => 'プロフィール画像'
         ];
     }
 }

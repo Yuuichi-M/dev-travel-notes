@@ -1,10 +1,10 @@
 <div class="row justify-content-center">
     <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
 
-        <div class="row mt-2">
+        <div class="row">
             <div class="col-8 offset-2">
                 @if (session('status'))
-                <div class="alert alert-success" role="alert">
+                <div class="alert alert-success mt-4" role="alert">
                     {{ session('status') }}
                 </div>
                 @endif
@@ -15,24 +15,11 @@
             <div class="card-body">
                 <div class="d-flex flex-row">
 
-                    <!--ユーザーアイコン-->
-                    <!-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
-                        <i class="fas fa-user-circle fa-3x"></i>
-                    </a> -->
-
-                    <!--ユーザーアイコン-->
-                    <!-- <a href="{{ route('users.show', ['name' => $user->name]) }}" class="avatar-form image-picker">
-                        <input type="file" name="avatar" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
-                        <label for="avatar" class="d-inline-block">
-                            <img src="/image/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 45px; height: 45px;">
-                        </label>
-                    </a> -->
-
                     <a class="" href="{{ route('users.show', ['name' => $user->name]) }}" style="text-decoration: none;">
-                        @if (!empty($user_imgs->avatar_file_name))
+                        @if (!empty($user->avatar_file_name))
                         <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @else
-                        <img src="/image/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
+                        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @endif
                         <span class="card-title text-dark h2 ml-1">{{ $user->name }}</span>
                     </a>
@@ -129,15 +116,7 @@
                     @endif
                     <!-- modal -->
 
-
                 </div>
-
-                <!--ユーザー名-->
-                <!-- <h2 class="card-title m-0">
-                    <a href="{{ route('users.show', ['name' => $user->name]) }}" class="text-dark">
-                        {{ $user->name }}
-                    </a>
-                </h2> -->
 
                 <div class="card-text mt-3">
                     {{ $user->self_introduction }}

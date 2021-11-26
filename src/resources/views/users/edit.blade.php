@@ -21,7 +21,7 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" class="p-3 mb-1" action="{{ route('users.update', ["name" => Auth::user()->name] )}}">
+                        <form method="POST" class="p-3 mb-1" action="{{ route('users.update', ["name" => Auth::user()->name] )}}" enctype="multipart/form-data">
                             @method('PUT')
                             @csrf
 
@@ -34,11 +34,22 @@
                                 </div>
 
                                 <div class="avatar-form image-picker text-center">
-                                    <input type="file" name="avatar" class="d-none" accept="image/png,image/jpeg,image/gif" id="avatar" />
+                                    <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="images/png,image/jpeg,image/gif" id="avatar" />
                                     <label for="avatar" class="d-inline-block">
-                                        <img src="/image/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
+                                        @if (!empty($user->avatar_file_name))
+                                        <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
+                                        @else
+                                        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
+                                        @endif
                                     </label>
                                     <div class="small">プロフィール画像をアップロードできます。</div>
+
+                                    @error('avatar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
                                 </div>
 
                                 <div class="md-form">
