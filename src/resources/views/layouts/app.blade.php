@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     @hasSection('title')
-    <title>@yield('title')</title>
+    <title>@yield('title') | {{ config('app.name') }}</title>
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
     @else
     <title>{{ config('app.name') }}</title>
     @endif
