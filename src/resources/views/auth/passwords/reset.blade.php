@@ -2,7 +2,7 @@
 
 @section('title','パスワード再設定')
 
-@include('layouts.nav')
+@include('commons.header')
 
 @section('content')
 

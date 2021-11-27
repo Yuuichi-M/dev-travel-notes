@@ -2,7 +2,7 @@
 
 @section('title','プロフィール変更')
 
-@include('layouts.nav')
+@include('commons.header')
 
 @section('content')
 

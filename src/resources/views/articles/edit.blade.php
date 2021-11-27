@@ -2,7 +2,7 @@
 
 @section('title','投稿')
 
-@include('layouts.nav')
+@include('commons.header')
 
 @section('content')
 
