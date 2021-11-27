@@ -8,7 +8,7 @@
     @hasSection('title')
     <title>@yield('title') | {{ config('app.name') }}</title>
 
-    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
     @else
     <title>{{ config('app.name') }}</title>
     @endif

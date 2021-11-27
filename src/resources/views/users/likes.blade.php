@@ -2,7 +2,7 @@
 
 @section('title', $user->name . 'のいいねした記事')
 
-@include('layouts.nav')
+@include('commons.header')
 
 @section('content')
 

@@ -2,7 +2,7 @@
 
 @section('title','ログイン')
 
-@include('layouts.nav')
+@include('commons.header')
 
 @section('content')
 
@@ -58,6 +58,10 @@
                                 パスワードを忘れた方は<a href="{{ route('password.request') }}" class="deep-orange-text">こちら</a>
                             </div>
 
+                            <div class="mt-2">
+                                アカウント未登録の方は<a href="{{ route('register') }}" class="deep-orange-text">こちら</a>
+                            </div>
+
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="サインイン" type="submit">
                                 Sign In
                                 <i class="fas fa-arrow-right text-white"></i>
@@ -69,10 +73,6 @@
                             </button>
 
                         </form>
-
-                        <div>
-                            アカウント未登録の方は<a href="{{ route('register') }}" class="deep-orange-text">こちら</a>
-                        </div>
 
                     </div>
                 </div>

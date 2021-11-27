@@ -2,7 +2,7 @@
 
 @section('title','アカウント作成')
 
-@include('layouts.nav')
+@include('commons.header')
 
 @section('content')
 
