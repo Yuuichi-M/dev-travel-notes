@@ -44,22 +44,19 @@
                             <div class="dropdown-menu dropdown-menu-right">
 
                                 <a class="dropdown-item text-dark" href="{{ route('users.edit', ["name" => Auth::user()->name]) }}">
-                                    プロフィールを変更する
-                                    <i class="fas fa-edit ml-1"></i>
+                                    <i class="fas fa-edit mr-2"></i>プロフィールを変更する
                                 </a>
 
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item text-dark" href="/">
-                                    投稿一覧へ戻る　　　　
-                                    <i class="fas fa-arrow-circle-left text-dark"></i>
+                                    <i class="fas fa-arrow-circle-left mr-2"></i>投稿一覧へ戻る　　　　
                                 </a>
 
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item text-danger" data-toggle="modal" data-target="">
-                                    アカウントを退会する　
-                                    <i class="fas fa-user-alt-slash"></i>
+                                    <i class="fas fa-user-alt-slash mr-2"></i>アカウントを退会する　
                                 </a>
 
                             </div>
@@ -75,7 +72,7 @@
 
                                     <span class="text-white" style="font-size: 18px">
                                         <i class="fas fa-trash-alt text-white mr-1" style="font-size: 20px"></i>
-                                        DELETE ARTICLE
+                                        DELETE ACCOUNT
                                     </span>
 
                                     <button type=" button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
@@ -100,12 +97,12 @@
                                     <div class="modal-footer justify-content-between btn-group">
                                         <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
                                             <i class="fas fa-backspace mr-1"></i>
-                                            CANCEL
+                                            キャンセル
                                         </button>
 
                                         <button type="submit" class="btn btn-outline-danger">
                                             <i class="fas fa-trash-alt mr-1"></i>
-                                            DELETE
+                                            退会する
                                         </button>
                                     </div>
 

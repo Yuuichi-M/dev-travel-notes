@@ -47,15 +47,13 @@
 
                                 @auth
                                 <a class="dropdown-item text-dark" href="{{ route("articles.edit", ['article' => $article]) }}">
-                                    投稿を編集する
-                                    <i class="fas fa-edit ml-1"></i>
+                                    <i class="fas fa-edit mr-2"></i>投稿を編集する
                                 </a>
 
                                 <div class="dropdown-divider"></div>
 
                                 <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
-                                    投稿を削除する
-                                    <i class="fas fa-trash-alt ml-1"></i>
+                                    <i class="fas fa-trash-alt mr-2"></i>投稿を削除する
                                 </a>
                                 @endauth
 
@@ -72,7 +70,7 @@
 
                                     <span class="text-white" style="font-size: 18px">
                                         <i class="fas fa-trash-alt text-white mr-1" style="font-size: 20px"></i>
-                                        DELETE ARTICLE
+                                        DELETE POST
                                     </span>
 
                                     <button type=" button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
@@ -97,12 +95,12 @@
                                     <div class="modal-footer justify-content-between btn-group">
                                         <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
                                             <i class="fas fa-backspace mr-1"></i>
-                                            CANCEL
+                                            キャンセル
                                         </button>
 
                                         <button type="submit" class="btn btn-outline-danger">
                                             <i class="fas fa-trash-alt mr-1"></i>
-                                            DELETE
+                                            削除する
                                         </button>
                                     </div>
 

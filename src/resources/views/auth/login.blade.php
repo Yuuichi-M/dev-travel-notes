@@ -14,7 +14,9 @@
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-sign-in-alt text-white" style="font-size: 24px"></i>
-                    <span class="text-white" style="font-size: 24px">Sign In</span>
+                    <span class="text-white" style="font-size: 24px">
+                        Login
+                    </span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -25,29 +27,39 @@
                             <div style="text-align: initial;">
 
                                 <div class="md-form">
-                                    <label for="email">メールアドレス</label>
+                                    <label for="email">
+                                        メールアドレス
+                                    </label>
                                     <input class="form-control @error('email') is-invalid @enderror" type="text" id="email" name="email" required autocomplete="email" value="{{ old('email') }}">
-                                    <small>登録済みのメールアドレスを入力してください。</small>
+                                    <small>
+                                        登録済みのメールアドレスを入力してください。
+                                    </small>
 
                                     @error('email')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>
+                                            {{ $message }}
+                                        </strong>
                                     </span>
                                     @enderror
-
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="password">パスワード</label>
+                                    <label for="password">
+                                        パスワード
+                                    </label>
                                     <input class="form-control @error('password') is-invalid @enderror" type="password" id="password" name="password" required autocomplete="current-password">
-                                    <small>登録済みのパスワードを入力してください。</small>
+                                    <small>
+                                        登録済みのパスワードを入力してください。
+                                    </small>
 
                                     @error('password')
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        <strong>
+                                            {{ $message }}
+                                        </strong>
                                     </span>
                                     @enderror
-
                                 </div>
 
                             </div>
@@ -55,22 +67,33 @@
                             <input type="hidden" name="remember" id="remember" value="on">
 
                             <div>
-                                パスワードを忘れた方は<a href="{{ route('password.request') }}" class="deep-orange-text">こちら</a>
+                                パスワードを忘れた方は
+                                <a href="{{ route('password.request') }}" class="deep-orange-text">
+                                    こちら
+                                </a>
                             </div>
 
-                            <div class="mt-2">
-                                アカウント未登録の方は<a href="{{ route('register') }}" class="deep-orange-text">こちら</a>
-                            </div>
-
-                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="サインイン" type="submit">
-                                Sign In
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="ログイン" type="submit">
+                                ログイン
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
-                                <i class="fas fa-arrow-left text-dark"></i>
-                                Return
+                            <button class="btn btn-block sunny-morning-gradient rounded-pill mt-4 text-white" title="ゲストログイン" type="button" onclick="">
+                                ゲストログイン
+                                <i class="fas fa-arrow-right text-white"></i>
                             </button>
+
+                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="キャンセル" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                                <i class="fas fa-arrow-left text-dark"></i>
+                                キャンセル
+                            </button>
+
+                            <div class="mt-4">
+                                アカウント未登録の方は
+                                <a href="{{ route('register') }}" class="deep-orange-text">
+                                    こちら
+                                </a>
+                            </div>
 
                         </form>
 
