@@ -1,107 +1,80 @@
-<nav class="navbar navbar-expand-md navbar-fixed-top shadow-sm">
+<nav class="navbar navbar-expand navbar-fixed-top">
 
-    <a class="navbar-brand font-weight-bold deep-orange-text ml-2" title="ホーム" href="/">
-        <i class="fas fa-shoe-prints mr-1" style="font-size: 20px"></i>
-        {{ config('app.name') }}
-    </a>
+    <div class="container">
 
-    <button class="navbar-toggler mt-2" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        @if (!empty($user->avatar_file_name))
-        <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
-        @else
-        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 35px; height: 35px;">
-        @endif
-        {{ $user->name }} <span class="caret"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
+        <a class="navbar-brand font-weight-bold deep-orange-text" title="ホーム" href="/">
+            <i class="fas fa-shoe-prints mr-1" style="font-size: 18px"></i>
+            {{ config('app.name') }}
+        </a>
 
-            @if(Auth::check())
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item">
-                <a class="nav-link deep-orange-text" href="{{ route('articles.create') }}">投稿</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link deep-orange-text" href="{{ route("users.show", ["name" => Auth::user()->name]) }}">マイページ</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link deep-orange-text" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-button').submit();">ログアウト</a>
-                <form id="logout-button" method="POST" action="{{ route('logout') }}">
-                    @csrf
-                </form>
-            </li>
+                @guest
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
+                        <i class="fas fa-user-alt deep-orange-text text-center" style="font-size: 17px">
+                            <div class="small mt-1" style="font-size: 5px">
+                                アカウント登録
+                            </div>
+                        </i>
+                    </a>
+                </li>
 
-            @else
+                <li class=" nav-item">
+                    <a class="nav-link deep-orange-text" href="{{ route('login') }}" role="button" title="ログイン">
+                        <i class="fas fa-sign-in-alt deep-orange-text text-center" style="font-size: 17px">
+                            <div class="small mt-1" style="font-size: 5px">
+                                ログイン
+                            </div>
+                        </i>
+                    </a>
+                </li>
+                @else
 
-            <li class="nav-item">
-                <a class="nav-link deep-orange-text" href="{{ route('register') }}">アカウント作成</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link deep-orange-text" href="{{ route('login') }}">ログイン</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link deep-orange-text" href="">ゲストログイン</a>
-            </li>
+                <li class="nav-item dropdown ml-2">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle deep-orange-text" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        @if (!empty(Auth::user()->avatar_file_name))
+                        <img src="/storage/avatars/{{Auth::user()->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 31px; height: 31px;">
+                        @else
+                        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 31px; height: 31px;">
+                        @endif
+                    </a>
 
-            @endif
-        </ul>
+                    {{-- ドロップダウンメニュー --}}
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item text-dark" href="{{ route("users.show", ["name" => Auth::user()->name]) }}">
+                            @if (!empty(Auth::user()->avatar_file_name))
+                            <img src="/storage/avatars/{{Auth::user()->avatar_file_name}}" class="rounded-circle mr-1" style="object-fit: cover; width: 22px; height: 22px;">
+                            @else
+                            <img src="/images/avatar-default.svg" class="rounded-circle mr-1" style="object-fit: cover; width: 22px; height: 22px;">
+                            @endif
+                            マイページ
+                        </a>
 
-        <!-- @guest
-            <li class="nav-item mt-2">
-                <h4><a class="nav-link" title="サインアップ" href=" {{ route('register') }}"><i class="fas fa-user-alt deep-orange-text"></i></a></h4>
-            </li>
-            @endguest
+                        <div class="dropdown-divider"></div>
 
-            @guest
-            <li class="nav-item mt-2">
-                <h4><a class="nav-link" title="サインイン" href="{{ route('login') }}"><i class="fas fa-sign-in-alt deep-orange-text"></i></a></h4>
-            </li>
-            @endguest
+                        <a class="dropdown-item text-dark" href="{{ route('articles.create') }}">
+                            <i class="fas fa-paper-plane mr-2"></i>
+                            投稿する
+                        </a>
 
-            @auth
-            <li class="nav-item mt-2">
-                <h4><a class="nav-link" title="マイページ" href="{{ route("users.show", ["name" => Auth::user()->name]) }}"><i class="fas fa-user-circle deep-orange-text"></i></a></h4>
-            </li>
-            @endauth
+                        <div class="dropdown-divider"></div>
 
-            @auth
-            <li class="nav-item mt-2 mr-1">
-                <h4><a class="nav-link" title="投稿" href="{{ route('articles.create') }}"><i class="fas fa-paper-plane deep-orange-text"></i></a></h4>
-            </li>
-            @endauth
+                        <a class="dropdown-item text-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-button').submit();">
+                            <i class="fas fa-sign-out-alt mr-2"></i>
+                            ログアウト
+                        </a>
+                        <form id="logout-button" method="POST" action="{{ route('logout') }}" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </li>
 
-            @auth
+                @endguest
+            </ul>
 
-            <li class="nav-item dropdown mt-1">
-
-                <a class="nav-link" title="メニュー" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <h2><i class="fas fa-bars deep-orange-text"></i></h2>
-                </a>
-
-                <div class="dropdown-menu dropdown-menu-right dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-
-                    <button class="dropdown-item" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">
-                        マイページ
-                        <i class="fas fa-user-circle ml-1"></i>
-                    </button>
-
-                    <div class="dropdown-divider"></div>
-
-                    <button form="logout-button" class="dropdown-item text-danger" type="submit">
-                        ログアウト
-                        <i class="fas fa-sign-out-alt ml-1"></i>
-                    </button>
-
-                </div>
-            </li>
-
-            <form id="logout-button" method="POST" action="{{ route('logout') }}">
-                @csrf
-            </form>
-
-            @endauth
-
-        </ul> -->
+        </div>
     </div>
 
 </nav>
