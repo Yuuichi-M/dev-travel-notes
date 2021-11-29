@@ -24,6 +24,7 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
+            'article_img' => 'file|image',
             'title' => 'required|string|max:100',
             'url' => 'string|url',
             'category_id' => 'string|max:2',
@@ -36,11 +37,11 @@ class ArticleRequest extends FormRequest
     public function attributes()
     {
         return [
+            'article_img' => '画像',
             'title' => 'タイトル',
             'url' => 'URL',
             'category_id' => '所在地',
             'summary' => '本文',
-            'article_img' => 'イメージ',
             'tags' => 'タグ',
         ];
     }

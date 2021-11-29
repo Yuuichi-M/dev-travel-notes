@@ -61,7 +61,8 @@ class ArticleController extends Controller
             $article->tags()->attach($tag);
         });
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')
+            ->with('status', '投稿しました。');
     }
 
     //投稿編集画面
@@ -97,14 +98,16 @@ class ArticleController extends Controller
             $article->tags()->attach($tag);
         });
 
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')
+            ->with('status', '投稿修正しました。');
     }
 
     //投稿記事削除
     public function destroy(Article $article)
     {
         $article->delete();
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')
+            ->with('status', '投稿削除しました。');
     }
 
     //記事詳細画面
