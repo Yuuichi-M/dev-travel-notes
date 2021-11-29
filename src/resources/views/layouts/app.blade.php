@@ -6,12 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     @hasSection('title')
-    <title>@yield('title') | {{ config('app.name') }}</title>
-
-    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
+    <title>
+        @yield('title') | {{ config('app.name') }}
+    </title>
     @else
     <title>{{ config('app.name') }}</title>
     @endif
+    <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">

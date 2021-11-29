@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div class="avatar-form image-picker text-center">
-                                    <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="images/png,image/jpeg,image/gif" id="avatar" />
+                                    <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="images/png,image/jpeg,image/gif" value="{{ old('avatar_file_name') }}" id="avatar" />
                                     <label for="avatar" class="d-inline-block">
                                         @if (!empty($user->avatar_file_name))
                                         <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">

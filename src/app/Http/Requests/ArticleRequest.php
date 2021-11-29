@@ -24,13 +24,12 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'article_img' => 'file|image',
+            'article_img' => 'nullable|file|image',
             'title' => 'required|string|max:100',
-            'url' => 'string|url',
+            'url' => 'nullable|string|url',
             'category_id' => 'string|max:2',
-            'summary' => 'string|max:10000',
-            'article_img' => 'file|image',
-            'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
+            'summary' => 'nullable|string|max:10000',
+            'tags' => 'nullable|json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
         ];
     }
 

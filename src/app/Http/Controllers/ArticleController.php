@@ -8,6 +8,9 @@ use App\Category;
 use App\Article;
 use App\Tag;
 use App\User;
+use Illuminate\Http\File;
+use Illuminate\Http\UploadedFile;
+use Intervention\Image\Facades\Image;
 use App\Http\Requests\ArticleRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -22,6 +25,7 @@ class ArticleController extends Controller
     //一覧
     public function index()
     {
+        $user = Auth::user();
         //n+1問題解消　create_atを降順で並び替え　ページネーション9
         $articles = Article::with('user')->orderBy('id', 'desc')->paginate(9);
         //category　n+1問題解消
@@ -53,6 +57,15 @@ class ArticleController extends Controller
 
         $article->user_id = Auth::id();
         $article->fill($request->all());
+
+        //投稿画像保存処理
+        if ($request->has('article_img')) {
+            //保存先指定(現在はStorage)
+            $fileName = $this->saveImage($request->file('article_img'));
+            //ファイル名をDBへ保存
+            $article->image_file_name = $fileName;
+        }
+
         $article->save();
 
         //タグ登録
@@ -63,6 +76,36 @@ class ArticleController extends Controller
 
         return redirect()->route('articles.index')
             ->with('status', '投稿しました。');
+    }
+
+    /**
+     * 商品画像をリサイズして保存します
+     *
+     * @param UploadedFile $file アップロードされた商品画像
+     * @return string ファイル名
+     */
+    private function saveImage(UploadedFile $file): string
+    {
+        $tempPath = $this->makeTempPath();
+
+        Image::make($file)->fit(200, 200)->save($tempPath);
+
+        $filePath = Storage::disk('public')
+            ->putFile('article_img', new File($tempPath));
+
+        return basename($filePath);
+    }
+
+    /**
+     * 一時的なファイルを生成してパスを返します。
+     *
+     * @return string ファイルパス
+     */
+    private function makeTempPath(): string
+    {
+        $tmp_fp = tmpfile();
+        $meta   = stream_get_meta_data($tmp_fp);
+        return $meta["uri"];
     }
 
     //投稿編集画面

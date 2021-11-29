@@ -21,7 +21,7 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" action="{{ route('articles.store') }}" class="p-3 mb-1">
+                        <form method="POST" action="{{ route('articles.store') }}" class="p-3 mb-1" enctype="multipart/form-data">
                             @csrf
 
                             <div style="text-align: initial;">
@@ -34,7 +34,7 @@
 
                                 <div class="image-picker text-center">
                                     <div class="card-text">画像投稿</div>
-                                    <input type="file" name="article_img" class="d-none @error('article_img') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" id="article_img" />
+                                    <input type="file" name="article_img" class="d-none @error('article_img') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" value="{{ old('image_file_name') }}" id="article_img" />
                                     <label for="article_img" class="d-inline-block" role="button">
                                         <img src="/images/image-default.png" style="object-fit: cover; width: 200px; height: 200px;">
                                     </label>
