@@ -94,7 +94,7 @@ class UserController extends Controller
         ///tmpに一時ファイルが生成->ファイルポインタが返る
         $tmp_fp = tmpfile();
         //ファイルのメタ情報を取得(ファイルポインタを指定)
-        $meta   = stream_get_meta_data($tmp_fp);
+        $meta = stream_get_meta_data($tmp_fp);
         //メタ情報からURI(ファイルのパス)を取得し、返す。
         return $meta["uri"];
     }

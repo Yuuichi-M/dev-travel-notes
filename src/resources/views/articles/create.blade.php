@@ -21,32 +21,31 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" action="{{ route('articles.store') }}" class="p-3 mb-1">
+                        <form method="POST" action="{{ route('articles.store') }}" class="p-3 mb-1" enctype="multipart/form-data">
                             @csrf
 
                             <div style="text-align: initial;">
-
-                                <!--
-                                <div>投稿画像</div>
-                                <div style=color:red;>(注)jpeg,png形式 サイズ:2MB未満</div>
-                                <span class="article-image-form image-picker">
-                                    <input type="file" name="article-image" class="d-none" accept="image/png,image/jpeg,image/gif" id="article-image" />
-                                    <label for="article-image" class="d-inline-block" role="button">
-                                        <img src="/images/item-image-default.png" style="object-fit: cover; width: 200px; height: 150px;">
-                                    </label>
-                                </span>
-
-                                @error('article-image')
-                                <div style="color: #E4342E;" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </div>
-                                @enderror
-                                -->
 
                                 <div class="form-group row">
                                     <p class="col-md-12 text-center text-dark">
                                         <span class="text-danger">(※)</span>は入力必須項目です。
                                     </p>
+                                </div>
+
+                                <div class="image-picker text-center">
+                                    <div class="card-text">画像投稿</div>
+                                    <input type="file" name="article_img" class="d-none @error('article_img') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" value="{{ old('image_file_name') }}" id="article_img" />
+                                    <label for="article_img" class="d-inline-block" role="button">
+                                        <img src="/images/image-default.png" style="object-fit: cover; width: 200px; height: 200px;">
+                                    </label>
+                                    <div class="small">クリックして画像をアップロードできます。</div>
+
+                                    @error('article_img')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+
                                 </div>
 
                                 <div class="md-form">

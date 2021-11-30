@@ -32,6 +32,7 @@
                 </li>
                 @else
 
+                <!-- dropdown menu -->
                 <li class="nav-item dropdown ml-2">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle deep-orange-text" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         @if (!empty(Auth::user()->avatar_file_name))
@@ -41,7 +42,6 @@
                         @endif
                     </a>
 
-                    {{-- ドロップダウンメニュー --}}
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item text-dark" href="{{ route("users.show", ["name" => Auth::user()->name]) }}">
                             @if (!empty(Auth::user()->avatar_file_name))
@@ -70,6 +70,7 @@
                         </form>
                     </div>
                 </li>
+                <!-- dropdown menu -->
 
                 @endguest
             </ul>
