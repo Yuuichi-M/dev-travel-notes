@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4 rounded">
+            <div class="card mt-4 rounded shadow-none">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-paper-plane text-white mr-1" style="font-size: 24px"></i>
@@ -25,12 +25,6 @@
                             @csrf
 
                             <div style="text-align: initial;">
-
-                                <div class="form-group row">
-                                    <p class="col-md-12 text-center text-dark">
-                                        <span class="text-danger">(※)</span>は入力必須項目です。
-                                    </p>
-                                </div>
 
                                 <div class="image-picker text-center">
                                     <div class="card-text">画像投稿</div>
@@ -49,23 +43,11 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="title">タイトル<span class="text-danger">(※)</span></label>
+                                    <label for="title">タイトル</label>
                                     <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ old('title') }}">
                                     <small>100文字以内で入力してください</small>
 
                                     @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-
-                                <div class="md-form">
-                                    <label for="url">参考URL</label>
-                                    <input type="text" name="url" id="url" class="form-control @error('url') is-invalid @enderror" value="{{ old('url') }}">
-                                    <small>公式HPや紹介サイト、マップ等のURLを入力してください</small>
-
-                                    @error('url')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

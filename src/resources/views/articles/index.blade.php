@@ -6,12 +6,22 @@
 
 @section('content')
 
+<div class="pt-4">
+    <h4 class="text-center text-dark">Posts</h4>
+    <div class="text-center text-muted">
+        {{ $articles->count() }}件
+    </div>
+    <hr class="border mx-auto" style="width: 200px;">
+</div>
+
 <div class="container">
+
     @foreach($articles as $article)
 
     @include('articles.articleList')
 
     @endforeach
+
 </div>
 
 @auth

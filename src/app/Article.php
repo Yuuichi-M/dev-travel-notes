@@ -14,7 +14,7 @@ class Article extends Model
     protected $dates = ['deleted_at'];
 
     protected $fillable = [
-        'title', 'category_id', 'summary', 'url'
+        'title', 'category_id', 'summary', 'image_file_name',
     ];
 
     //記事一覧　1対多

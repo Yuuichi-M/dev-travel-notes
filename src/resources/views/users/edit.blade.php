@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4 rounded">
+            <div class="card mt-4 rounded shadow-none">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-user-edit text-white mr-1" style="font-size: 24px"></i>
@@ -34,7 +34,7 @@
                                 </div>
 
                                 <div class="avatar-form image-picker text-center">
-                                    <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="images/png,image/jpeg,image/gif" value="{{ old('avatar_file_name') }}" id="avatar" />
+                                    <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" value="{{ old('avatar_file_name') }}" id="avatar" />
                                     <label for="avatar" class="d-inline-block">
                                         @if (!empty($user->avatar_file_name))
                                         <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
