@@ -80,12 +80,12 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="投稿" type="submit">
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="投稿" type="submit">
                                 POST
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                            <button class="btn btn-block grey lighten-3 rounded-pill mt-4 text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
                                 <i class="fas fa-arrow-left text-dark"></i>
                                 Return
                             </button>

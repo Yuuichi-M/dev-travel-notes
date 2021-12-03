@@ -14,10 +14,6 @@
                     {{ $article->user->name }}
                 </div>
 
-                <!-- <span class="font-weight-lighter card-text d-flex align-items-center">
-                    {{ $article->created_at->format('Y/m/d H:i') }}
-                </span> -->
-
                 @if( Auth::id() === $article->user_id )
                 <!-- dropdown -->
                 <div class="ml-auto d-flex align-items-center card-text">
@@ -94,14 +90,39 @@
                 <!-- modal -->
 
             </div>
-            <div class="jumbotron jumbotron-fluid shadow-none p-0">
-                <div class="">
-                    @if (!empty($article->image_file_name))
-                    <img src="/storage/article_img/{{$article->image_file_name}}" class="" width="100%">
-                    @else
-                    <img src="/images/image-default.png" class="" width="100%">
-                    @endif
+            <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
+                @if (!empty($article->image_file_name))
+                <img src="/storage/article_img/{{$article->image_file_name}}" class="" width="100%">
+                @else
+                <img src="/images/image-default.png" class="" width="100%">
+                @endif
+            </div>
+
+            <div class="col-md-8 p-3">
+
+                @include('articles.articleTag')
+
+                <div class="text-truncate" style="max-width: 250px;">
+                    <a class="text-dark card-title h5 mb-3" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">
+                        {{ $article->title }}
+                    </a>
                 </div>
+
+                <div class="font-weight-lighter grey-text small">
+                    <span>
+                        {{ $article->category->prefecture }}
+                    </span>
+
+                    <span class="ml-1">
+                        {{ $article->created_at->format('Y/m/d H:i') }}
+                    </span>
+                </div>
+
+                <div class="text-truncate text-muted mt-2" style="max-width: 300px;">
+                    {{ $article->summary }}
+                </div>
+
+                @include('articles.like')
 
             </div>
         </div>
