@@ -6,7 +6,28 @@
 
 @section('content')
 
-<div class="pt-4">
+<form class="form-inline" method="GET" action="{{ route('articles.index') }}">
+    <div class="mx-auto mt-3">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <select class="custom-select" name="category">
+                    <option value="">全て</option>
+                    @foreach ($prefectures as $prefecture)
+                    <option value="prefecture:{{$prefecture->id}}" class="font-weight-bold">{{$prefecture->prefecture}}</option>
+                    @endforeach
+                </select>
+            </div>
+            <input type="text" name="keyword" class="form-control" aria-label="Text input with dropdown button" placeholder="キーワード検索">
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-dark shadow-none m-0" style="padding-top: 10px; padding-bottom: 9px; border-style: solid;">
+                    <i class=" fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="pt-2">
     <h4 class="text-center text-dark">Posts</h4>
     <div class="text-center text-muted">
         {{ $articles->count() }}件
