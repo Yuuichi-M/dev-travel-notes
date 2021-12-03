@@ -24,12 +24,11 @@ class ArticleRequest extends FormRequest
     public function rules()
     {
         return [
-            'article_img' => 'nullable|file|image',
+            'article_img' => 'file|image',
             'title' => 'required|string|max:100',
-            'url' => 'nullable|string|url',
             'category_id' => 'string|max:2',
-            'summary' => 'nullable|string|max:10000',
-            'tags' => 'nullable|json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
+            'summary' => 'required|string|max:10000',
+            'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
         ];
     }
 
@@ -38,7 +37,6 @@ class ArticleRequest extends FormRequest
         return [
             'article_img' => '画像',
             'title' => 'タイトル',
-            'url' => 'URL',
             'category_id' => '所在地',
             'summary' => '本文',
             'tags' => 'タグ',

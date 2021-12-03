@@ -11,7 +11,7 @@
     <div class="row justify-content-center">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4 rounded">
+            <div class="card mt-4 rounded shadow-none">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
                     <i class="fas fa-edit text-white" style="font-size: 24px"></i>
@@ -21,53 +21,38 @@
                 <div class="card-body text-center">
                     <div class="card-text">
 
-                        <form method="POST" class="p-3 mb-1" action="{{ route('articles.update',  ['article' => $article]) }}">
+                        <form method="POST" class="p-3 mb-1" action="{{ route('articles.update',  ['article' => $article]) }}" enctype="multipart/form-data">
                             @method('PATCH')
                             @csrf
 
                             <div style="text-align: initial;">
 
-                                <!--
-                            <div>投稿画像</div>
-                            <div style=color:red;>(注)jpeg,png形式 サイズ:2MB未満</div>
-                            <span class="article-image-form image-picker">
-                                <input type="file" name="article-image" class="d-none" accept="image/png,image/jpeg,image/gif" id="article-image" />
-                                <label for="article-image" class="d-inline-block" role="button">
-                                    <img src="/images/item-image-default.png" style="object-fit: cover; width: 200px; height: 150px;">
-                                </label>
-                            </span>
+                                <div class="image-picker text-center">
+                                    <div class="card-text">画像投稿</div>
+                                    <input type="file" name="article_img" class="d-none @error('article_img') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" id="article_img" />
+                                    <label for="article_img" class="d-inline-block" role="button">
+                                        @if (!empty($article->image_file_name))
+                                        <img src="/storage/article_img/{{$article->image_file_name}}" style="object-fit: cover; width: 200px; height: 200px;">
+                                        @else
+                                        <img src="/images/image-default.png" style="object-fit: cover; width: 200px; height: 200px;">
+                                        @endif
+                                    </label>
+                                    <div class="small">クリックして画像をアップロードできます。</div>
 
-                            @error('article-image')
-                            <div style="color: #E4342E;" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </div>
-                            @enderror
-                            -->
-
-                                <div class="form-group row">
-                                    <p class="col-md-12 text-center text-dark">
-                                        <span class="text-danger">(※)</span>は入力必須項目です。
-                                    </p>
-                                </div>
-
-                                <div class="md-form">
-                                    <label for="title">タイトル<span class="text-danger">(※)</span></label>
-                                    <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ $article->title ?? old('title') }}">
-                                    <small>100文字以内で入力してください</small>
-
-                                    @error('title')
+                                    @error('article_img')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                     @enderror
+
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="url">参考URL</label>
-                                    <input type="text" name="url" id="url" class="form-control @error('url') is-invalid @enderror" value="{{ $article->url ?? old('url') }}">
-                                    <small>公式HPや紹介サイト、マップ等のURLを入力してください</small>
+                                    <label for="title">タイトル</label>
+                                    <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ $article->title ?? old('title') }}">
+                                    <small>100文字以内で入力してください</small>
 
-                                    @error('url')
+                                    @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -100,12 +85,12 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="更新" type="submit">
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="更新" type="submit">
                                 update
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                            <button class="btn btn-block grey lighten-3 rounded-pill mt-4 text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
                                 <i class="fas fa-arrow-left text-dark"></i>
                                 Return
                             </button>

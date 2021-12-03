@@ -11,18 +11,29 @@
             </div>
         </div>
 
-        <div class="card mt-3">
+        <div class="card mt-3 shadow-none" style="border-radius: 1rem">
             <div class="card-body">
                 <div class="d-flex flex-row">
 
-                    <a class="" href="{{ route('users.show', ['name' => $user->name]) }}" style="text-decoration: none;">
+                    @auth
+                    <span class="" style="text-decoration: none;">
                         @if (!empty($user->avatar_file_name))
                         <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @endif
                         <span class="card-title text-dark h2 ml-1">{{ $user->name }}</span>
-                    </a>
+                    </span>
+                    @else
+                    <span class="" style="text-decoration: none;">
+                        @if (!empty($user->avatar_file_name))
+                        <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
+                        @else
+                        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
+                        @endif
+                        <span class="card-title text-dark h2 ml-1">{{ $user->name }}</span>
+                    </span>
+                    @endauth
 
                     <!--フォローボタン-->
                     @if( Auth::id() !== $user->id )
@@ -37,7 +48,7 @@
 
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <button type="button" class="btn btn-link text-muted m-0 p-2">
-                                    <i class="fas fa-ellipsis-v"></i>
+                                    <i class="fas fa-ellipsis-h"></i>
                                 </button>
                             </a>
 

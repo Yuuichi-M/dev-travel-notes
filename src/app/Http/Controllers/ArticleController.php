@@ -25,7 +25,6 @@ class ArticleController extends Controller
     //一覧
     public function index()
     {
-        $user = Auth::user();
         //n+1問題解消　create_atを降順で並び替え　ページネーション9
         $articles = Article::with('user')->orderBy('id', 'desc')->paginate(9);
         //category　n+1問題解消
@@ -88,7 +87,7 @@ class ArticleController extends Controller
     {
         $tempPath = $this->makeTempPath();
 
-        Image::make($file)->fit(200, 200)->save($tempPath);
+        Image::make($file)->fit(630, 630)->save($tempPath);
 
         $filePath = Storage::disk('public')
             ->putFile('article_img', new File($tempPath));
@@ -132,6 +131,15 @@ class ArticleController extends Controller
     public function update(ArticleRequest $request, Article $article)
     {
         $article->fill($request->all());
+
+        //投稿画像保存処理
+        if ($request->has('article_img')) {
+            //保存先指定(現在はStorage)
+            $fileName = $this->saveImage($request->file('article_img'));
+            //ファイル名をDBへ保存
+            $article->image_file_name = $fileName;
+        }
+
         $article->save();
 
         //登録タグ編集

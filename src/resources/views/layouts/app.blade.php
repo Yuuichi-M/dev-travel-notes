@@ -30,7 +30,7 @@
 
 </head>
 
-<body>
+<body style="padding-top: 4rem">
     <div id="app">
         @yield('content')
     </div>

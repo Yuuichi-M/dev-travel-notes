@@ -8,45 +8,35 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
-        <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
+    <div class="row mb-3">
+        <div class="col-md-8 mx-auto">
+            <div class="card mt-3 shadow-none" style="border-radius: 1rem">
+                <div class="card-body d-flex pt-3 pb-3 pl-3 pr-3 border-bottom">
+                    <a class="mr-1 d-flex align-items-center" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="text-decoration: none;">
+                        @if (!empty($article->user->avatar_file_name))
+                        <img src=" /storage/avatars/{{$article->user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
+                        @else
+                        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
+                        @endif
+                    </a>
 
-            <div class="card mt-4 rounded">
-
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
-                    <i class="fas fa-book-open text-white mr-1" style="font-size: 24px"></i>
-                    <span class="text-white" style="font-size: 24px">Detail</span>
-                </h4>
-
-                <div class="card-body d-flex flex-row p-3 text-dark">
-                    <i class="fas fa-user-circle fa-3x mr-1"></i>
-                    <div>
-
-                        <div class="font-weight-bold text-dark">
-                            {{ $article->user->name }}
-                        </div>
-
-                        <div class="font-weight-lighter card-text">
-                            {{ $article->created_at->format('Y/m/d H:i') }}
-                        </div>
-
+                    <div class="font-weight-bold text-dark d-flex align-items-center ml-2" style="font-size: 16px">
+                        {{ $article->user->name }}
                     </div>
 
                     @if( Auth::id() === $article->user_id )
                     <!-- dropdown -->
-                    <div class="ml-auto card-text">
+                    <div class="ml-auto d-flex align-items-center card-text">
                         <div class="dropdown">
 
                             <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <button type="button" class="btn btn-link text-muted m-0 p-2">
-                                    <i class="fas fa-ellipsis-v"></i>
+                                    <i class="fas fa-ellipsis-h"></i>
                                 </button>
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-right">
-
-                                @auth
-                                <a class="dropdown-item text-dark" href="{{ route("articles.edit", ['article' => $article]) }}">
+                                <a class="dropdown-item text-dark" href="{{ route('articles.edit', ['article' => $article]) }}">
                                     <i class="fas fa-edit mr-2"></i>投稿を編集する
                                 </a>
 
@@ -55,8 +45,6 @@
                                 <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
                                     <i class="fas fa-trash-alt mr-2"></i>投稿を削除する
                                 </a>
-                                @endauth
-
                             </div>
                         </div>
                     </div>
@@ -112,38 +100,45 @@
                     <!-- modal -->
 
                 </div>
-                <div class="card-body">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-10">
-                            <h4 class="card-title">
-                                {{ $article->title }}
-                            </h4>
+                <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
+                    @if (!empty($article->image_file_name))
+                    <img src="/storage/article_img/{{$article->image_file_name}}" class="" width="100%">
+                    @else
+                    <img src="/images/image-default.png" class="" width="100%">
+                    @endif
+                </div>
 
-                            <div class="card-text">
-                                <i class="fas fa-map-marker-alt deep-orange-text"></i>
-                                {{ $article->category->prefecture }}
-                            </div>
+                <div class="col-md-8 p-3">
 
-                            <div class="card-text">
-                                <i class="fas fa-link mr-1"></i><a href="{{ $article->url }}" target="_blank">{{ $article->url }}</a>
-                            </div>
+                    @include('articles.articleTag')
 
-                            <div class="text-dark mt-3">
-                                {!! nl2br(e( $article->summary )) !!}
-                            </div>
-
-                            @include('articles.like')
-
-                            @include('articles.articleTag')
-
-                        </div>
+                    <div class="text-dark card-title h5 mb-1">
+                        {{ $article->title }}
                     </div>
 
-                    <button class="btn btn-block grey lighten-4 rounded-pill mt-4 mb-1 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                    <div class="font-weight-lighter grey-text small">
+                        <span>
+                            {{ $article->category->prefecture }}
+                        </span>
+
+                        <span class="ml-1">
+                            {{ $article->created_at->format('Y/m/d H:i') }}
+                        </span>
+                    </div>
+
+                    <div class="text-muted mt-2">
+                        {!! nl2br(e( $article->summary )) !!}
+                    </div>
+
+                    @include('articles.like')
+
+                </div>
+
+                <div class="px-4 pb-4">
+                    <button class="btn btn-block grey lighten-3 rounded-pill text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
                         <i class="fas fa-arrow-left text-dark"></i>
                         Return
                     </button>
-
                 </div>
 
             </div>
