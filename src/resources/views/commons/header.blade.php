@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-fixed-top border-bottom fixed-top bg-white shadow-none">
+<nav class="navbar navbar-expand border-bottom fixed-top bg-white shadow-none">
 
     <div class="container">
 
