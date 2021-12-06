@@ -19,6 +19,9 @@ Route::get('/', 'ArticleController@index')->name('articles.index');
 Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
 Route::resource('/articles', 'ArticleController')->only(['show']);
 
+Route::post('/comments', 'CommentController@store')->name('comments.store')->middleware('auth');
+Route::delete('/comments/destroy/{comment}', 'CommentController@destroy')->name('comments.destroy')->middleware('auth');
+
 //いいね機能　name省略
 Route::prefix('articles')->name('articles.')->group(function () {
     Route::put('/{article}/like', 'ArticleController@like')->name('like')->middleware('auth');

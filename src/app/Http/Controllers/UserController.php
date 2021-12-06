@@ -76,7 +76,7 @@ class UserController extends Controller
         //一時ファイルを生成してパスを取得
         $tempPath = $this->makeTempPath();
         //画像をリサイズ(Intervention Image)->一時ファイルに保存
-        Image::make($file)->fit(60, 60)->save($tempPath);
+        Image::make($file)->fit(100, 100)->save($tempPath);
         //Storageファサードを使用して画像をディスクに保存
         $filePath = Storage::disk('public')
             ->putFile('avatars', new File($tempPath));

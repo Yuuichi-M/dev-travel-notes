@@ -2,7 +2,7 @@
 
     <div class="container">
 
-        <a class="navbar-brand font-weight-bold deep-orange-text flex-grow-1" title="ホーム" href="/">
+        <a class="navbar-brand font-weight-bold deep-orange-text" title="ホーム" href="/">
             <i class="fas fa-shoe-prints mr-1" style="font-size: 18px"></i>
             {{ config('app.name') }}
         </a>

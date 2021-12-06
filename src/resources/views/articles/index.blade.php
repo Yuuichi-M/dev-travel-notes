@@ -5,7 +5,7 @@
 @include('commons.articleIndexHeader')
 
 @section('content')
-<div style="padding-top: 3rem">
+<div class="mb-3" style="padding-top: 3rem">
 
     <!-- <div class="pt-2">
         <h4 class="text-center text-dark">Posts</h4>
