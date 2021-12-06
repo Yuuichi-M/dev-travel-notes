@@ -98,7 +98,7 @@
                 @endif
             </div>
 
-            <div class="col-md-8 p-3">
+            <div class="col-md-12 p-3">
 
                 @include('articles.articleTag')
 
@@ -123,6 +123,13 @@
                 </div>
 
                 @include('articles.like')
+
+                <details class="mt-2">
+                    <summary class="deep-orange-text" style="font-size:18px;">
+                        Comment
+                    </summary>
+                    @include('comments.comment')
+                </details>
 
             </div>
         </div>

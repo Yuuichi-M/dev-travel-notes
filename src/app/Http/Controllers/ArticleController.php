@@ -8,6 +8,7 @@ use App\Category;
 use App\Article;
 use App\Tag;
 use App\User;
+use App\Comment;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
 use Intervention\Image\Facades\Image;

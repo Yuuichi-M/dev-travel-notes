@@ -108,7 +108,7 @@
                     @endif
                 </div>
 
-                <div class="col-md-8 p-3">
+                <div class="col-md-12 p-3">
 
                     @include('articles.articleTag')
 
@@ -142,6 +142,9 @@
                 </div>
 
             </div>
+
+            @include('comments.comment')
+
         </div>
     </div>
 </div>
