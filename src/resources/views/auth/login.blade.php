@@ -78,7 +78,7 @@
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block sunny-morning-gradient rounded-pill mt-4 text-white" title="ゲストログイン" type="button" onclick="">
+                            <button class="btn btn-block sunny-morning-gradient rounded-pill mt-4 text-white" title="ゲストログイン" type="button" onclick="location.href='{{ route("login.guest") }}'">
                                 ゲストログイン
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>

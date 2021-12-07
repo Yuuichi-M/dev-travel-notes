@@ -48,7 +48,7 @@ class UserController extends Controller
     public function update(UserRequest $request, User $user)
     {
         $user = Auth::user();
-        $user->fill($request->all());
+        $user->fill($request->validated());
 
         //アバター画像保存処理
         if ($request->has('avatar')) {
