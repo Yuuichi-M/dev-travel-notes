@@ -42,7 +42,7 @@ Route::prefix('users')->name('users.')->group(function () {
     //プロフィール変更処理
     Route::put('/{name}', 'UserController@update')->name('update')->middleware('auth');
     //ユーザー退会処理
-    Route::delete('/destroy', 'UserController@destroy')->name('destroy')->middleware('auth');
+    Route::delete('/{user}/destroy', 'UserController@destroy')->name('destroy')->middleware('auth');
     //いいね一覧表示
     Route::get('/{name}/likes', 'UserController@likes')->name('likes');
     //フォロー中ユーザー・フォロワー表示
