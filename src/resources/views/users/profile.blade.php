@@ -15,7 +15,6 @@
             <div class="card-body">
                 <div class="d-flex flex-row">
 
-                    @auth
                     <span class="" style="text-decoration: none;">
                         @if (!empty($user->avatar_file_name))
                         <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
@@ -24,16 +23,6 @@
                         @endif
                         <span class="card-title text-dark h2 ml-1">{{ $user->name }}</span>
                     </span>
-                    @else
-                    <span class="" style="text-decoration: none;">
-                        @if (!empty($user->avatar_file_name))
-                        <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
-                        @else
-                        <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
-                        @endif
-                        <span class="card-title text-dark h2 ml-1">{{ $user->name }}</span>
-                    </span>
-                    @endauth
 
                     <!--フォローボタン-->
                     @if( Auth::id() !== $user->id )
@@ -64,11 +53,15 @@
                                     <i class="fas fa-arrow-circle-left mr-2"></i>投稿一覧へ戻る　　　　
                                 </a>
 
+                                @unless (Auth::id() == 3)
+
                                 <div class="dropdown-divider"></div>
 
-                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="">
+                                <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $user->id }}">
                                     <i class="fas fa-user-alt-slash mr-2"></i>アカウントを退会する　
                                 </a>
+
+                                @endunless
 
                             </div>
                         </div>
@@ -76,7 +69,7 @@
                     <!-- dropdown -->
 
                     <!-- modal -->
-                    <div id="" class="modal fade" tabindex="-1" role="dialog">
+                    <div id="modal-delete-{{ $user->id }}" class="modal fade" tabindex="-1" role="dialog">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
@@ -92,12 +85,12 @@
 
                                 </div>
 
-                                <form method="POST" action="">
+                                <form method="POST" action="{{ route('users.destroy', Auth::user()) }}">
                                     @csrf
                                     @method('DELETE')
 
                                     <div class="modal-body">
-
+                                        アカウント名 : {{ $user->name }}
                                     </div>
 
                                     <div class="modal-body text-danger">

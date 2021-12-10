@@ -41,6 +41,8 @@ Route::prefix('users')->name('users.')->group(function () {
     Route::get('/{name}/edit', 'UserController@edit')->name('edit')->middleware('auth');
     //プロフィール変更処理
     Route::put('/{name}', 'UserController@update')->name('update')->middleware('auth');
+    //ユーザー退会処理
+    Route::delete('/destroy', 'UserController@destroy')->name('destroy')->middleware('auth');
     //いいね一覧表示
     Route::get('/{name}/likes', 'UserController@likes')->name('likes');
     //フォロー中ユーザー・フォロワー表示
