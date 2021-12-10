@@ -64,6 +64,12 @@ class UserController extends Controller
             ->with('status', 'プロフィールを変更しました。');
     }
 
+    //退会機能
+    public function destroy(User $user)
+    {
+        $user->delete();
+        return redirect('/');
+    }
 
     /**
      * アバター画像をリサイズして保存

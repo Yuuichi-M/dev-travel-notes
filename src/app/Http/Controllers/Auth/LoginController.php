@@ -46,7 +46,7 @@ class LoginController extends Controller
     // ゲストログイン処理
     public function guestLogin()
     {
-        // id=1 のゲストユーザー情報がDBに存在すれば、ゲストログインする
+        // id=3 のゲストユーザー情報がDBに存在すれば、ゲストログインする
         if (Auth::loginUsingId(self::GUEST_USER_ID)) {
             return redirect('/');
         }
