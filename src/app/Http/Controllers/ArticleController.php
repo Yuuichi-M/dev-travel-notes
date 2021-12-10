@@ -53,8 +53,6 @@ class ArticleController extends Controller
     //投稿機能
     public function store(ArticleRequest $request, Article $article)
     {
-        //dd($request->all());
-
         $article->user_id = Auth::id();
         $article->fill($request->all());
 
