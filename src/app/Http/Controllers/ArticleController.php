@@ -31,7 +31,7 @@ class ArticleController extends Controller
 
         $query = Article::query();
 
-        //カテゴリで絞り込み
+        //カテゴリ検索
         if ($request->filled('category')) {
             list($categoryType, $categoryID) = explode(':', $request->input('category'));
 
@@ -42,6 +42,7 @@ class ArticleController extends Controller
             }
         }
 
+        //キーワード検索
         if ($request->filled('keyword')) {
             $keyword = '%' . $this->escape($request->input('keyword')) . '%';
             $query->where(function ($query) use ($keyword) {
@@ -50,11 +51,19 @@ class ArticleController extends Controller
             });
         }
 
+        //検索した値の取得(値保持)
+        $searchData = [
+            'category' => $request->input('category', ''),
+            'keyword'  => $request->input('keyword', ''),
+        ];
+
         $articles = $query->with('user')->orderBy('id', 'desc')->paginate(19);
 
         // dd($request->filled('keyword'));
 
-        return view('articles.index', compact('articles'))->with('prefectures', $prefectures);
+        return view('articles.index', compact('articles'))
+            ->with('prefectures', $prefectures)
+            ->with('searchData', $searchData);
     }
 
     private function escape(string $value)

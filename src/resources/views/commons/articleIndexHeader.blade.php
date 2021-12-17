@@ -94,20 +94,23 @@
     <form class="form-inline deep-orange lighten-5" method="GET" action="{{ route('articles.index') }}" style="width: 100%;">
         <div class="mx-auto mt-2 mb-2">
             <div class="input-group">
+
                 <div class="input-group-prepend">
                     <select class="custom-select" name="category" id="category">
                         <option value="">全て</option>
                         @foreach ($prefectures as $prefecture)
-                        <option value="prefecture:{{$prefecture->id}}" class="font-weight-bold">{{$prefecture->prefecture}}</option>
+                        <option value="prefecture:{{$prefecture->id}}" class="font-weight-bold" {{ $searchData['category'] == "prefecture:" . $prefecture->id ? 'selected' : ''}}>{{ $prefecture->prefecture }}</option>
                         @endforeach
                     </select>
                 </div>
-                <input type="text" name="keyword" id="keyword" class="form-control" aria-label="Text input with dropdown button" placeholder="キーワード検索">
+
+                <input type="text" name="keyword" id="keyword" class="form-control" value="{{$searchData['keyword']}}" aria-label="Text input with dropdown button" placeholder="キーワード検索">
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-outline-dark bg-white shadow-none m-0" style="padding-top: 10px; padding-bottom: 9px; border-style: solid;">
                         <i class=" fas fa-search"></i>
                     </button>
                 </div>
+
             </div>
         </div>
     </form>
