@@ -13,8 +13,8 @@
                 @guest
                 <li class="nav-item">
                     <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
-                        <i class="fas fa-user-alt deep-orange-text text-center" style="font-size: 17px">
-                            <div class="small mt-1" style="font-size: 5px">
+                        <i class="fas fa-user-alt deep-orange-text text-center" style="font-size: 15px">
+                            <div class="small mt-1" style="font-size: 3px">
                                 アカウント登録
                             </div>
                         </i>
@@ -23,9 +23,19 @@
 
                 <li class=" nav-item">
                     <a class="nav-link deep-orange-text" href="{{ route('login') }}" role="button" title="ログイン">
-                        <i class="fas fa-sign-in-alt deep-orange-text text-center" style="font-size: 17px">
-                            <div class="small mt-1" style="font-size: 5px">
+                        <i class="fas fa-sign-in-alt deep-orange-text text-center" style="font-size: 15px">
+                            <div class="small mt-1" style="font-size: 3px">
                                 ログイン
+                            </div>
+                        </i>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link deep-orange-text" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
+                        <i class="fas fa-user-tie deep-orange-text text-center" style="font-size: 15px">
+                            <div class="small mt-1" style="font-size: 3px">
+                                ゲストログイン
                             </div>
                         </i>
                     </a>

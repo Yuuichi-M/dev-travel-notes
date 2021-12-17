@@ -4,7 +4,7 @@
         <div class="container">
 
             <a class="navbar-brand font-weight-bold deep-orange-text flex-grow-1" title="ホーム" href="/">
-                <i class="fas fa-shoe-prints mr-1" style="font-size: 18px"></i>
+                <i class="fas fa-shoe-prints mr-1" style="font-size: 18px;"></i>
                 {{ config('app.name') }}
             </a>
 
@@ -14,19 +14,29 @@
                     @guest
                     <li class="nav-item">
                         <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
-                            <i class="fas fa-user-alt deep-orange-text text-center" style="font-size: 17px">
-                                <div class="small mt-1" style="font-size: 5px">
+                            <i class="fas fa-user-alt deep-orange-text text-center" style="font-size: 15px;">
+                                <div class="small mt-1" style="font-size: 3px;">
                                     アカウント登録
                                 </div>
                             </i>
                         </a>
                     </li>
 
-                    <li class=" nav-item">
+                    <li class="nav-item">
                         <a class="nav-link deep-orange-text" href="{{ route('login') }}" role="button" title="ログイン">
-                            <i class="fas fa-sign-in-alt deep-orange-text text-center" style="font-size: 17px">
-                                <div class="small mt-1" style="font-size: 5px">
+                            <i class="fas fa-sign-in-alt deep-orange-text text-center" style="font-size: 15px;">
+                                <div class="small mt-1" style="font-size: 3px;">
                                     ログイン
+                                </div>
+                            </i>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link deep-orange-text" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
+                            <i class="fas fa-user-tie deep-orange-text text-center" style="font-size: 15px;">
+                                <div class="small mt-1" style="font-size: 3px;">
+                                    ゲストログイン
                                 </div>
                             </i>
                         </a>
@@ -85,14 +95,14 @@
         <div class="mx-auto mt-2 mb-2">
             <div class="input-group">
                 <div class="input-group-prepend">
-                    <select class="custom-select" name="category">
+                    <select class="custom-select" name="category" id="category">
                         <option value="">全て</option>
                         @foreach ($prefectures as $prefecture)
                         <option value="prefecture:{{$prefecture->id}}" class="font-weight-bold">{{$prefecture->prefecture}}</option>
                         @endforeach
                     </select>
                 </div>
-                <input type="text" name="keyword" class="form-control" aria-label="Text input with dropdown button" placeholder="キーワード検索">
+                <input type="text" name="keyword" id="keyword" class="form-control" aria-label="Text input with dropdown button" placeholder="キーワード検索">
                 <div class="input-group-append">
                     <button type="submit" class="btn btn-outline-dark bg-white shadow-none m-0" style="padding-top: 10px; padding-bottom: 9px; border-style: solid;">
                         <i class=" fas fa-search"></i>

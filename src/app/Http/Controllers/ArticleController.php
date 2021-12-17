@@ -24,15 +24,46 @@ class ArticleController extends Controller
     }
 
     //一覧
-    public function index()
+    public function index(Request $request)
     {
-        //n+1問題解消　create_atを降順で並び替え　ページネーション9
-        $articles = Article::with('user')->orderBy('id', 'desc')->paginate(9);
-        //category　n+1問題解消
-        $categories = Article::with('category')->limit(5)->get();
         //カテゴリー取得
         $prefectures = Category::orderBy('sort_no')->get();
-        return view('articles.index', compact('articles', 'categories'))->with('prefectures', $prefectures);
+
+        $query = Article::query();
+
+        //カテゴリで絞り込み
+        if ($request->filled('category')) {
+            list($categoryType, $categoryID) = explode(':', $request->input('category'));
+
+            if ($categoryType === 'prefecture') {
+                $query->whereHas('Category', function ($query) use ($categoryID) {
+                    $query->where('category_id', $categoryID);
+                });
+            }
+        }
+
+        if ($request->filled('keyword')) {
+            $keyword = '%' . $this->escape($request->input('keyword')) . '%';
+            $query->where(function ($query) use ($keyword) {
+                $query->orWhere('title', 'LIKE', $keyword)
+                    ->orWhere('summary', 'LIKE', $keyword);
+            });
+        }
+
+        $articles = $query->with('user')->orderBy('id', 'desc')->paginate(19);
+
+        // dd($request->filled('keyword'));
+
+        return view('articles.index', compact('articles'))->with('prefectures', $prefectures);
+    }
+
+    private function escape(string $value)
+    {
+        return str_replace(
+            ['\\', '%', '_'],
+            ['\\\\', '\\%', '\\_'],
+            $value
+        );
     }
 
     //投稿画面
