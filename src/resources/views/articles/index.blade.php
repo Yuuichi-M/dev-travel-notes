@@ -7,13 +7,12 @@
 @section('content')
 <div class="mb-3" style="padding-top: 3rem">
 
-    <!-- <div class="pt-2">
-        <h4 class="text-center text-dark">Posts</h4>
+    <div class="pt-2 mt-4">
         <div class="text-center text-muted">
-            {{ $articles->count() }}件
+            投稿数 : {{ $articles->count() }}件
         </div>
         <hr class="border mx-auto" style="width: 200px;">
-    </div> -->
+    </div>
 
     <div class="container">
 
