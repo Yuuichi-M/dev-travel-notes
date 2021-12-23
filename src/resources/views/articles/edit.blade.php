@@ -32,7 +32,7 @@
                                     <input type="file" name="article_img" class="d-none @error('article_img') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" id="article_img" />
                                     <label for="article_img" class="d-inline-block" role="button">
                                         @if (!empty($article->image_file_name))
-                                        <img src="/storage/article_img/{{$article->image_file_name}}" style="object-fit: cover; width: 200px; height: 200px;">
+                                        <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" style="object-fit: cover; width: 200px; height: 200px;">
                                         @else
                                         <img src="/images/image-default.png" style="object-fit: cover; width: 200px; height: 200px;">
                                         @endif

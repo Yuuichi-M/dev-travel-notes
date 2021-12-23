@@ -92,7 +92,7 @@
             </div>
             <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
                 @if (!empty($article->image_file_name))
-                <img src="/storage/article_img/{{$article->image_file_name}}" class="" width="100%">
+                <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" class="" width="100%">
                 @else
                 <img src="/images/image-default.png" class="" width="100%">
                 @endif
@@ -122,10 +122,18 @@
                     {{ $article->summary }}
                 </div>
 
-                @include('articles.like')
+                <div class="d-flex flex-row align-items-center">
+                    @include('articles.like')
+                    <span class="pt-2 pl-4">
+                        <i class="far fa-comment text-dark"></i>
+                        <span class="pl-2">
+                            {{ $article->comments->count() }}
+                        </span>
+                    </span>
+                </div>
 
                 <details class="mt-2">
-                    <summary class="deep-orange-text" style="font-size:18px;">
+                    <summary class="deep-orange-text" style="font-size:16px;">
                         Comment
                     </summary>
                     @include('comments.comment')

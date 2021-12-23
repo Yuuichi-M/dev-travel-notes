@@ -102,7 +102,7 @@
                 </div>
                 <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
                     @if (!empty($article->image_file_name))
-                    <img src="/storage/article_img/{{$article->image_file_name}}" class="" width="100%">
+                    <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" class="" width="100%">
                     @else
                     <img src="/images/image-default.png" class="" width="100%">
                     @endif
@@ -130,20 +130,32 @@
                         {!! nl2br(e( $article->summary )) !!}
                     </div>
 
-                    @include('articles.like')
+                    <div class="d-flex flex-row align-items-center">
+
+                        @include('articles.like')
+
+                        <span class="pt-2 pl-4">
+                            <i class="far fa-comment text-dark"></i>
+                            <span class="pl-2">
+                                {{ $article->comments->count() }}
+                            </span>
+                        </span>
+
+                    </div>
 
                 </div>
 
-                <div class="px-4 pb-4">
+                <div class="px-4 pb-2">
                     <button class="btn btn-block grey lighten-3 rounded-pill text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
                         <i class="fas fa-arrow-left text-dark"></i>
-                        Return
+                        Back
                     </button>
                 </div>
 
+                <div class="mb-3 mx-2">
+                    @include('comments.comment')
+                </div>
             </div>
-
-            @include('comments.comment')
 
         </div>
     </div>

@@ -24,7 +24,7 @@ class ArticleController extends Controller
     }
 
     //一覧
-    public function index(Request $request)
+    public function index(Request $request, Comment $comment)
     {
         //カテゴリー取得
         $prefectures = Category::orderBy('sort_no')->get();
@@ -61,7 +61,7 @@ class ArticleController extends Controller
 
         // dd($request->filled('keyword'));
 
-        return view('articles.index', compact('articles'))
+        return view('articles.index', compact('articles', 'comment'))
             ->with('prefectures', $prefectures)
             ->with('searchData', $searchData);
     }
@@ -128,8 +128,8 @@ class ArticleController extends Controller
 
         Image::make($file)->fit(630, 630)->save($tempPath);
 
-        $filePath = Storage::disk('public')
-            ->putFile('article_img', new File($tempPath));
+        $filePath = Storage::disk('s3')
+            ->putFile('article_img', new File($tempPath), 'public');
 
         return basename($filePath);
     }
