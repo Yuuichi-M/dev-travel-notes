@@ -84,8 +84,8 @@ class UserController extends Controller
         //画像をリサイズ(Intervention Image)->一時ファイルに保存
         Image::make($file)->fit(100, 100)->save($tempPath);
         //Storageファサードを使用して画像をディスクに保存
-        $filePath = Storage::disk('public')
-            ->putFile('avatars', new File($tempPath));
+        $filePath = Storage::disk('s3')
+            ->putFile('avatars', new File($tempPath), 'public');
 
         return basename($filePath);
     }
