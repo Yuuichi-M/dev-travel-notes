@@ -33,9 +33,9 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="mb-2">
-                <div class="border-bottom mt-3 text-dark">
+                <!-- <div class="border-bottom mt-3 text-dark">
                     <h4 class="deep-orange-text"><i class="fas fa-comment mr-1"></i>Comments</h4>
-                </div>
+                </div> -->
 
                 @forelse($article->comments as $comment)
                 <div class="d-flex align-items-center">
