@@ -17,7 +17,7 @@
 
                     <span class="" style="text-decoration: none;">
                         @if (!empty($user->avatar_file_name))
-                        <img src="/storage/avatars/{{$user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
+                        <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @endif

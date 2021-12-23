@@ -46,7 +46,7 @@
                 <li class="nav-item dropdown ml-2">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle deep-orange-text" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         @if (!empty(Auth::user()->avatar_file_name))
-                        <img src="/storage/avatars/{{Auth::user()->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 31px; height: 31px;">
+                        <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . Auth::user()->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 31px; height: 31px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 31px; height: 31px;">
                         @endif
@@ -55,7 +55,7 @@
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item text-dark" href="{{ route("users.show", ["name" => Auth::user()->name]) }}">
                             @if (!empty(Auth::user()->avatar_file_name))
-                            <img src="/storage/avatars/{{Auth::user()->avatar_file_name}}" class="rounded-circle mr-1" style="object-fit: cover; width: 22px; height: 22px;">
+                            <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . Auth::user()->avatar_file_name) }}" class="rounded-circle mr-1" style="object-fit: cover; width: 22px; height: 22px;">
                             @else
                             <img src="/images/avatar-default.svg" class="rounded-circle mr-1" style="object-fit: cover; width: 22px; height: 22px;">
                             @endif

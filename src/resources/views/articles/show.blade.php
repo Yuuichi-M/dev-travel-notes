@@ -14,7 +14,7 @@
                 <div class="card-body d-flex pt-3 pb-3 pl-3 pr-3 border-bottom">
                     <a class="mr-1 d-flex align-items-center" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="text-decoration: none;">
                         @if (!empty($article->user->avatar_file_name))
-                        <img src=" /storage/avatars/{{$article->user->avatar_file_name}}" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
+                        <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $article->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                         @endif
