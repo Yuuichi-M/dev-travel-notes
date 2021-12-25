@@ -40,7 +40,7 @@
                 @forelse($article->comments as $comment)
                 <div class="d-flex align-items-center">
                     <span>
-                        <a class="dropdown-item text-dark px-0" href="{{ route("users.show", ["name" => Auth::user()->name]) }}">
+                        <a class="dropdown-item text-dark px-0" href="{{ route('users.show', ['name' => $comment->user->name]) }}">
                             @if (!empty($comment->user->avatar_file_name))
                             <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $comment->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 20px; height: 20px;">
                             @else

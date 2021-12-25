@@ -15,14 +15,15 @@
             <div class="card-body">
                 <div class="d-flex flex-row">
 
-                    <span class="" style="text-decoration: none;">
+                    <span class="d-flex align-items-center mr-2" style="text-decoration: none;">
                         @if (!empty($user->avatar_file_name))
                         <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 55px; height: 55px;">
                         @endif
-                        <span class="card-title text-dark h2 ml-1">{{ $user->name }}</span>
                     </span>
+
+                    <span class="card-title text-dark h3 m-0 d-flex align-items-center">{{ $user->name }}</span>
 
                     <!--フォローボタン-->
                     @if( Auth::id() !== $user->id )

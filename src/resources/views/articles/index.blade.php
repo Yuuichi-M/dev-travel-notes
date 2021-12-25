@@ -7,11 +7,11 @@
 @section('content')
 <div class="mb-3" style="padding-top: 3rem">
 
-    <div class="pt-2 mt-4">
+    <div class="pt-2 mt-2">
         <div class="text-center text-muted">
             投稿数 : {{ $articles->count() }}件
         </div>
-        <hr class="border mx-auto" style="width: 200px;">
+        <hr class="border mx-auto my-1" style="width: 200px;">
     </div>
 
     <div class="container">
@@ -25,10 +25,10 @@
     </div>
 
     @auth
-    <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column" role="button" title="投稿" style="position: fixed; bottom: 45px; right: 30px; width: 150px; height: 150px; border-radius: 75px; object-fit: cover; width: 70px; height: 70px;">
+    <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button post-button-md post-button-lg post-button-max" role="button" title="投稿">
         <div>
-            <i class="fas fa-plus" style="font-size: 12px;"></i>
-            <div class="mb-1"><i class="far fa-paper-plane" style="font-size: 30px;"></i></div>
+            <i class="fas fa-plus plus-icon plus-icon-md plus-icon-lg plus-icon-max"></i>
+            <div class="mb-1"><i class="far fa-paper-plane paper-plane-icon paper-plane-icon-md paper-plane-icon-lg paper-plane-icon-max"></i></div>
         </div>
     </a>
     @endauth

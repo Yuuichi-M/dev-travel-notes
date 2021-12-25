@@ -10942,3 +10942,98 @@ a.text-dark:focus {
   }
 }
 
+@media screen and (max-width:480px) {
+  .navbar-logo{
+    font-size: 14px;
+  }
+  .navbar-icon{
+    font-size: 3px;
+  }
+  .navbar-searchForm{
+    padding-left: 12px;
+    padding-right: 12px;
+
+  }
+  .post-button{
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    object-fit: cover;
+    width: 60px;
+    height: 60px;
+  }
+  .plus-icon{
+    font-size: 9px;
+  }
+  .paper-plane-icon{
+    font-size: 25px;
+  }
+  .guest-operation{
+    font-size: 10px;
+  }
+}
+
+@media screen and (min-width:480px) and ( max-width:768px) {
+  .post-button-md{
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    object-fit: cover;
+    width: 80px;
+    height: 80px;
+  }
+  .plus-icon-md{
+    font-size: 11px;
+  }
+  .paper-plane-icon-md{
+    font-size: 34px;
+  }
+}
+
+@media screen and (min-width:768px) and ( max-width:1024px) {
+    /*　for ipad　*/
+  .post-button-lg{
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    object-fit: cover;
+    width: 110px;
+    height: 110px;
+  }
+  .plus-icon-lg{
+    font-size: 15px;
+  }
+  .paper-plane-icon-lg{
+    font-size: 46px;
+  }
+}
+
+@media screen and (min-width:1024px) {
+    /*　for PC　*/
+  .post-button-max{
+    position: fixed;
+    bottom: 40px;
+    right: 10px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    object-fit: cover;
+    width: 140px;
+    height: 140px;
+  }
+  .plus-icon-max{
+    font-size: 20px;
+  }
+  .paper-plane-icon-max{
+    font-size: 56px;
+  }
+}

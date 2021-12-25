@@ -2,8 +2,8 @@
 
     <div class="container">
 
-        <a class="navbar-brand font-weight-bold deep-orange-text" title="ホーム" href="/">
-            <i class="fas fa-shoe-prints mr-1" style="font-size: 18px"></i>
+        <a class="navbar-brand font-weight-bold deep-orange-text navbar-logo" title="ホーム" href="/">
+            <i class="fas fa-shoe-prints mr-1"></i>
             {{ config('app.name') }}
         </a>
 
@@ -13,8 +13,8 @@
                 @guest
                 <li class="nav-item">
                     <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
-                        <i class="fas fa-user-alt deep-orange-text text-center" style="font-size: 15px">
-                            <div class="small mt-1" style="font-size: 3px">
+                        <i class="fas fa-user-alt deep-orange-text text-center navbar-icon">
+                            <div class="small mt-1">
                                 アカウント登録
                             </div>
                         </i>
@@ -23,23 +23,23 @@
 
                 <li class=" nav-item">
                     <a class="nav-link deep-orange-text" href="{{ route('login') }}" role="button" title="ログイン">
-                        <i class="fas fa-sign-in-alt deep-orange-text text-center" style="font-size: 15px">
-                            <div class="small mt-1" style="font-size: 3px">
+                        <i class="fas fa-sign-in-alt deep-orange-text text-center navbar-icon">
+                            <div class="small mt-1">
                                 ログイン
                             </div>
                         </i>
                     </a>
                 </li>
 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link deep-orange-text" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
-                        <i class="fas fa-user-tie deep-orange-text text-center" style="font-size: 15px">
-                            <div class="small mt-1" style="font-size: 3px">
+                        <i class="fas fa-user-tie deep-orange-text text-center navbar-icon">
+                            <div class="small mt-1">
                                 ゲストログイン
                             </div>
                         </i>
                     </a>
-                </li>
+                </li> -->
                 @else
 
                 <!-- dropdown menu -->
