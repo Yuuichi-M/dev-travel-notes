@@ -19,7 +19,7 @@
 
                 <div class="mt-2">
                     <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="更新" type="submit">
-                        Post comment
+                        コメント投稿
                         <i class="fas fa-arrow-right text-white"></i>
                     </button>
                 </div>

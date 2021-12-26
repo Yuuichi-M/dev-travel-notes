@@ -96,7 +96,7 @@
             <div class="input-group">
 
                 <div class="input-group-prepend">
-                    <select class="custom-select" name="category" id="category">
+                    <select class="custom-select text-dark" name="category" id="category" style="border-style: solid; border-color: #ff7043;">
                         <option value="">全て</option>
                         @foreach ($prefectures as $prefecture)
                         <option value="prefecture:{{$prefecture->id}}" class="font-weight-bold" {{ $searchData['category'] == "prefecture:" . $prefecture->id ? 'selected' : ''}}>{{ $prefecture->prefecture }}</option>
@@ -104,10 +104,10 @@
                     </select>
                 </div>
 
-                <input type="text" name="keyword" id="keyword" class="form-control" value="{{$searchData['keyword']}}" aria-label="Text input with dropdown button" placeholder="キーワード検索">
+                <input type="text" name="keyword" id="keyword" class="form-control text-dark" value="{{$searchData['keyword']}}" aria-label="Text input with dropdown button" placeholder="キーワード検索" style="border-style: solid; border-color: #ff7043;">
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-outline-dark bg-white shadow-none m-0" style="padding-top: 10px; padding-bottom: 9px; border-style: solid;">
-                        <i class=" fas fa-search"></i>
+                    <button type="submit" class="btn bg-white shadow-none m-0" style="padding-top: 10px; padding-bottom: 9px; border-style: solid; border-color: #ff7043;">
+                        <i class="fas fa-search deep-orange-text"></i>
                     </button>
                 </div>
 

@@ -103,10 +103,8 @@
 
                 @include('articles.articleTag')
 
-                <div class="text-truncate" style="max-width: 250px;">
-                    <a class="text-dark card-title h5 mb-3" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">
-                        {{ $article->title }}
-                    </a>
+                <div class="text-truncate text-dark card-title h5 mb-1" style="max-width: 400px;">
+                    {{ $article->title }}
                 </div>
 
                 <div class="font-weight-lighter grey-text small">
@@ -119,9 +117,10 @@
                     </span>
                 </div>
 
-                <div class="text-truncate text-muted mt-2" style="max-width: 300px;">
+                <div class="text-truncate text-muted mt-2" style="max-width: 500px;">
                     {{ $article->summary }}
                 </div>
+                <span><a class="small deep-orange-text" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">詳細を表示する</a></span>
 
                 <div class="d-flex flex-row align-items-center">
                     @include('articles.like')

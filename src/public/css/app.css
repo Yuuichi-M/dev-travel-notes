@@ -11001,7 +11001,7 @@ a.text-dark:focus {
   .post-button-lg{
     position: fixed;
     bottom: 40px;
-    right: 10px;
+    right: 20px;
     width: 150px;
     height: 150px;
     border-radius: 75px;
@@ -11022,18 +11022,18 @@ a.text-dark:focus {
   .post-button-max{
     position: fixed;
     bottom: 40px;
-    right: 10px;
+    right: 40px;
     width: 150px;
     height: 150px;
     border-radius: 75px;
     object-fit: cover;
-    width: 140px;
-    height: 140px;
+    width: 110px;
+    height: 110px;
   }
   .plus-icon-max{
-    font-size: 20px;
+    font-size: 15px;
   }
   .paper-plane-icon-max{
-    font-size: 56px;
+    font-size: 46px;
   }
 }

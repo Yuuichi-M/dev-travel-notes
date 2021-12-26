@@ -55,7 +55,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="name">名前<span class="text-danger">(※)</span></label>
+                                    <label for="name">名前<span class="text-danger small">(必須)</span></label>
 
                                     @if (Auth::id() == 3)
 
@@ -78,7 +78,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="email">メールアドレス<span class="text-danger">(※)</span></label>
+                                    <label for="email">メールアドレス<span class="text-danger small">(必須)</span></label>
 
                                     @if (Auth::id() == 3)
 
