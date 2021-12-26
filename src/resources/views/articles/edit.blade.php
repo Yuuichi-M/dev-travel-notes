@@ -8,12 +8,12 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-2">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4 rounded shadow-none">
+            <div class="card mt-2 shadow-none" style="border-radius: 1rem;">
 
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3" style="border-radius: 1rem 1rem 0 0;">
                     <i class="fas fa-edit text-white" style="font-size: 24px"></i>
                     <span class="text-white">Edit Post</span>
                 </h4>
@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="title">タイトル</label>
+                                    <label for="title">タイトル<span class="text-danger small">(必須)</span></label>
                                     <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ $article->title ?? old('title') }}">
                                     <small>100文字以内で入力してください</small>
 
@@ -74,7 +74,7 @@
                                 @include('articles.tag')
 
                                 <div class="form-group">
-                                    <label for="summary"></label>
+                                    <label for="summary"><span class="text-danger small">(必須)</span></label>
                                     <textarea name="summary" class="form-control @error('summary') is-invalid @enderror" cols="50" rows="8" name="summary" id="summary" required placeholder="感想をシェアしよう">{{ $article->summary ?? old('summary') }}</textarea>
 
                                     @error('summary')
@@ -86,13 +86,13 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="更新" type="submit">
-                                update
+                                更新
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
                             <button class="btn btn-block grey lighten-3 rounded-pill mt-4 text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                                戻る
                                 <i class="fas fa-arrow-left text-dark"></i>
-                                Return
                             </button>
 
                         </form>

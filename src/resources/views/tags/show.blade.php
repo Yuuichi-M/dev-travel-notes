@@ -1,17 +1,17 @@
 @extends('layouts.app')
 
-@section('title', '記事一覧')
+@section('title', 'タグ検索一覧')
 
 @include('commons.header')
 
 @section('content')
 
-<div class="pt-4">
-    <h4 class="text-center text-dark">{{ $tag->hashtag }}</h2>
-        <div class="text-center text-muted">
-            {{ $tag->articles->count() }}件
-        </div>
-        <hr class="border mx-auto" style="width: 200px;">
+<div class="pt-2">
+    <h5 class="text-center text-dark">{{ $tag->hashtag }}</h5>
+    <div class="text-center text-muted">
+        タグ検索結果 : {{ $tag->articles->count() }}件
+    </div>
+    <hr class="border mx-auto my-1" style="width: 200px;">
 </div>
 
 <div class="container">

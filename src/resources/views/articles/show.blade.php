@@ -8,9 +8,12 @@
 
 <div class="container">
 
-    <div class="row mb-3">
+    <div class="row justify-content-center mb-2">
+
         <div class="col-md-8 mx-auto">
-            <div class="card mt-3 shadow-none" style="border-radius: 1rem">
+
+            <div class="card mt-2 shadow-none" style="border-radius: 1rem">
+
                 <div class="card-body d-flex pt-3 pb-3 pl-3 pr-3 border-bottom">
                     <a class="mr-1 d-flex align-items-center" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="text-decoration: none;">
                         @if (!empty($article->user->avatar_file_name))
@@ -147,8 +150,8 @@
 
                 <div class="px-4 pb-2">
                     <button class="btn btn-block grey lighten-3 rounded-pill text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                        戻る
                         <i class="fas fa-arrow-left text-dark"></i>
-                        Back
                     </button>
                 </div>
 

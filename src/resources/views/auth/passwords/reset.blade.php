@@ -7,12 +7,12 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-2">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4">
+            <div class="card mt-2 shadow-none" style="border-radius: 1rem;">
 
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3 text-dark lighten-4">
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3" style="border-radius: 1rem 1rem 0 0;">
                     <i class="fas fa-key text-white mr-1" style="font-size: 24px"></i>
                     <span class="text-white" style="font-size: 24px">Reset Password</span>
                 </h4>
@@ -48,14 +48,14 @@
 
                             </div>
 
-                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="パスワード再設定" type="submit">
-                                RESET
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="パスワード再設定" type="submit">
+                                パスワード再設定
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="戻る" type="button" onclick="location.href='{{ route("articles.index") }}'">
-                                <i class="fas fa-arrow-left text-dark"></i>
-                                Return
+                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark shadow-none" title="キャンセル" type="button" onclick="location.href='{{ route("articles.index") }}'">
+                                キャンセル
+                                <i class="fas fa-backspace text-dark"></i>
                             </button>
 
                         </form>

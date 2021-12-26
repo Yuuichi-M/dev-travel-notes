@@ -7,12 +7,12 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-2">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4">
+            <div class="card mt-2 shadow-none" style="border-radius: 1rem;">
 
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3" style="border-radius: 1rem 1rem 0 0;">
                     <i class="fas fa-sign-in-alt text-white" style="font-size: 24px"></i>
                     <span class="text-white" style="font-size: 24px">
                         Login
@@ -73,19 +73,19 @@
                                 </a>
                             </div>
 
-                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white" title="ログイン" type="submit">
+                            <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="ログイン" type="submit">
                                 ログイン
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block sunny-morning-gradient rounded-pill mt-4 text-white" title="ゲストログイン" type="button" onclick="location.href='{{ route("login.guest") }}'">
+                            <button class="btn btn-block sunny-morning-gradient rounded-pill mt-4 text-white shadow-none" title="ゲストログイン" type="button" onclick="location.href='{{ route("login.guest") }}'">
                                 ゲストログイン
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
-                            <button class="btn btn-block grey lighten-4 rounded-pill mt-4 text-dark" title="キャンセル" type="button" onclick="location.href='{{ route("articles.index") }}'">
-                                <i class="fas fa-arrow-left text-dark"></i>
+                            <button class="btn btn-block grey lighten-3 rounded-pill mt-4 text-dark shadow-none" title="キャンセル" type="button" onclick="location.href='{{ route("articles.index") }}'">
                                 キャンセル
+                                <i class="fas fa-arrow-left text-dark"></i>
                             </button>
 
                             <div class="mt-4">

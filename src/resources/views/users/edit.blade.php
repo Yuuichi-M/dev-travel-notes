@@ -8,12 +8,12 @@
 
 <div class="container">
 
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mb-2">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
-            <div class="card mt-4 rounded shadow-none">
+            <div class="card mt-2 shadow-none" style="border-radius: 1rem;">
 
-                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
+                <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3" style="border-radius: 1rem 1rem 0 0;">
                     <i class="fas fa-user-edit text-white mr-1" style="font-size: 24px"></i>
                     <span class="text-white" style="font-size: 24px">Edit Profile</span>
                 </h4>
@@ -27,16 +27,10 @@
 
                             <div style="text-align: initial;">
 
-                                <div class="form-group row">
-                                    <p class="col-md-12 text-center text-dark">
-                                        <span class="text-danger">(※)</span>は入力必須項目です。
-                                    </p>
-                                </div>
-
                                 @if (Auth::id() == 3)
                                 <div class="form-group row text-danger">
                                     <p class="col-md-12 text-center text-dark">
-                                        <span class="text-danger">※ゲストユーザーはプロフィール画像のみ編集できます。</span>
+                                        <span class="text-danger guest-operation">※ゲストユーザーはプロフィール画像のみ編集できます。</span>
                                     </p>
                                 </div>
                                 @endif
@@ -61,7 +55,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="name">名前<span class="text-danger">(※)</span></label>
+                                    <label for="name">名前<span class="text-danger small">(必須)</span></label>
 
                                     @if (Auth::id() == 3)
 
@@ -84,7 +78,7 @@
                                 </div>
 
                                 <div class="md-form">
-                                    <label for="email">メールアドレス<span class="text-danger">(※)</span></label>
+                                    <label for="email">メールアドレス<span class="text-danger small">(必須)</span></label>
 
                                     @if (Auth::id() == 3)
 
@@ -129,13 +123,13 @@
                             </div>
 
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="更新" type="submit">
-                                update
+                                更新
                                 <i class="fas fa-arrow-right text-white"></i>
                             </button>
 
                             <button class="btn btn-block grey lighten-3 rounded-pill mt-4 text-dark shadow-none" title="戻る" type="button" onclick="location.href='{{ route("users.show", ["name" => Auth::user()->name]) }}'">
+                                戻る
                                 <i class="fas fa-arrow-left text-dark"></i>
-                                Return
                             </button>
 
                         </form>
