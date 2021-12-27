@@ -76,8 +76,8 @@
                                 <div class="modal-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
 
                                     <span class="text-white" style="font-size: 18px">
-                                        <i class="fas fa-trash-alt text-white mr-1" style="font-size: 20px"></i>
-                                        DELETE ACCOUNT
+                                        <i class="fas fa-user-alt-slash text-white mr-1" style="font-size: 20px"></i>
+                                        Delete Account
                                     </span>
 
                                     <button type=" button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
@@ -97,16 +97,17 @@
                                     <div class="modal-body text-danger">
                                         <i class="far fa-hand-point-up mr-1" style="font-size: 18px"></i>
                                         本当に退会してもよろしいですか？
+                                        <div class="small text-danger">※ 退会するとアカウントや投稿が全て削除されます。</div>
                                     </div>
 
                                     <div class="modal-footer justify-content-between btn-group">
-                                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
+                                        <button type="button" class="btn btn-light shadow-none" data-dismiss="modal">
                                             <i class="fas fa-backspace mr-1"></i>
                                             キャンセル
                                         </button>
 
-                                        <button type="submit" class="btn btn-outline-danger">
-                                            <i class="fas fa-trash-alt mr-1"></i>
+                                        <button type="submit" class="btn btn-danger shadow-none">
+                                            <i class="fas fa-user-alt-slash mr-1"></i>
                                             退会する
                                         </button>
                                     </div>
