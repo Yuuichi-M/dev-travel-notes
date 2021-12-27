@@ -49,7 +49,7 @@
 
                                 <span class="text-white" style="font-size: 18px;">
                                     <i class="fas fa-trash-alt text-white mr-1" style="font-size: 20px"></i>
-                                    DELETE POST
+                                    Delete Post
                                 </span>
 
                                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
