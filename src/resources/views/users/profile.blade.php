@@ -132,11 +132,11 @@
                 <div class="card-text">
 
                     <a href="{{ route('users.followings', ['name' => $user->name]) }}" class="text-dark mr-2">
-                        {{ $user->count_followings }}フォロー中
+                        {{ $user->count_followings }} フォロー中
                     </a>
 
                     <a href="{{ route('users.followers', ['name' => $user->name]) }}" class="text-dark">
-                        {{ $user->count_followers }}フォロワー
+                        {{ $user->count_followers }} フォロワー
                     </a>
 
                 </div>
