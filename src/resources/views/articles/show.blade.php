@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '記事一覧')
+@section('title', '投稿詳細')
 
 @include('commons.header')
 
@@ -59,12 +59,12 @@
                             <div class="modal-content">
                                 <div class="modal-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
 
-                                    <span class="text-white" style="font-size: 18px">
+                                    <span class="text-white" style="font-size: 18px;">
                                         <i class="fas fa-trash-alt text-white mr-1" style="font-size: 20px"></i>
-                                        DELETE POST
+                                        Delete Post
                                     </span>
 
-                                    <button type=" button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
+                                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
 
@@ -84,12 +84,12 @@
                                     </div>
 
                                     <div class="modal-footer justify-content-between btn-group">
-                                        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">
+                                        <button type="button" class="btn btn-light shadow-none" data-dismiss="modal">
                                             <i class="fas fa-backspace mr-1"></i>
                                             キャンセル
                                         </button>
 
-                                        <button type="submit" class="btn btn-outline-danger">
+                                        <button type="submit" class="btn btn-danger shadow-none">
                                             <i class="fas fa-trash-alt mr-1"></i>
                                             削除する
                                         </button>
@@ -113,8 +113,6 @@
 
                 <div class="col-md-12 p-3">
 
-                    @include('articles.articleTag')
-
                     <div class="text-dark card-title h5 mb-1">
                         {{ $article->title }}
                     </div>
@@ -133,12 +131,16 @@
                         {!! nl2br(e( $article->summary )) !!}
                     </div>
 
+                    @include('articles.articleTag')
+
                     <div class="d-flex flex-row align-items-center">
 
                         @include('articles.like')
 
-                        <span class="pt-2 pl-4">
-                            <i class="far fa-comment text-dark"></i>
+                        <span class="pl-4" style="text-decoration: none; padding-top: 8px;">
+                            <a href="#comment-list" style="text-decoration: none;">
+                                <i class="far fa-comment text-dark"></i>
+                            </a>
                             <span class="pl-2">
                                 {{ $article->comments->count() }}
                             </span>
