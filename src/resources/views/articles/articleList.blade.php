@@ -101,8 +101,6 @@
 
             <div class="col-md-12 p-3">
 
-                @include('articles.articleTag')
-
                 <div class="text-truncate text-dark card-title h5 mb-1" style="max-width: 400px;">
                     {{ $article->title }}
                 </div>
@@ -122,23 +120,22 @@
                 </div>
                 <span><a class="small deep-orange-text" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">詳細を表示する</a></span>
 
+                @include('articles.articleTag')
+
                 <div class="d-flex flex-row align-items-center">
+
                     @include('articles.like')
-                    <span class="pt-2 pl-4">
-                        <i class="far fa-comment text-dark"></i>
+
+                    <span class="pl-4" style="text-decoration: none; padding-top: 9px;">
+                        <a href="{{ route('articles.show', ['article' => $article]) }}#comment-list" style="text-decoration: none;">
+                            <i class="far fa-comment text-dark"></i>
+                        </a>
                         <span class="pl-2">
                             {{ $article->comments->count() }}
                         </span>
                     </span>
+
                 </div>
-
-                <details class="mt-2">
-                    <summary class="deep-orange-text" style="font-size:16px;">
-                        Comment
-                    </summary>
-                    @include('comments.comment')
-                </details>
-
             </div>
         </div>
     </div>
