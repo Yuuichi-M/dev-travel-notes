@@ -109,7 +109,7 @@
 
                                     @else
 
-                                    <textarea name="self_introduction" class="form-control @error('self_introduction') is-invalid @enderror" cols="50" rows="8" name="self_introduction" id="self_introduction" required placeholder="自己紹介を書こう">{{ $user->self_introduction ?? old('self_introduction') }}</textarea>
+                                    <textarea name="self_introduction" class="form-control @error('self_introduction') is-invalid @enderror" cols="50" rows="8" name="self_introduction" id="self_introduction" required placeholder="自己紹介を書こう ※150文字以内">{{ $user->self_introduction ?? old('self_introduction') }}</textarea>
 
                                     @error('self_introduction')
                                     <span class="invalid-feedback" role="alert">

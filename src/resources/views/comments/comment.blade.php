@@ -7,7 +7,7 @@
                 <div class="mt-4" id="comment">
                     <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                     <input type="hidden" name="article_id" value="{{ $article->id }}">
-                    <textarea id="comment" type="text" name="comment" class="form-control @error('comment') is-invalid @enderror" rows="3" placeholder="コメントを入力できます">{{ old('comment') }}</textarea>
+                    <textarea id="comment" type="text" name="comment" class="form-control @error('comment') is-invalid @enderror" rows="3" placeholder="コメントを入力できます ※100文字以内">{{ old('comment') }}</textarea>
 
                     @error('comment')
                     <span class="invalid-feedback" role="alert">

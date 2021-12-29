@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-8 offset-2">
                 @if (session('status'))
-                <div class="alert alert-success mt-4" role="alert">
+                <div class="alert alert-success mt-3 mb-0 text-center" role="alert" style="font-size: 12px;">
                     {{ session('status') }}
                 </div>
                 @endif

@@ -57,7 +57,7 @@ class ArticleController extends Controller
             'keyword'  => $request->input('keyword', ''),
         ];
 
-        $articles = $query->with('user')->orderBy('id', 'desc')->paginate(1);
+        $articles = $query->with('user')->orderBy('id', 'desc')->paginate(9);
 
         // dd($request->filled('keyword'));
 

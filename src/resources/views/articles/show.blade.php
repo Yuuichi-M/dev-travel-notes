@@ -137,11 +137,11 @@
 
                         @include('articles.like')
 
-                        <span class="pl-4" style="text-decoration: none; padding-top: 8px;">
+                        <span class="pl-4 d-flex align-items-center" style="text-decoration: none; padding-top: 8px;">
                             <a href="#comment-list" style="text-decoration: none;">
                                 <i class="far fa-comment text-dark"></i>
                             </a>
-                            <span class="pl-2">
+                            <span class="d-flex align-items-center" style="padding-left: 12.5px;">
                                 {{ $article->comments->count() }}
                             </span>
                         </span>

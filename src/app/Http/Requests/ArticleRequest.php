@@ -25,7 +25,7 @@ class ArticleRequest extends FormRequest
     {
         return [
             'article_img' => 'file|image',
-            'title' => 'required|string|max:100',
+            'title' => 'required|string|max:50',
             'category_id' => 'string|max:2',
             'summary' => 'required|string|max:10000',
             'tags' => 'json|regex:/^(?!.*\s).+$/u|regex:/^(?!.*\/).*$/u',
