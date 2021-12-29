@@ -24,6 +24,10 @@
 
     </div>
 
+    <div class="d-flex justify-content-center pt-3">
+        {{ $articles->links('vendor.pagination.bootstrap-4') }}
+    </div>
+
     @auth
     <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button post-button-md post-button-lg post-button-max" role="button" title="投稿">
         <div>
