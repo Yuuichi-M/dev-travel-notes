@@ -1,4 +1,4 @@
-<div class="row justify-content-center mb-3">
+<div class="row justify-content-center">
     <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-7 col-xl-6">
         <div class="card mt-3 shadow-none" style="border-radius: 1rem">
             <div class="card-body pb-0">
@@ -23,7 +23,7 @@
 
                 </div>
 
-                <div class="card-text mt-3 text-truncate" style="max-width: 400px;">
+                <div class="card-text mt-3">
                     {{ $person->self_introduction }}
                 </div>
 

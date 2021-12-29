@@ -40,7 +40,7 @@ class UserRequest extends FormRequest
                 'avatar' => ['file', 'image'],
                 'name' => ['required', 'string', 'max:16'],
                 'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())],
-                'self_introduction' => ['string', 'max:500'],
+                'self_introduction' => ['string', 'max:100'],
             ];
         }
     }

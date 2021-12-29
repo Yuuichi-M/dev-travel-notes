@@ -45,7 +45,7 @@
                                 <div class="md-form">
                                     <label for="title">タイトル<span class="text-danger small">(必須)</span></label>
                                     <input type="text" name="title" id="title" class="form-control @error('title') is-invalid @enderror" required value="{{ old('title') }}">
-                                    <small>100文字以内で入力してください</small>
+                                    <small>50文字以内で入力してください</small>
 
                                     @error('title')
                                     <span class="invalid-feedback" role="alert">
@@ -70,7 +70,7 @@
 
                                 <div class="form-group">
                                     <label for="summary"><span class="text-danger small">(必須)</span></label>
-                                    <textarea name="summary" class="form-control @error('summary') is-invalid @enderror" cols="50" rows="8" name="summary" id="summary" required placeholder="感想をシェアしよう">{{ old('summary') }}</textarea>
+                                    <textarea name="summary" class="form-control @error('summary') is-invalid @enderror" cols="50" rows="8" name="summary" id="summary" required placeholder="感想をシェアしよう ※10000文字以内">{{ old('summary') }}</textarea>
 
                                     @error('summary')
                                     <span class="invalid-feedback" role="alert">
