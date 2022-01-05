@@ -13,7 +13,7 @@
     <ul class="nav nav-tabs nav-justified mt-3">
 
         <li class="nav-item">
-            <a class="nav-link active text-white deep-orange lighten-2" href="{{ route('users.show', ['name' => $user->name]) }}">
+            <a class="nav-link active text-white deep-orange lighten-1" href="{{ route('users.show', ['name' => $user->name]) }}">
                 <i class="far fa-paper-plane mr-1"></i>
                 投稿一覧
             </a>
