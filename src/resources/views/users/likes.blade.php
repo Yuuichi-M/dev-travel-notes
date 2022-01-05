@@ -20,7 +20,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link active text-white deep-orange lighten-2" href="{{ route('users.likes', ['name' => $user->name]) }}">
+            <a class="nav-link active text-white deep-orange lighten-1" href="{{ route('users.likes', ['name' => $user->name]) }}">
                 <i class="far fa-heart mr-1"></i>
                 いいね一覧
             </a>

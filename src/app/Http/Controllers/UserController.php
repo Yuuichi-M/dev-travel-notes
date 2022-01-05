@@ -18,8 +18,9 @@ class UserController extends Controller
     //マイページ
     public function show(string $name)
     {
-        //ユーザーモデル取得($nameと一致するモデル)
-        $user = User::where('name', $name)->first();
+        //ユーザーモデル取得($nameと一致するモデル), N+1問題解消
+        $user = User::where('name', $name)->first()
+            ->load(['articles.user', 'articles.likes', 'articles.tags', 'articles.comments', 'articles.category']);
         //記事モデル取得
         $articles = $user->articles->sortByDesc('id');
 
@@ -108,8 +109,9 @@ class UserController extends Controller
     //いいね一覧表示
     public function likes(string $name)
     {
-        //ユーザーモデル取得($nameと一致するモデル)
-        $user = User::where('name', $name)->first();
+        //ユーザーモデル取得($nameと一致するモデル), N+1問題解消
+        $user = User::where('name', $name)->first()
+            ->load(['likes.user', 'likes.likes', 'likes.tags', 'likes.comments', 'likes.category']);
         //記事モデル取得
         $articles = $user->likes->sortByDesc('id');
 
@@ -122,7 +124,9 @@ class UserController extends Controller
     //フォロー中のユーザー表示
     public function followings(string $name)
     {
-        $user = User::where('name', $name)->first();
+        //ユーザーモデル取得($nameと一致するモデル), N+1問題解消
+        $user = User::where('name', $name)->first()
+            ->load('followings.followers');
 
         $followings = $user->followings->sortByDesc('id');
 
@@ -135,7 +139,9 @@ class UserController extends Controller
     //フォロワー表示
     public function followers(string $name)
     {
-        $user = User::where('name', $name)->first();
+        //ユーザーモデル取得($nameと一致するモデル), N+1問題解消
+        $user = User::where('name', $name)->first()
+            ->load('followers.followers');
 
         $followers = $user->followers->sortByDesc('id');
 

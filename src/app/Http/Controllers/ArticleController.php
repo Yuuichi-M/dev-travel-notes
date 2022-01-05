@@ -57,7 +57,9 @@ class ArticleController extends Controller
             'keyword'  => $request->input('keyword', ''),
         ];
 
-        $articles = $query->with('user')->orderBy('id', 'desc')->paginate(9);
+        //投稿記事取得, N+1問題解消
+        $articles = $query
+            ->with(['user', 'likes', 'tags', 'comments', 'category'])->orderBy('id', 'desc')->paginate(9);
 
         // dd($request->filled('keyword'));
 
@@ -204,6 +206,7 @@ class ArticleController extends Controller
     public function show(Article $article)
     {
         $prefectures = Category::orderBy('sort_no')->get();
+
         return view('articles.show', ['article' => $article])->with('prefectures', $prefectures);
     }
 
