@@ -19,7 +19,8 @@ class UserController extends Controller
     public function show(string $name)
     {
         //ユーザーモデル取得($nameと一致するモデル)
-        $user = User::where('name', $name)->first();
+        $user = User::where('name', $name)->first()
+            ->load(['articles.user', 'articles.likes', 'articles.tags', 'articles.comments', 'articles.category']);
         //記事モデル取得
         $articles = $user->articles->sortByDesc('id');
 
