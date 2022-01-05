@@ -110,7 +110,8 @@ class UserController extends Controller
     public function likes(string $name)
     {
         //ユーザーモデル取得($nameと一致するモデル)
-        $user = User::where('name', $name)->first();
+        $user = User::where('name', $name)->first()
+            ->load(['likes.user', 'likes.likes', 'likes.tags', 'likes.comments', 'likes.category']);
         //記事モデル取得
         $articles = $user->likes->sortByDesc('id');
 
