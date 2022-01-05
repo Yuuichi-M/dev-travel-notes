@@ -138,7 +138,8 @@ class UserController extends Controller
     //フォロワー表示
     public function followers(string $name)
     {
-        $user = User::where('name', $name)->first();
+        $user = User::where('name', $name)->first()
+            ->load('followers.followers');
 
         $followers = $user->followers->sortByDesc('id');
 
