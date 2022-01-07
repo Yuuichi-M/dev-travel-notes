@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center mb-2">
+    <div class="row justify-content-center">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
             <div class="card mt-2 shadow-none" style="border-radius: 1rem;">
@@ -103,4 +103,9 @@
         </div>
     </div>
 </div>
+
+<div style="padding-top: 50px;">
+    @include('commons.footer')
+</div>
+
 @endsection
