@@ -8,7 +8,7 @@
 
 <div class="container">
 
-    <div class="row justify-content-center mb-2">
+    <div class="row justify-content-center">
 
         <div class="col-md-8 mx-auto">
 
@@ -164,6 +164,10 @@
 
         </div>
     </div>
+</div>
+
+<div class="pt-3">
+    @include('commons.footer')
 </div>
 
 @endsection

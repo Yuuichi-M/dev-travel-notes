@@ -139,4 +139,9 @@
         </div>
     </div>
 </div>
+
+<div class="pt-3">
+    @include('commons.footer')
+</div>
+
 @endsection

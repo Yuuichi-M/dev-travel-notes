@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-md-8 mx-auto">
         <div class="card mt-3 shadow-none" style="border-radius: 1rem">
-            <div class="card-body d-flex pt-3 pb-3 pl-3 pr-3 border-bottom">
+            <div class="card-body d-flex p-3 border-bottom">
 
                 <a class="mr-1 d-flex align-items-center" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="text-decoration: none;">
                     @if (!empty($article->user->avatar_file_name))

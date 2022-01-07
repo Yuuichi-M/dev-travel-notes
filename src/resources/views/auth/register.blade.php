@@ -7,14 +7,14 @@
 @section('content')
 
 <div class="container">
-    <div class="row justify-content-center mb-2">
+    <div class="row justify-content-center">
         <div class="mx-auto col col-12 col-sm-11 col-md-9 col-lg-8 col-xl-6">
 
             <div class="card mt-2 shadow-none" style="border-radius: 1rem;">
 
                 <h4 class="card-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3" style="border-radius: 1rem 1rem 0 0;">
                     <i class="fas fa-user-alt text-white mr-1" style="font-size: 24px"></i>
-                    <span class="text-white" style="font-size: 24px">Sign Up</span>
+                    <span class="text-white" style="font-size: 24px">Register</span>
                 </h4>
 
                 <div class="card-body text-center">
@@ -91,6 +91,10 @@
             </div>
         </div>
     </div>
+</div>
+
+<div style="padding-top: 50px;">
+    @include('commons.footer')
 </div>
 
 @endsection

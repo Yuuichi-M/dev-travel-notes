@@ -36,6 +36,10 @@
 
 </div>
 
+<div class="pt-3">
+@include('commons.footer')
+</div>
+
 @auth
 <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button post-button-md post-button-lg post-button-max" role="button" title="投稿">
     <div>
