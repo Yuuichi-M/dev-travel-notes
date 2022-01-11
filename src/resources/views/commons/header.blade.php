@@ -15,7 +15,7 @@
                     <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
                         <i class="fas fa-user-alt deep-orange-text text-center navbar-icon">
                             <div class="small mt-1">
-                                アカウント登録
+                                新規登録
                             </div>
                         </i>
                     </a>
