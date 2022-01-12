@@ -14,7 +14,7 @@
 
         @guest
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-
+            <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel"> -->
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -51,8 +51,9 @@
                             <div class="card-body text-center">
                                 <div class="text-dark">
                                     <div class="justify-content-center align-items-center">
-                                        <div class="justify-content-center align-items-center home-message pt-4">
-                                            旅行先のグルメ、名所、宿の情報も自由に投稿。
+                                        <div class="justify-content-center align-items-center home-message pt-2">
+                                            旅行先のグルメ、名所、宿の</br>
+                                            情報や感想を自由に投稿しよう。
                                         </div>
                                     </div>
                                 </div>
@@ -68,8 +69,8 @@
                             <div class="card-body text-center">
                                 <div class="text-dark">
                                     <div class="justify-content-center align-items-center">
-                                        <div class="justify-content-center align-items-center home-message pt-4">
-                                            他ユーザーの投稿にいいね<i class="fas fa-heart text-danger"></i>やコメント<i class="fas fa-comment"></i>をして交流しよう。
+                                        <div class="justify-content-center align-items-center home-message pt-2 home-message-third">
+                                            他ユーザーの投稿にいいね<i class="fas fa-heart text-danger"></i>や</br>コメント<i class="fas fa-comment"></i>をして交流しよう。
                                         </div>
                                     </div>
                                 </div>
@@ -79,13 +80,13 @@
                 </div>
 
                 <div class="carousel-item d-flex justify-content-center">
-                    <img class="d-block home-img" src="/images/home0.jpg" alt="fourth slide">
+                    <img class="d-block home-img" src="/images/home0.jpg" alt="Fourth slide">
                     <div class="mx-auto">
                         <div class="card shadow-none home-card-fourth" style="border-radius: 1rem;">
                             <div class="card-body text-center">
                                 <div class="text-dark">
                                     <div class="justify-content-center align-items-center">
-                                        <div class="justify-content-center align-items-center h3">
+                                        <div class="justify-content-center align-items-center home-title-fourth">
                                             今すぐ始めよう
                                         </div>
                                         <button class="btn btn-block deep-orange rounded-pill mt-4 text-white shadow-none" title="ゲストログイン" type="button" onclick="location.href='{{ route("register") }}'">
