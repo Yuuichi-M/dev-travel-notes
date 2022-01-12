@@ -34,7 +34,7 @@
     @auth
     <div style="padding-top: 4rem">
         @else
-        <div style="padding-top: 63px">
+        <div class="home-pt">
             @endauth
             <div id="app">
                 @yield('content')
