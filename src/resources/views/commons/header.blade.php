@@ -31,7 +31,7 @@
                     </a>
                 </li>
 
-                <!-- <li class="nav-item">
+                <li class="nav-item">
                     <a class="nav-link deep-orange-text" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
                         <i class="fas fa-user-tie deep-orange-text text-center navbar-icon">
                             <div class="small mt-1">
@@ -39,7 +39,7 @@
                             </div>
                         </i>
                     </a>
-                </li> -->
+                </li>
                 @else
 
                 <!-- dropdown menu -->

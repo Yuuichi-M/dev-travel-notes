@@ -49,7 +49,7 @@
                     <div class="mx-auto">
                         <div class="card shadow-none home-card-second" style="border-radius: 1rem;">
                             <div class="card-body text-center">
-                                <div class="text-dark">
+                                <div class="card-text">
                                     <div class="justify-content-center align-items-center">
                                         <div class="justify-content-center align-items-center home-message pt-2">
                                             旅行先のグルメ、名所、宿の</br>
@@ -67,10 +67,10 @@
                     <div class="mx-auto">
                         <div class="card shadow-none home-card-third" style="border-radius: 1rem;">
                             <div class="card-body text-center">
-                                <div class="text-dark">
+                                <div class="card-text">
                                     <div class="justify-content-center align-items-center">
                                         <div class="justify-content-center align-items-center home-message pt-2 home-message-third">
-                                            他ユーザーの投稿にいいね<i class="fas fa-heart text-danger"></i>や</br>コメント<i class="fas fa-comment"></i>をして交流しよう。
+                                            他ユーザーの投稿にいいね<i class="fas fa-heart text-danger"></i>や</br>コメント<i class="fas fa-comment text-dark"></i>をして交流しよう。
                                         </div>
                                     </div>
                                 </div>
@@ -84,7 +84,7 @@
                     <div class="mx-auto">
                         <div class="card shadow-none home-card-fourth" style="border-radius: 1rem;">
                             <div class="card-body text-center">
-                                <div class="text-dark">
+                                <div class="card-text">
                                     <div class="justify-content-center align-items-center">
                                         <div class="justify-content-center align-items-center home-title-fourth">
                                             今すぐ始めよう
@@ -139,10 +139,10 @@
         {{ $articles->links('vendor.pagination.bootstrap-4') }}
     </div>
 
-    <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button post-button-md post-button-lg post-button-max" role="button" title="投稿">
+    <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button" role="button" title="投稿">
         <div>
-            <i class="fas fa-plus plus-icon plus-icon-md plus-icon-lg plus-icon-max"></i>
-            <div class="mb-1"><i class="far fa-paper-plane paper-plane-icon paper-plane-icon-md paper-plane-icon-lg paper-plane-icon-max"></i></div>
+            <i class="fas fa-plus plus-icon"></i>
+            <div class="mb-1"><i class="far fa-paper-plane paper-plane-icon"></i></div>
         </div>
     </a>
     @endguest
