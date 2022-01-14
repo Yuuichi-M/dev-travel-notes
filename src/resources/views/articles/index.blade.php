@@ -13,17 +13,15 @@
         @endauth
 
         @guest
+
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
-            <!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel"> -->
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
-
             <div class="carousel-inner">
-
                 <div class="carousel-item d-flex justify-content-center center active">
                     <img class="d-block home-img" src="/images/home6.jpg" alt="First slide">
                     <div class="mx-auto">
@@ -43,7 +41,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item d-flex justify-content-center center">
                     <img class="d-block home-img" src="/images/home1.1.jpg" alt="Second slide">
                     <div class="mx-auto">
@@ -61,7 +58,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item d-flex justify-content-center center">
                     <img class="d-block home-img" src="/images/home7.jpg" alt="Third slide">
                     <div class="mx-auto">
@@ -70,7 +66,12 @@
                                 <div class="card-text">
                                     <div class="justify-content-center align-items-center">
                                         <div class="justify-content-center align-items-center home-message pt-2 home-message-third">
-                                            他ユーザーの投稿にいいね<i class="fas fa-heart text-danger"></i>や</br>コメント<i class="fas fa-comment text-dark"></i>をして交流しよう。
+                                            他ユーザーの投稿にいいね
+                                            <i class="fas fa-heart text-danger"></i>
+                                            や</br>
+                                            コメント
+                                            <i class="fas fa-comment text-dark"></i>
+                                            をして交流しよう。
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +79,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="carousel-item d-flex justify-content-center">
                     <img class="d-block home-img" src="/images/home0.jpg" alt="Fourth slide">
                     <div class="mx-auto">
@@ -107,20 +107,20 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
-
         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
+            <span class="sr-only">
+                Previous
+            </span>
         </a>
-
         <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
             <span class="carousel-control-next-icon h1" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
+            <span class="sr-only">
+                Next
+            </span>
         </a>
-
     </div>
 
     @else
@@ -134,17 +134,18 @@
         @endforeach
 
     </div>
-
     <div class="d-flex justify-content-center pt-3">
         {{ $articles->links('vendor.pagination.bootstrap-4') }}
     </div>
-
     <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button" role="button" title="投稿">
         <div>
             <i class="fas fa-plus plus-icon"></i>
-            <div class="mb-1"><i class="far fa-paper-plane paper-plane-icon"></i></div>
+            <div class="mb-1">
+                <i class="far fa-paper-plane paper-plane-icon"></i>
+            </div>
         </div>
     </a>
+
     @endguest
 
 </div>
