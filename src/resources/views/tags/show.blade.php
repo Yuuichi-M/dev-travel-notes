@@ -13,7 +13,6 @@
     </div>
     <hr class="border mx-auto my-1" style="width: 200px;">
 </div>
-
 <div class="container">
 
     @foreach($tag->articles as $article)
