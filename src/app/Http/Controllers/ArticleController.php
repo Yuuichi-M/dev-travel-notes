@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Storage;
 use App\Category;
 use App\Article;
 use App\Tag;
-use App\User;
 use App\Comment;
 use Illuminate\Http\File;
 use Illuminate\Http\UploadedFile;
@@ -28,7 +27,6 @@ class ArticleController extends Controller
     {
         //カテゴリー取得
         $prefectures = Category::orderBy('sort_no')->get();
-
         $query = Article::query();
 
         //カテゴリ検索
@@ -60,8 +58,6 @@ class ArticleController extends Controller
         //投稿記事取得, N+1問題解消
         $articles = $query
             ->with(['user', 'likes', 'tags', 'comments', 'category'])->orderBy('id', 'desc')->paginate(9);
-
-        // dd($request->filled('keyword'));
 
         return view('articles.index', compact('articles', 'comment'))
             ->with('prefectures', $prefectures)
@@ -127,9 +123,7 @@ class ArticleController extends Controller
     private function saveImage(UploadedFile $file): string
     {
         $tempPath = $this->makeTempPath();
-
         Image::make($file)->fit(630, 630)->save($tempPath);
-
         $filePath = Storage::disk('s3')
             ->putFile('article_img', new File($tempPath), 'public');
 
@@ -152,10 +146,12 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         $prefectures = Category::orderBy('sort_no')->get();
+
         //タグ取得
         $tagNames = $article->tags->map(function ($tag) {
             return ['text' => $tag->name];
         });
+
         //すべてのタグ情報を取得(自動補正用)
         $allTagNames = Tag::all()->map(function ($tag) {
             return ['text' => $tag->name];

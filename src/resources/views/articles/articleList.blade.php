@@ -2,7 +2,6 @@
     <div class="col-md-8 mx-auto">
         <div class="card mt-3 shadow-none" style="border-radius: 1rem">
             <div class="card-body d-flex p-3 border-bottom">
-
                 <a class="mr-1 d-flex align-items-center" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="text-decoration: none;">
                     @if (!empty($article->user->avatar_file_name))
                     <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $article->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
@@ -10,31 +9,29 @@
                     <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                     @endif
                 </a>
-
                 <div class="font-weight-bold text-dark d-flex align-items-center ml-2" style="font-size: 16px">
                     {{ $article->user->name }}
                 </div>
 
                 @if( Auth::id() === $article->user_id )
+
                 <!-- dropdown -->
                 <div class="ml-auto d-flex align-items-center card-text">
                     <div class="dropdown">
-
                         <a data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <button type="button" class="btn btn-link text-muted m-0 p-2">
                                 <i class="fas fa-ellipsis-h"></i>
                             </button>
                         </a>
-
                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item text-dark" href="{{ route('articles.edit', ['article' => $article]) }}">
-                                <i class="fas fa-edit mr-2"></i>投稿を編集する
+                                <i class="fas fa-edit mr-2"></i>
+                                投稿を編集する
                             </a>
-
                             <div class="dropdown-divider"></div>
-
                             <a class="dropdown-item text-danger" data-toggle="modal" data-target="#modal-delete-{{ $article->id }}">
-                                <i class="fas fa-trash-alt mr-2"></i>投稿を削除する
+                                <i class="fas fa-trash-alt mr-2"></i>
+                                投稿を削除する
                             </a>
                         </div>
                     </div>
@@ -46,18 +43,16 @@
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header font-weight-bold deep-orange lighten-1 text-center pb-3 pt-3">
-
                                 <span class="text-white" style="font-size: 18px;">
                                     <i class="fas fa-trash-alt text-white mr-1" style="font-size: 20px"></i>
                                     Delete Post
                                 </span>
-
                                 <button type="button" class="close text-white" data-dismiss="modal" aria-label="閉じる">
-                                    <span aria-hidden="true">&times;</span>
+                                    <span aria-hidden="true">
+                                        &times;
+                                    </span>
                                 </button>
-
                             </div>
-
                             <form method="POST" action="{{ route('articles.destroy', ['article' => $article]) }}">
                                 @csrf
                                 @method('DELETE')
@@ -65,28 +60,25 @@
                                 <div class="modal-body">
                                     {{ $article->title }}
                                 </div>
-
                                 <div class="modal-body text-danger">
                                     <i class="far fa-hand-point-up mr-1" style="font-size: 18px"></i>
                                     本当に削除してもよろしいですか？
                                 </div>
-
                                 <div class="modal-footer justify-content-between btn-group">
                                     <button type="button" class="btn btn-light shadow-none" data-dismiss="modal">
                                         <i class="fas fa-backspace mr-1"></i>
                                         キャンセル
                                     </button>
-
                                     <button type="submit" class="btn btn-danger shadow-none">
                                         <i class="fas fa-trash-alt mr-1"></i>
                                         削除する
                                     </button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
                 </div>
+
                 @endif
                 <!-- modal -->
 
@@ -98,27 +90,26 @@
                 <img src="/images/image-default.png" class="" width="100%">
                 @endif
             </div>
-
             <div class="col-md-12 p-3">
-
                 <div class="text-truncate text-dark card-title h5 mb-1" style="max-width: 400px;">
                     {{ $article->title }}
                 </div>
-
                 <div class="font-weight-lighter grey-text small">
                     <span>
                         {{ $article->category->prefecture }}
                     </span>
-
                     <span class="ml-1">
                         {{ $article->created_at->format('Y/m/d H:i') }}
                     </span>
                 </div>
-
                 <div class="text-truncate text-muted mt-2" style="max-width: 500px;">
                     {{ $article->summary }}
                 </div>
-                <span><a class="small deep-orange-text" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">詳細を表示する</a></span>
+                <span>
+                    <a class="small deep-orange-text" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">
+                        詳細を表示する
+                    </a>
+                </span>
 
                 @include('articles.articleTag')
 
@@ -134,7 +125,6 @@
                             {{ $article->comments->count() }}
                         </span>
                     </span>
-
                 </div>
             </div>
         </div>

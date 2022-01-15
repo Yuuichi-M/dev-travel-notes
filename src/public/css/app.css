@@ -10946,9 +10946,11 @@ a.text-dark:focus {
   .navbar-logo{
     font-size: 14px;
   }
+
   .navbar-icon{
     font-size: 3px;
   }
+
   .navbar-searchForm{
     padding-left: 12px;
     padding-right: 12px;
@@ -10965,16 +10967,20 @@ a.text-dark:focus {
     width: 60px;
     height: 60px;
   }
+
   .plus-icon{
     font-size: 9px;
   }
+
   .paper-plane-icon{
     font-size: 25px;
   }
+
   .guest-operation{
     font-size: 10px;
   }
-    .home-img {
+
+  .home-img {
     width: 100%;
     height: 80vh;
     object-fit: cover;
@@ -11042,7 +11048,7 @@ a.text-dark:focus {
 }
 
 @media screen and (min-width:480px) and ( max-width:768px) {
-  .post-button-md{
+  .post-button{
     position: fixed;
     bottom: 40px;
     right: 10px;
@@ -11053,12 +11059,15 @@ a.text-dark:focus {
     width: 80px;
     height: 80px;
   }
-  .plus-icon-md{
+
+  .plus-icon{
     font-size: 11px;
   }
-  .paper-plane-icon-md{
+
+  .paper-plane-icon{
     font-size: 34px;
   }
+
   .home-img {
     width: 100%;
     height: 80vh;
@@ -11130,7 +11139,7 @@ a.text-dark:focus {
 
 @media screen and (min-width:768px) and ( max-width:1024px) {
     /*　for ipad　*/
-  .post-button-lg{
+  .post-button{
     position: fixed;
     bottom: 40px;
     right: 20px;
@@ -11141,13 +11150,16 @@ a.text-dark:focus {
     width: 110px;
     height: 110px;
   }
-  .plus-icon-lg{
+
+  .plus-icon{
     font-size: 15px;
   }
-  .paper-plane-icon-lg{
+
+  .paper-plane-icon{
     font-size: 46px;
   }
-      .home-img {
+
+  .home-img {
     width: 100%;
     height: 80vh;
     object-fit: cover;
@@ -11218,7 +11230,7 @@ a.text-dark:focus {
 
 @media screen and (min-width:1024px) {
     /*　for PC　*/
-  .post-button-max{
+  .post-button{
     position: fixed;
     bottom: 40px;
     right: 40px;
@@ -11229,14 +11241,16 @@ a.text-dark:focus {
     width: 110px;
     height: 110px;
   }
-  .plus-icon-max{
+
+  .plus-icon{
     font-size: 15px;
   }
-  .paper-plane-icon-max{
+
+  .paper-plane-icon{
     font-size: 46px;
   }
 
-    .home-img {
+  .home-img {
     width: 100%;
     height: 80vh;
     object-fit: cover;

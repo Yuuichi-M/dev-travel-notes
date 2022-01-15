@@ -23,7 +23,7 @@ class Article extends Model
         return $this->belongsTo('App\User');
     }
 
-    //いいね機能　多対多のリレーション
+    //いいね機能のリレーション　多対多
     public function likes(): BelongsToMany
     {
         //(モデル,　中間テーブル)
@@ -50,13 +50,13 @@ class Article extends Model
         return $this->belongsToMany('App\Tag')->withTimestamps();
     }
 
-    //所在地表示
+    //所在地のリレーション 1対多
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
-    //コメント機能
+    //コメント機能のリレーション　
     public function comments()
     {
         return $this->hasMany(Comment::class);
