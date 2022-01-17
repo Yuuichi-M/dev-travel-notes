@@ -13,7 +13,6 @@
         @endauth
 
         @guest
-
         <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -145,7 +144,6 @@
             </div>
         </div>
     </a>
-
     @endguest
 
 </div>

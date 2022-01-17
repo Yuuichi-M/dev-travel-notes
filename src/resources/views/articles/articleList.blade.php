@@ -14,7 +14,6 @@
                 </div>
 
                 @if( Auth::id() === $article->user_id )
-
                 <!-- dropdown -->
                 <div class="ml-auto d-flex align-items-center card-text">
                     <div class="dropdown">
@@ -78,7 +77,6 @@
                         </div>
                     </div>
                 </div>
-
                 @endif
                 <!-- modal -->
 
