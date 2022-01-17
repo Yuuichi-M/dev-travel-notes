@@ -9,7 +9,6 @@
                 <ul class="navbar-nav ml-auto">
 
                     @guest
-
                     <li class="nav-item">
                         <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
                             <i class="fas fa-user-alt deep-orange-text text-center navbar-icon">
@@ -74,15 +73,14 @@
                         </div>
                     </li>
                     <!-- dropdown menu -->
-
                     @endguest
+
                 </ul>
             </div>
         </div>
     </nav>
 
     @auth
-
     <form class="form-inline deep-orange lighten-5" method="GET" action="{{ route('articles.index') }}" style="width: 100%;">
         <div class="mx-auto mt-2 mb-2 navbar-searchForm">
             <div class="input-group">
@@ -106,7 +104,6 @@
             </div>
         </div>
     </form>
-
     @endauth
 
 </div>

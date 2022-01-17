@@ -23,7 +23,6 @@
                     </div>
 
                     @if( Auth::id() === $article->user_id )
-
                     <!-- dropdown -->
                     <div class="ml-auto d-flex align-items-center card-text">
                         <div class="dropdown">
@@ -87,9 +86,9 @@
                             </div>
                         </div>
                     </div>
-
                     @endif
                     <!-- modal -->
+
                 </div>
                 <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
                     @if (!empty($article->image_file_name))
