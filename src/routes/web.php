@@ -11,6 +11,46 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+//認証系
+Auth::routes();
+
+//ゲストユーザーログイン
+Route::get('guest', 'Auth\LoginController@guestLogin')->name('login.guest');
+
+//投稿系
+Route::get('/', 'ArticleController@index')->name('articles.index');
+Route::resource('/articles', 'ArticleController')->except(['index', 'show'])->middleware('auth');
+Route::resource('/articles', 'ArticleController')->only(['show']);
+
+Route::post('/comments', 'CommentController@store')->name('comments.store')->middleware('auth');
+Route::delete('/comments/destroy/{comment}', 'CommentController@destroy')->name('comments.destroy')->middleware('auth');
+
+//いいね機能　name省略
+Route::prefix('articles')->name('articles.')->group(function () {
+    Route::put('/{article}/like', 'ArticleController@like')->name('like')->middleware('auth');
+    Route::delete('/{article}/like', 'ArticleController@unlike')->name('unlike')->middleware('auth');
+});
+
+//タグ機能
+Route::get('/tags/{name}', 'TagController@show')->name('tags.show');
+
+//マイページ
+Route::prefix('users')->name('users.')->group(function () {
+    Route::get('/{name}', 'UserController@show')->name('show');
+    //プロフィール変更画面
+    Route::get('/{name}/edit', 'UserController@edit')->name('edit')->middleware('auth');
+    //プロフィール変更処理
+    Route::put('/{name}', 'UserController@update')->name('update')->middleware('auth');
+    //ユーザー退会処理
+    Route::delete('/{user}/destroy', 'UserController@destroy')->name('destroy')->middleware('auth');
+    //いいね一覧表示
+    Route::get('/{name}/likes', 'UserController@likes')->name('likes');
+    //フォロー中ユーザー・フォロワー表示
+    Route::get('/{name}/followings', 'UserController@followings')->name('followings');
+    Route::get('/{name}/followers', 'UserController@followers')->name('followers');
+    //フォロー機能
+    Route::middleware('auth')->group(function () {
+        Route::put('/{name}/follow', 'UserController@follow')->name('follow');
+        Route::delete('/{name}/follow', 'UserController@unfollow')->name('unfollow');
+    });
 });
