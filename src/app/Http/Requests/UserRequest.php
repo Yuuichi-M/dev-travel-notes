@@ -34,6 +34,7 @@ class UserRequest extends FormRequest
         if (Auth::id() == self::GUEST_USER_ID) {
             return [
                 'avatar' => ['file', 'image'],
+                'self_introduction' => ['string', 'max:100'],
             ];
         } else { // ゲストユーザー以外
             return [
