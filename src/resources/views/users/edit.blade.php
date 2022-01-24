@@ -23,17 +23,6 @@
                             @csrf
 
                             <div style="text-align: initial;">
-
-                                @if (Auth::id() == 3)
-                                <div class="form-group row text-danger">
-                                    <p class="col-md-12 text-center text-dark">
-                                        <span class="text-danger guest-operation">
-                                            ※ゲストユーザーはプロフィール画像のみ編集できます。
-                                        </span>
-                                    </p>
-                                </div>
-                                @endif
-
                                 <div class="avatar-form image-picker text-center">
                                     <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" value="{{ old('avatar_file_name') }}" id="avatar" />
                                     <label for="avatar" class="d-inline-block">
@@ -53,12 +42,21 @@
                                     @enderror
                                 </div>
                                 <div class="md-form">
+
+                                    @if (Auth::id() == 3)
+                                    <label for="name">
+                                        名前
+                                    </label>
+
+                                    @else
+
                                     <label for="name">
                                         名前
                                         <span class="text-danger small">
                                             (必須)
                                         </span>
                                     </label>
+                                    @endif
 
                                     @if (Auth::id() == 3)
                                     <input class="form-control" type="text" id="name" name="name" required value="{{ $user->name }}" readonly>
@@ -83,12 +81,21 @@
 
                                 </div>
                                 <div class="md-form">
+
+                                    @if (Auth::id() == 3)
+                                    <label for="email">
+                                        メールアドレス
+                                    </label>
+
+                                    @else
+
                                     <label for="email">
                                         メールアドレス
                                         <span class="text-danger small">
                                             (必須)
                                         </span>
                                     </label>
+                                    @endif
 
                                     @if (Auth::id() == 3)
                                     <input class="form-control" type="text" id="email" name="email" required value="{{ $user->email }}" readonly>
@@ -114,12 +121,6 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="self_introduction"></label>
-
-                                    @if (Auth::id() == 3)
-                                    <textarea name="self_introduction" class="form-control" cols="50" rows="8" name="self_introduction" id="self_introduction" required placeholder="自己紹介を書こう" readonly>{{ $user->self_introduction }}</textarea>
-
-                                    @else
-
                                     <textarea name="self_introduction" class="form-control @error('self_introduction') is-invalid @enderror" cols="50" rows="8" name="self_introduction" id="self_introduction" required placeholder="自己紹介を書こう ※150文字以内">{{ $user->self_introduction ?? old('self_introduction') }}</textarea>
                                     @error('self_introduction')
                                     <span class="invalid-feedback" role="alert">
@@ -128,8 +129,6 @@
                                         </strong>
                                     </span>
                                     @enderror
-                                    @endif
-
                                 </div>
                             </div>
                             <button class="btn btn-block deep-orange lighten-1 rounded-pill mt-4 text-white shadow-none" title="更新" type="submit">
