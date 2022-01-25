@@ -126,6 +126,18 @@
 
     <div class="container">
 
+        <div class="row">
+            <div class="col-8 offset-2">
+
+                @if (session('status'))
+                <div class="alert alert-success mt-3 mb-0 text-center" role="alert" style="font-size: 12px; border-radius: 1rem;">
+                    {{ session('status') }}
+                </div>
+                @endif
+
+            </div>
+        </div>
+
         @foreach($articles as $article)
 
         @include('articles.articleList')
