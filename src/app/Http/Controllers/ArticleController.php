@@ -187,7 +187,7 @@ class ArticleController extends Controller
         });
 
         return redirect()->route('articles.index')
-            ->with('status', '投稿修正しました。');
+            ->with('status', '投稿を修正しました。');
     }
 
     //投稿記事削除
@@ -195,7 +195,7 @@ class ArticleController extends Controller
     {
         $article->delete();
         return redirect()->route('articles.index')
-            ->with('status', '投稿削除しました。');
+            ->with('status', '投稿を削除しました。');
     }
 
     //記事詳細画面
