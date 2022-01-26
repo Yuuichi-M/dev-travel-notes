@@ -5,10 +5,19 @@ jobs:
       - image: circleci/php:7.4.1-node-browsers
     steps:
       - checkout
-      - run: sudo composer self-update
-      - run: composer install -n --prefer-dist
-      - run: npm ci
-      - run: npm run dev
+      - run:
+          working_directory: ./src
+          command: sudo composer self-update --2
+      - run:
+          working_directory: ./src
+          command: composer install -n --prefer-dist
+      - run:
+          working_directory: ./src
+          command: npm ci
+      - run:
+          working_directory: ./src
+          command: npm run dev
       - run:
           name: php test
+          working_directory: ./src
           command: vendor/bin/phpunit
