@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           working_directory: ./src
-          command: sudo composer self-update --2
+          command: sudo composer self-update
       - run:
           working_directory: ./src
           command: composer install -n --prefer-dist
