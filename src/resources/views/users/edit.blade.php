@@ -27,7 +27,7 @@
                                     <input type="file" name="avatar" class="d-none @error('avatar') is-invalid @enderror" accept="image/png,image/jpeg,image/gif" value="{{ old('avatar_file_name') }}" id="avatar" />
                                     <label for="avatar" class="d-inline-block">
                                         @if (!empty($user->avatar_file_name))
-                                        <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
+                                        <img src="{{ asset('https://portfolio-s3-backe.s3.ap-northeast-1.amazonaws.com/avatars/' . $user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
                                         @else
                                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 125px; height: 125px;">
                                         @endif
