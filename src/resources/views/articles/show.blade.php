@@ -13,7 +13,7 @@
                 <div class="card-body d-flex pt-3 pb-3 pl-3 pr-3 border-bottom">
                     <a class="mr-1 d-flex align-items-center" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="text-decoration: none;">
                         @if (!empty($article->user->avatar_file_name))
-                        <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $article->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
+                        <img src="{{ asset('https://portfolio-s3-backe.s3.ap-northeast-1.amazonaws.com/avatars/' . $article->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                         @else
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                         @endif
@@ -92,7 +92,7 @@
                 </div>
                 <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
                     @if (!empty($article->image_file_name))
-                    <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" class="" width="100%">
+                    <img src="{{ asset('https://portfolio-s3-backe.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" class="" width="100%">
                     @else
                     <img src="/images/image-default.png" class="" width="100%">
                     @endif
