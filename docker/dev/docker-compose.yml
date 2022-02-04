@@ -1,0 +1,31 @@
+version: '2'
+services:
+    app:
+        container_name: laravel-app
+        build: ./app/
+        image: laravel-app
+        ports:
+            - '80:80'
+        volumes:
+            - ~/git/github/travel-notes:/var/www/app:delegated
+        tty: true
+        depends_on:
+            - db
+    db:
+        container_name: laravel-db
+        build: ./mysql/
+        image: laravel-db
+        command: --default-authentication-plugin=mysql_native_password
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_DATABASE: travel-notes
+        volumes:
+            - ./mysql/db_data:/var/lib/mysql
+    redis:
+        container_name: laravel-redis
+        image: "redis:latest"
+        ports:
+            - '6379:6379'
+        volumes:
+            - ./redis/db_data:/data
