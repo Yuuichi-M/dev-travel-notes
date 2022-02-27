@@ -10,7 +10,7 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "dd:fe:21:7a:e9:f6:12:e9:22:04:0b:13:39:fa:80:ce"
-      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/travel-notes/deploy.sh
+      - run: ssh -p $SSH_PORT $SSH_USER@$SSH_HOST "/var/www/travel-notes/deploy.sh"
       #失敗
       - slack/notify:
           event: fail
