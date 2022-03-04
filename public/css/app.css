@@ -11043,7 +11043,11 @@ a.text-dark:focus {
   }
 
   .home-pt {
-    padding-top: 56px;
+    padding-top: 64px;
+  }
+
+  .home-nav-icon {
+    margin-bottom: 5px;
   }
 }
 
@@ -11133,7 +11137,11 @@ a.text-dark:focus {
   }
 
   .home-pt {
-    padding-top: 63px;
+    padding-top: 64px;
+  }
+
+  .home-nav-icon {
+    margin-bottom: 5px;
   }
 }
 
@@ -11224,7 +11232,11 @@ a.text-dark:focus {
   }
 
   .home-pt {
-    padding-top: 63px;
+    padding-top: 64px;
+  }
+
+  .home-nav-icon {
+    margin-bottom: 5px;
   }
 }
 
@@ -11312,6 +11324,10 @@ a.text-dark:focus {
   }
 
   .home-pt {
-    padding-top: 63px;
+    padding-top: 64px;
+  }
+
+  .home-nav-icon {
+    margin-bottom: 5px;
   }
 }

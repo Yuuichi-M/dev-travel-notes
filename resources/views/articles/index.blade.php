@@ -22,64 +22,22 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item d-flex justify-content-center center active">
-                    <img class="d-block home-img" src="/images/home6.jpg" alt="First slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-04 20.34.17.png" alt="First slide">
                     <div class="mx-auto">
-                        <div class="card shadow-none home-card" style="border-radius: 1rem;">
-                            <div class="card-body text-center">
-                                <div class="card-text">
-                                    <div class="justify-content-center align-items-center">
-                                        <div class="justify-content-center align-items-center deep-orange-text home-title">
-                                            Travel nots
-                                        </div>
-                                        <div class="justify-content-center align-items-center home-message">
-                                            旅行先での思い出を仲間と共有しよう。
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="carousel-item d-flex justify-content-center center">
-                    <img class="d-block home-img" src="/images/home1.1.jpg" alt="Second slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-05 0.13.53.png" alt="Second slide">
                     <div class="mx-auto">
-                        <div class="card shadow-none home-card-second" style="border-radius: 1rem;">
-                            <div class="card-body text-center">
-                                <div class="card-text">
-                                    <div class="justify-content-center align-items-center">
-                                        <div class="justify-content-center align-items-center home-message pt-2">
-                                            旅行先のグルメ、名所、宿の</br>
-                                            情報や感想を自由に投稿しよう。
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="carousel-item d-flex justify-content-center center">
-                    <img class="d-block home-img" src="/images/home7.jpg" alt="Third slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-05 1.00.25.png" alt="Third slide">
                     <div class="mx-auto">
-                        <div class="card shadow-none home-card-third" style="border-radius: 1rem;">
-                            <div class="card-body text-center">
-                                <div class="card-text">
-                                    <div class="justify-content-center align-items-center">
-                                        <div class="justify-content-center align-items-center home-message pt-2 home-message-third">
-                                            他ユーザーの投稿にいいね
-                                            <i class="fas fa-heart text-danger"></i>
-                                            や</br>
-                                            コメント
-                                            <i class="fas fa-comment text-dark"></i>
-                                            をして交流しよう。
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="carousel-item d-flex justify-content-center">
-                    <img class="d-block home-img" src="/images/home0.jpg" alt="Fourth slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-05 1.14.47.png" alt="Fourth slide">
                     <div class="mx-auto">
                         <div class="card shadow-none home-card-fourth" style="border-radius: 1rem;">
                             <div class="card-body text-center">

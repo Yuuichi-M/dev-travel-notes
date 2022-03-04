@@ -43,7 +43,7 @@
                     <span>
                         <a class="dropdown-item text-dark px-0 d-flex align-items-center" href="{{ route('users.show', ['name' => $comment->user->name]) }}" style="text-decoration: none;">
                             @if (!empty($comment->user->avatar_file_name))
-                            <img src="{{ asset('https://portfolio-sns-backet.s3.ap-northeast-1.amazonaws.com/avatars/' . $comment->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 20px; height: 20px;">
+                            <img src="{{ asset('https://portfolio-s3-backe.s3.ap-northeast-1.amazonaws.com/avatars/' . $comment->user->avatar_file_name) }}" class="rounded-circle" style="object-fit: cover; width: 20px; height: 20px;">
                             @else
                             <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 20px; height: 20px;">
                             @endif

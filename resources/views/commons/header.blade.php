@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand border-bottom fixed-top bg-white shadow-none">
     <div class="container">
-        <a class="navbar-brand font-weight-bold deep-orange-text navbar-logo" title="ホーム" href="/">
-            <i class="fas fa-shoe-prints mr-1"></i>
+        <a class="navbar-brand font-weight-bold deep-orange-text" title="ホーム" href="/">
+            <i class="fab fa-fly"></i>
             {{ config('app.name') }}
         </a>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -9,29 +9,20 @@
 
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
-                        <i class="fas fa-user-alt deep-orange-text text-center navbar-icon">
-                            <div class="small mt-1">
-                                新規登録
-                            </div>
+                    <a class="nav-link h5 home-nav-icon" href="{{ route('register') }}" role="button" title="アカウント登録">
+                        <i class="fas fa-user-alt deep-orange-text mr-2 mt-2">
                         </i>
                     </a>
                 </li>
                 <li class=" nav-item">
-                    <a class="nav-link deep-orange-text" href="{{ route('login') }}" role="button" title="ログイン">
-                        <i class="fas fa-sign-in-alt deep-orange-text text-center navbar-icon">
-                            <div class="small mt-1">
-                                ログイン
-                            </div>
+                    <a class="nav-link h5 home-nav-icon" href="{{ route('login') }}" role="button" title="ログイン">
+                        <i class="fas fa-sign-in-alt deep-orange-text mr-2 mt-2">
                         </i>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link deep-orange-text" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
-                        <i class="fas fa-user-tie deep-orange-text text-center navbar-icon">
-                            <div class="small mt-1">
-                                ゲストログイン
-                            </div>
+                    <a class="nav-link h5 home-nav-icon" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
+                        <i class="fas fa-user-tie deep-orange-text mr-2 mt-2">
                         </i>
                     </a>
                 </li>
