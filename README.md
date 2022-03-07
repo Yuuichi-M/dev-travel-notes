@@ -1,16 +1,21 @@
 # Travel notes
 
-<img width="1043" alt="スクリーンショット 2022-02-04 23 39 10" src="https://user-images.githubusercontent.com/71712059/152547710-49925c67-aa03-446b-9681-e0a8f8fbced5.png">
+旅の思い出を投稿して、他ユーザーと共有できるWebアプリケーションです。
+URL：https://travel-notes.online/
 
+<img width="1471" alt="スクリーンショット 2022-03-06 13 59 20" src="https://user-images.githubusercontent.com/71712059/156978337-bcd49eec-7ae4-4935-bf72-da37c99c3cfe.png">
 
-## ER図・画面遷移図
+## 画面遷移図
 
-![画面遷移図・ER図-ページ2](https://user-images.githubusercontent.com/71712059/152547052-3ae3099a-2b26-4d11-9870-5d510b8cd6fd.jpg)
+<img width="1047" alt="スクリーンショット 2022-03-07 0 02 49" src="https://user-images.githubusercontent.com/71712059/156979018-5ee18640-72be-4e4d-bc48-0cb2315c357f.png">
 
-![画面遷移図・ER図-ページ1](https://user-images.githubusercontent.com/71712059/152547077-00aee217-e85e-4ca9-8e12-631a62f8ec6f.jpg)
+## ERデータベース図
 
+<img width="1565" alt="スクリーンショット 2022-03-06 23 59 11" src="https://user-images.githubusercontent.com/71712059/156979033-c7ac7776-f765-47ca-8855-183834a886a4.png">
 
 ## 開発環境構築
+
+<img width="1095" alt="スクリーンショット 2022-03-07 1 22 05" src="https://user-images.githubusercontent.com/71712059/156979158-5cf2932f-c7fa-4aae-8fc8-21bdc2cc5deb.png">
 
 - docker images
   - laravel-app
@@ -19,6 +24,9 @@
   - laravel-db
     - mysql:8.0.27
   - laravel-redis
+
+docker/dev配下
+https://github.com/Yuuichi-M/travel-notes/tree/main/docker/dev
 
 - git clone or fork
 
@@ -61,9 +69,7 @@ php artisan db:seed
 
 http://dev-travel-notes.online/
 
-
-<img width="1247" alt="スクリーンショット 2022-02-05 0 41 46" src="https://user-images.githubusercontent.com/71712059/152558190-6274ce00-1b58-4810-ba6a-9e5d50241912.png">
-
+<img width="1262" alt="スクリーンショット 2022-03-07 15 26 02" src="https://user-images.githubusercontent.com/71712059/156979344-50f9f024-b06f-4418-8ff0-ad3ec09adc90.png">
 
 - DB login
 
@@ -78,3 +84,136 @@ docker exec -it laravel-app bash
 redis-cli -h redis
 
 ```
+
+## 本番環境構成図
+
+<img width="1956" alt="スクリーンショット 2022-03-07 2 00 19" src="https://user-images.githubusercontent.com/71712059/156980168-0ca12a03-c1c6-44ed-b4a6-860674a8bfcd.png">
+
+## 使用技術
+#### バックエンド
+- php:7.4-fpm-alpine
+- Laravel 6.20.34
+#### フロントエンド
+- HTML
+- CSS
+- Bootstrap 4
+- Vue.js 2.6.14
+#### 開発環境
+- Docker 20.10.12 / Docker Compose v2.2.3
+(nginx, php-fpm, supervisor, mysql 8.0.27)
+#### 本番環境
+- AWS：EC2, RDS, VPC, Route 53, ALB, ACM, S3, CloudWatch
+EC2:(nginx, php-fpm, mysql 8.0.27)
+- CircleCI
+  deploy job：git pullデプロイ自動化
+slack orb:：Slackデプロイ結果通知
+#### 使用ツール
+- バージョン管理： Git / GitHub
+- IDE： Visual Studio Code
+- DBクライアント：TablePlus
+- ER図, 画面遷移図, インフラ構成図：Cacco
+
+## 機能一覧
+
+#### 認証機能
+- ユーザー登録機能：名前・メールアドレス・パスワード登録
+- ログイン機能：メールアドレス・パスワード認証
+- ゲストログイン機能：ユーザー未登録のままログイン可能
+- パスワード再設定機能：メールアドレス認証・パスワード変更
+- プロフィール編集機能：名前・メールアドレス変更。プロフィール画像、自己紹介文登録
+- ログアウト機能：ログイン前画面に遷移
+- 退会機能：登録ユーザーの削除。削除前にモーダル表示
+
+#### メイン機能
+- 投稿機能：画像、タイトル、所在地（カテゴリ)、タグ、本文の投稿
+- 投稿編集機能：画像、タイトル、所在地（カテゴリ)、タグ、本文の変更
+- 投稿削除機能：削除前にモーダル表示
+- 検索機能：カテゴリ検索、キーワード検索
+- タグ検索機能：タグをクリックすると結果表示
+- いいね機能：お気に入り登録。非同期通信
+- コメント機能：コメント登録
+- コメント削除機能
+- フォロー機能：他ユーザーをお気に入り登録。非同期通信
+
+## 機能・画面説明
+#### ホーム画面
+- ヘッダーから、ユーザー登録、ログイン画面遷移、ゲストログインができます
+- 中央の画像を左にフェードさせることで、簡単な機能説明を見ることができます
+- ４枚目の画像からもユーザー登録、ログイン画面遷移、ゲストログインができます
+
+![home.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7cc37217-2f29-8717-a95c-67b1865d8100.gif)
+
+#### ユーザー登録・ログイン
+- Register(ユーザー登録)画面からユーザー登録ができる
+- Login(ログイン)画面からログイン・ゲストログインができる
+
+![スクリーンショット 2022-03-06 18.11.32.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/1609e43d-48e0-dec1-3c04-1ce62b48ba13.png)
+
+#### 投稿一覧画面
+- 自身や他ユーザーの投稿一覧を表示
+- ヘッダーのメニューからマイページ画面、投稿画面遷移、ログアウトができます
+- 検索フォームからカテゴリ検索、キーワード検索ができます
+- 投稿記事左上のプロフィール画像をクリックすることで、マイページに遷移できます
+- 投稿記事右上のメニューをクリックすることで、投稿編集画面・投稿削除画面に遷移できます
+- 「詳細を表示する」をクリックすると、投稿詳細画面に遷移できます
+- タグをクリックすると、タグ検索ができます
+- ♥ボタンをクリックすると、いいねを残せます
+- 吹き出しボタンをクリックすると、投稿詳細画面のコメント入力に遷移します
+- 画面右下の紙飛行機ボタンをクリックすると、投稿画面に遷移します
+
+![スクリーンショット 2022-03-06 18.43.12.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/dd0c7843-b5ee-6242-9394-28bc2f5cd139.png)
+
+#### 投稿画面・投稿編集画面
+- 画像(png, jpeg, gif)、タイトル、所在地(カテゴリ)、タグ、本文の入力し投稿ができる
+
+![スクリーンショット 2022-03-06 19.08.51.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7883e0e8-77d2-4632-ace5-a60e30596756.png)
+
+#### 投稿詳細画面
+- 投稿記事右上のメニューから投稿の編集、投稿の削除ができます
+- タグをクリックすると、タグ検索ができます
+- ♥ボタンをクリックすると、いいねを残せます
+- コメントを入力し投稿できます
+
+![スクリーンショット 2022-03-06 19.33.04.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/a7346f70-7366-d867-8b7c-b85165b12d65.png)
+
+#### 検索機能
+- 検索フォームからカテゴリ検索、キーワード検索ができます
+- タグをクリックすることで、タグ検索ができます
+
+![スクリーンショット 2022-03-06 19.42.47.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/729b1f68-bf17-7b9f-7dcb-6fbb09453a69.png)
+
+#### マイページ
+- プロフィール、マイ投稿一覧を表示
+- 投稿一覧画面と同じ機能を実行できます
+- いいね一覧ボタンをクリックすることで、マイいいね一覧を表示できます
+- プロフィール右上のメニューをクリックすることで、プロフィール変更画面に遷移できます
+- フォロー中・フォロワーボタンをクリックすることで、フォロー中・フォロワー一覧に遷移できます
+
+![スクリーンショット 2022-03-06 19.52.50.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/0d3eeb1a-47f5-be83-8a9d-ad5a56ca8283.png)
+
+#### プロフィール変更画面
+- 画像(png, jpeg, gif)、名前、メールアドレス、自己紹介を変更できます
+
+![スクリーンショット 2022-03-06 20.10.18.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/72536d31-2e7c-c7da-bb1b-fb1562ec9eb7.png)
+
+#### フォロー中・フォロワー一覧画面
+- フォロー中・フォロワーの一覧を表示
+- 一覧からフォローしたり、外したりできます
+- 他ユーザーのマイページ、フォロー中・フォロワー一覧に遷移できます
+
+![スクリーンショット 2022-03-06 20.15.41.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7dd2b5c3-d7ac-dbb5-8ddc-70a375161e91.png)
+
+#### 投稿削除・退会機能のモーダル
+- 投稿削除、退会をする際に最後の確認の為表示されます
+- 「削除する」「退会する」ボタンをクリックすることで、削除・退会できます
+
+![スクリーンショット 2022-03-06 20.23.08.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/b5ae23b3-9f7d-3adb-4944-944c324312e3.png)
+
+## 「Travel-notes」紹介記事
+
+URL:https://qiita.com/yuuichimizuta/items/e8a8cf2bbecba7cba965
+
+## 作者
+- Yuuichi Mizuta
+- Wantedly：https://www.wantedly.com/id/yuuichi_mizuta
+- Twitter：https://twitter.com/yuuichimizuta
