@@ -9,7 +9,7 @@
 @auth
 <div style="padding-top: 3rem">
     @else
-    <div style="padding-top: 53px">
+    <div style="padding-top: 52px">
         @endauth
 
         @guest
