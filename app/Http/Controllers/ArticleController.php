@@ -57,7 +57,7 @@ class ArticleController extends Controller
 
         //投稿記事取得, N+1問題解消
         $articles = $query
-            ->with(['user', 'likes', 'tags', 'comments', 'category'])->orderBy('id', 'desc')->paginate(9);
+            ->with(['user', 'likes', 'tags', 'comments', 'category'])->orderBy('id', 'desc')->paginate(5);
 
         return view('articles.index', compact('articles', 'comment'))
             ->with('prefectures', $prefectures)

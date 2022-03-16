@@ -9,21 +9,18 @@
 
                 @guest
                 <li class="nav-item">
-                    <a class="nav-link h5 home-nav-icon" href="{{ route('register') }}" role="button" title="アカウント登録">
-                        <i class="fas fa-user-alt deep-orange-text mr-2 mt-2">
-                        </i>
-                    </a>
-                </li>
-                <li class=" nav-item">
-                    <a class="nav-link h5 home-nav-icon" href="{{ route('login') }}" role="button" title="ログイン">
-                        <i class="fas fa-sign-in-alt deep-orange-text mr-2 mt-2">
-                        </i>
+                    <a class="nav-link home-nav-icon deep-orange-text mr-1 home-mt" href="{{ route('register') }}" role="button" title="アカウント登録">
+                        新規登録
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link h5 home-nav-icon" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
-                        <i class="fas fa-user-tie deep-orange-text mr-2 mt-2">
-                        </i>
+                    <a class="nav-link home-nav-icon deep-orange-text mr-1 home-mt" href="{{ route('login') }}" role="button" title="ログイン">
+                        ログイン
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link home-nav-icon deep-orange-text home-mt" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
+                        ゲストログイン
                     </a>
                 </li>
 

@@ -11046,8 +11046,13 @@ a.text-dark:focus {
     padding-top: 64px;
   }
 
+  .home-mt {
+    margin-top: 7px;
+  }
+
   .home-nav-icon {
-    margin-bottom: 5px;
+    margin-bottom: 7px;
+    font-size: 10.4px;
   }
 }
 
@@ -11138,6 +11143,10 @@ a.text-dark:focus {
 
   .home-pt {
     padding-top: 64px;
+  }
+
+  .home-mt {
+    margin-top: 5px;
   }
 
   .home-nav-icon {
@@ -11235,6 +11244,10 @@ a.text-dark:focus {
     padding-top: 64px;
   }
 
+  .home-mt {
+    margin-top: 5px;
+  }
+
   .home-nav-icon {
     margin-bottom: 5px;
   }
@@ -11325,6 +11338,10 @@ a.text-dark:focus {
 
   .home-pt {
     padding-top: 64px;
+  }
+
+  .home-mt {
+    margin-top: 5px;
   }
 
   .home-nav-icon {
