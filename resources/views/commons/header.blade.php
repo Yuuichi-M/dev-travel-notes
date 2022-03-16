@@ -8,20 +8,26 @@
             <ul class="navbar-nav ml-auto">
 
                 @guest
-                <li class="nav-item">
-                    <a class="nav-link home-nav-icon deep-orange-text mr-1 home-mt" href="{{ route('register') }}" role="button" title="アカウント登録">
-                        新規登録
+                <li class="nav-item dropdown ml-2">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle deep-orange-text" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <i class="fas fa-bars" style="font-size: 28px;"></i>
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link home-nav-icon deep-orange-text mr-1 home-mt" href="{{ route('login') }}" role="button" title="ログイン">
-                        ログイン
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link home-nav-icon deep-orange-text home-mt" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
-                        ゲストログイン
-                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
+                            <i class="fas fa-user deep-orange-text mr-2"></i>
+                            新規登録
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item deep-orange-text" href="{{ route('login') }}" role="button" title="ログイン">
+                            <i class="fas fa-sign-in-alt deep-orange-text mr-2"></i>
+                            ログイン
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item deep-orange-text" href="{{ route('login.guest') }}" role="button" title="ゲストログイン">
+                            <i class="fas fa-user-tie deep-orange-text mr-2"></i>
+                            ゲストログイン
+                        </a>
+                    </div>
                 </li>
 
                 @else
