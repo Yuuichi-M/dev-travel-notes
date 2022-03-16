@@ -9,7 +9,7 @@
 @auth
 <div style="padding-top: 3rem">
     @else
-    <div>
+    <div style="padding-top: 53px">
         @endauth
 
         @guest
@@ -79,8 +79,22 @@
             </span>
         </a>
     </div>
+    <div class="pt-4">
+        <h5 class="text-center deep-orange-text pb-2 pt-3">投稿を見てみよう！</h5>
+    </div>
 
+    @endguest
+
+    @if( count($articles)>0 )
+    <div class="text-center text-muted pt-4">
+        投稿 {{ count($articles) }} 件
+    </div>
+    <hr class="border mx-auto my-1" style="width: 200px;">
     @else
+    <div class="text-center text-muted pt-4">
+        検索条件に一致する投稿はありません。
+    </div>
+    @endif
 
     <div class="container">
 
@@ -106,6 +120,9 @@
     <div class="d-flex justify-content-center pt-3">
         {{ $articles->links('vendor.pagination.bootstrap-4') }}
     </div>
+
+    @auth
+
     <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button" role="button" title="投稿">
         <div>
             <i class="fas fa-plus plus-icon"></i>
@@ -114,7 +131,8 @@
             </div>
         </div>
     </a>
-    @endguest
+
+    @endauth
 
 </div>
 

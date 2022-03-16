@@ -5,17 +5,26 @@ URL：https://travel-notes.online/
 
 <img width="1471" alt="スクリーンショット 2022-03-06 13 59 20" src="https://user-images.githubusercontent.com/71712059/156978337-bcd49eec-7ae4-4935-bf72-da37c99c3cfe.png">
 
+## 「Travel-notes」紹介記事
+
+#### ポートフォリオ開発の詳細をまとめております。
+
+↓　↓<br/>
+https://qiita.com/yuuichimizuta/items/e8a8cf2bbecba7cba965
+
+<img width="400" alt="スクリーンショット 2022-03-17 3 20 16" src="https://user-images.githubusercontent.com/71712059/158660279-50ff7fcb-4abe-416d-bffc-3bfc705859cb.png" >
+
 ## 画面遷移図
 
-<img width="1047" alt="スクリーンショット 2022-03-07 0 02 49" src="https://user-images.githubusercontent.com/71712059/156979018-5ee18640-72be-4e4d-bc48-0cb2315c357f.png">
+<img width="770" alt="スクリーンショット 2022-03-07 0 02 49" src="https://user-images.githubusercontent.com/71712059/156979018-5ee18640-72be-4e4d-bc48-0cb2315c357f.png">
 
 ## ERデータベース図
 
-<img width="1565" alt="スクリーンショット 2022-03-06 23 59 11" src="https://user-images.githubusercontent.com/71712059/156979033-c7ac7776-f765-47ca-8855-183834a886a4.png">
+<img width="1000" alt="スクリーンショット 2022-03-06 23 59 11" src="https://user-images.githubusercontent.com/71712059/156979033-c7ac7776-f765-47ca-8855-183834a886a4.png">
 
 ## 開発環境構築
 
-<img width="1095" alt="スクリーンショット 2022-03-07 1 22 05" src="https://user-images.githubusercontent.com/71712059/156979158-5cf2932f-c7fa-4aae-8fc8-21bdc2cc5deb.png">
+<img width="800" alt="スクリーンショット 2022-03-07 1 22 05" src="https://user-images.githubusercontent.com/71712059/156979158-5cf2932f-c7fa-4aae-8fc8-21bdc2cc5deb.png">
 
 - docker images
   - laravel-app
@@ -25,7 +34,7 @@ URL：https://travel-notes.online/
     - mysql:8.0.27
   - laravel-redis
 
-docker/dev配下
+docker/dev配下<br/>
 https://github.com/Yuuichi-M/travel-notes/tree/main/docker/dev
 
 - git clone or fork
@@ -69,7 +78,7 @@ php artisan db:seed
 
 http://dev-travel-notes.online/
 
-<img width="1262" alt="スクリーンショット 2022-03-07 15 26 02" src="https://user-images.githubusercontent.com/71712059/156979344-50f9f024-b06f-4418-8ff0-ad3ec09adc90.png">
+<img width="850" alt="スクリーンショット 2022-03-07 15 26 02" src="https://user-images.githubusercontent.com/71712059/156979344-50f9f024-b06f-4418-8ff0-ad3ec09adc90.png">
 
 - DB login
 
@@ -99,13 +108,13 @@ redis-cli -h redis
 - Bootstrap 4
 - Vue.js 2.6.14
 #### 開発環境
-- Docker 20.10.12 / Docker Compose v2.2.3
+- Docker 20.10.12 / Docker Compose v2.2.3<br/>
 (nginx, php-fpm, supervisor, mysql 8.0.27)
 #### 本番環境
-- AWS：EC2, RDS, VPC, Route 53, ALB, ACM, S3, CloudWatch
+- AWS：EC2, RDS, VPC, Route 53, ALB, ACM, S3, CloudWatch<br/>
 EC2:(nginx, php-fpm, mysql 8.0.27)
-- CircleCI
-  deploy job：git pullデプロイ自動化
+- CircleCI<br/>
+  deploy job：git pullデプロイ自動化<br/>
 slack orb:：Slackデプロイ結果通知
 #### 使用ツール
 - バージョン管理： Git / GitHub
@@ -141,13 +150,13 @@ slack orb:：Slackデプロイ結果通知
 - 中央の画像を左にフェードさせることで、簡単な機能説明を見ることができます
 - ４枚目の画像からもユーザー登録、ログイン画面遷移、ゲストログインができます
 
-![home.gif](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7cc37217-2f29-8717-a95c-67b1865d8100.gif)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7cc37217-2f29-8717-a95c-67b1865d8100.gif">
 
 #### ユーザー登録・ログイン
 - Register(ユーザー登録)画面からユーザー登録ができる
 - Login(ログイン)画面からログイン・ゲストログインができる
 
-![スクリーンショット 2022-03-06 18.11.32.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/1609e43d-48e0-dec1-3c04-1ce62b48ba13.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/1609e43d-48e0-dec1-3c04-1ce62b48ba13.png">
 
 #### 投稿一覧画面
 - 自身や他ユーザーの投稿一覧を表示
@@ -161,12 +170,12 @@ slack orb:：Slackデプロイ結果通知
 - 吹き出しボタンをクリックすると、投稿詳細画面のコメント入力に遷移します
 - 画面右下の紙飛行機ボタンをクリックすると、投稿画面に遷移します
 
-![スクリーンショット 2022-03-06 18.43.12.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/dd0c7843-b5ee-6242-9394-28bc2f5cd139.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/dd0c7843-b5ee-6242-9394-28bc2f5cd139.png">
 
 #### 投稿画面・投稿編集画面
 - 画像(png, jpeg, gif)、タイトル、所在地(カテゴリ)、タグ、本文の入力し投稿ができる
 
-![スクリーンショット 2022-03-06 19.08.51.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7883e0e8-77d2-4632-ace5-a60e30596756.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7883e0e8-77d2-4632-ace5-a60e30596756.png">
 
 #### 投稿詳細画面
 - 投稿記事右上のメニューから投稿の編集、投稿の削除ができます
@@ -174,13 +183,13 @@ slack orb:：Slackデプロイ結果通知
 - ♥ボタンをクリックすると、いいねを残せます
 - コメントを入力し投稿できます
 
-![スクリーンショット 2022-03-06 19.33.04.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/a7346f70-7366-d867-8b7c-b85165b12d65.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/a7346f70-7366-d867-8b7c-b85165b12d65.png">
 
 #### 検索機能
 - 検索フォームからカテゴリ検索、キーワード検索ができます
 - タグをクリックすることで、タグ検索ができます
 
-![スクリーンショット 2022-03-06 19.42.47.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/729b1f68-bf17-7b9f-7dcb-6fbb09453a69.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/729b1f68-bf17-7b9f-7dcb-6fbb09453a69.png">
 
 #### マイページ
 - プロフィール、マイ投稿一覧を表示
@@ -189,31 +198,31 @@ slack orb:：Slackデプロイ結果通知
 - プロフィール右上のメニューをクリックすることで、プロフィール変更画面に遷移できます
 - フォロー中・フォロワーボタンをクリックすることで、フォロー中・フォロワー一覧に遷移できます
 
-![スクリーンショット 2022-03-06 19.52.50.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/0d3eeb1a-47f5-be83-8a9d-ad5a56ca8283.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/0d3eeb1a-47f5-be83-8a9d-ad5a56ca8283.png">
 
 #### プロフィール変更画面
 - 画像(png, jpeg, gif)、名前、メールアドレス、自己紹介を変更できます
 
-![スクリーンショット 2022-03-06 20.10.18.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/72536d31-2e7c-c7da-bb1b-fb1562ec9eb7.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/72536d31-2e7c-c7da-bb1b-fb1562ec9eb7.png">
 
 #### フォロー中・フォロワー一覧画面
 - フォロー中・フォロワーの一覧を表示
 - 一覧からフォローしたり、外したりできます
 - 他ユーザーのマイページ、フォロー中・フォロワー一覧に遷移できます
 
-![スクリーンショット 2022-03-06 20.15.41.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7dd2b5c3-d7ac-dbb5-8ddc-70a375161e91.png)
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7dd2b5c3-d7ac-dbb5-8ddc-70a375161e91.png">
 
 #### 投稿削除・退会機能のモーダル
 - 投稿削除、退会をする際に最後の確認の為表示されます
 - 「削除する」「退会する」ボタンをクリックすることで、削除・退会できます
 
-![スクリーンショット 2022-03-06 20.23.08.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/b5ae23b3-9f7d-3adb-4944-944c324312e3.png)
-
-## 「Travel-notes」紹介記事
-
-URL:https://qiita.com/yuuichimizuta/items/e8a8cf2bbecba7cba965
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/b5ae23b3-9f7d-3adb-4944-944c324312e3.png">
 
 ## 作者
+
+<img width="180" src="https://user-images.githubusercontent.com/71712059/158662896-bd2828fb-4b56-4e01-94dc-2ee52eacc393.JPG">
+
 - Yuuichi Mizuta
 - Wantedly：https://www.wantedly.com/id/yuuichi_mizuta
 - Twitter：https://twitter.com/yuuichimizuta
+- Qiita：https://qiita.com/yuuichimizuta

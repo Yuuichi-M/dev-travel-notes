@@ -36,13 +36,13 @@
     @include('commons.footer')
 </div>
 
-@auth
+@if( Auth::id() === $user->id )
 <a href="{{ route('articles.create') }}" class="deep-orange lighten-1 text-white d-inline-block d-flex justify-content-center align-items-center flex-column post-button" role="button" title="投稿">
     <div>
         <i class="fas fa-plus plus-icon"></i>
         <div class="mb-1"><i class="far fa-paper-plane paper-plane-icon"></i></div>
     </div>
 </a>
-@endauth
+@endif
 
 @endsection
