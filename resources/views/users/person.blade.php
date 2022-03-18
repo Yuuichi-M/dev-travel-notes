@@ -12,7 +12,7 @@
                             @endif
                         </span>
                     </a>
-                    <span class="card-title text-dark h3 m-0 d-flex align-items-center">{{ $person->name }}</span>
+                    <a class="card-title text-dark h3 m-0 d-flex align-items-center" href="{{ route('users.show', ['name' => $person->name]) }}" style="text-decoration: none;">{{ $person->name }}</a>
 
                     @if( Auth::id() !== $person->id )
                     <follow-button class="ml-auto" :initial-is-followed-by='@json($person->isFollowedBy(Auth::user()))' :authorized='@json(Auth::check())' endpoint="{{ route('users.follow', ['name' => $person->name]) }}">

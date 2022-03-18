@@ -9,9 +9,9 @@
                     <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                     @endif
                 </a>
-                <div class="font-weight-bold text-dark d-flex align-items-center ml-2" style="font-size: 16px">
+                <a class="font-weight-bold text-dark d-flex align-items-center ml-2" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="font-size: 16px; text-decoration: none;">
                     {{ $article->user->name }}
-                </div>
+                </a>
 
                 @if( Auth::id() === $article->user_id )
                 <!-- dropdown -->
@@ -81,33 +81,30 @@
                 <!-- modal -->
 
             </div>
-            <div class="jumbotron jumbotron-fluid shadow-none p-0 m-0">
+            <a class="jumbotron jumbotron-fluid shadow-none p-0 m-0" href="{{ route('articles.show', ['article' => $article]) }}" style="text-decoration: none;">
                 @if (!empty($article->image_file_name))
                 <img src="{{ asset('https://portfolio-s3-backe.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" class="" width="100%">
                 @else
-                <img src="/images/image-default.png" class="" width="100%">
+                <img src="/images/スクリーンショット 2022-03-18 20.57.57.png" class="" width="100%">
                 @endif
-            </div>
+            </a>
             <div class="col-md-12 p-3">
-                <div class="text-truncate text-dark card-title h5 mb-1" style="max-width: 400px;">
-                    {{ $article->title }}
-                </div>
-                <div class="font-weight-lighter grey-text small">
-                    <span>
-                        {{ $article->category->prefecture }}
-                    </span>
-                    <span class="ml-1">
-                        {{ $article->created_at->format('Y/m/d H:i') }}
-                    </span>
-                </div>
-                <div class="text-truncate text-muted mt-2" style="max-width: 500px;">
-                    {{ $article->summary }}
-                </div>
-                <span>
-                    <a class="small deep-orange-text" style="text-decoration: none;" href="{{ route('articles.show', ['article' => $article]) }}">
-                        詳細を表示する
-                    </a>
-                </span>
+                <a href="{{ route('articles.show', ['article' => $article]) }}" style="text-decoration: none;">
+                    <div class="text-truncate text-dark card-title h5 mb-1" style="max-width: 400px;">
+                        {{ $article->title }}
+                    </div>
+                    <div class="font-weight-lighter grey-text small">
+                        <span>
+                            {{ $article->category->prefecture }}
+                        </span>
+                        <span class="ml-1">
+                            {{ $article->created_at->format('Y/m/d H:i') }}
+                        </span>
+                    </div>
+                    <div class="text-truncate text-muted mt-2" style="max-width: 500px;">
+                        {{ $article->summary }}
+                    </div>
+                </a>
 
                 @include('articles.articleTag')
 

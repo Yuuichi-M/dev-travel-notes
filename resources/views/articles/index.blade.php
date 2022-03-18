@@ -18,26 +18,20 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item d-flex justify-content-center center active">
-                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-04 20.34.17.png" alt="First slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-18 23.58.55.png" alt="First slide">
                     <div class="mx-auto">
                     </div>
                 </div>
                 <div class="carousel-item d-flex justify-content-center center">
-                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-05 0.13.53.png" alt="Second slide">
-                    <div class="mx-auto">
-                    </div>
-                </div>
-                <div class="carousel-item d-flex justify-content-center center">
-                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-05 1.00.25.png" alt="Third slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-19 0.01.26.png" alt="Second slide">
                     <div class="mx-auto">
                     </div>
                 </div>
                 <div class="carousel-item d-flex justify-content-center">
-                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-05 1.14.47.png" alt="Fourth slide">
+                    <img class="d-block home-img" src="/images/スクリーンショット 2022-03-19 0.23.18.png" alt="Third slide">
                     <div class="mx-auto">
                         <div class="card shadow-none home-card-fourth" style="border-radius: 1rem;">
                             <div class="card-body text-center">
@@ -92,9 +86,18 @@
     <hr class="border mx-auto my-1" style="width: 200px;">
     @else
     <div class="text-center text-muted pt-4">
-        検索条件に一致する投稿はありません。
+        検索条件に一致する投稿はありませんでした。
+        <p class="deep-orange-text">
+            <br />
+            検索内容に関する投稿をしてみませんか?
+            <br />
+        </p>
     </div>
     @endif
+
+    <div class="d-flex justify-content-center pt-3">
+        {{ $articles->links('vendor.pagination.bootstrap-4') }}
+    </div>
 
     <div class="container">
 
@@ -117,6 +120,7 @@
         @endforeach
 
     </div>
+
     <div class="d-flex justify-content-center pt-3">
         {{ $articles->links('vendor.pagination.bootstrap-4') }}
     </div>
