@@ -49,7 +49,7 @@
                             @endif
                         </a>
                     </span>
-                    <a class="text-dark d-flex align-items-center ml-1" style="text-decoration: none;">
+                    <a class="text-dark d-flex align-items-center ml-1" href="{{ route('users.show', ['name' => $comment->user->name]) }}" style="text-decoration: none;">
                         {{ $comment->user->name }}
                     </a>
                     <span class="small d-flex align-items-center ml-2 grey-text" style="text-decoration: none;">
