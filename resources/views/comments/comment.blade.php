@@ -49,9 +49,9 @@
                             @endif
                         </a>
                     </span>
-                    <div class="text-dark d-flex align-items-center ml-1">
+                    <a class="text-dark d-flex align-items-center ml-1" style="text-decoration: none;">
                         {{ $comment->user->name }}
-                    </div>
+                    </a>
                     <span class="small d-flex align-items-center ml-2 grey-text" style="text-decoration: none;">
                         {{ $comment->created_at->format('Y/m/d H:i') }}
                     </span>

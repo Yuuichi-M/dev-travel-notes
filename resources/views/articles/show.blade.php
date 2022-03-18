@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '投稿詳細')
+@section('title', $article->title . 'の詳細')
 
 @include('commons.header')
 
@@ -18,9 +18,9 @@
                         <img src="/images/avatar-default.svg" class="rounded-circle" style="object-fit: cover; width: 33px; height: 33px;">
                         @endif
                     </a>
-                    <div class="font-weight-bold text-dark d-flex align-items-center ml-2" style="font-size: 16px">
+                    <a class="font-weight-bold text-dark d-flex align-items-center ml-2" href="{{ route('users.show', ['name' => $article->user->name]) }}" style="font-size: 16px; text-decoration: none;">
                         {{ $article->user->name }}
-                    </div>
+                    </a>
 
                     @if( Auth::id() === $article->user_id )
                     <!-- dropdown -->
@@ -94,7 +94,7 @@
                     @if (!empty($article->image_file_name))
                     <img src="{{ asset('https://portfolio-s3-backe.s3.ap-northeast-1.amazonaws.com/article_img/' . $article->image_file_name) }}" class="" width="100%">
                     @else
-                    <img src="/images/image-default.png" class="" width="100%">
+                    <img src="/images/スクリーンショット 2022-03-18 20.57.57.png" class="" width="100%">
                     @endif
                 </div>
                 <div class="col-md-12 p-3">

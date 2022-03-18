@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'マイページ')
+@section('title', $user->name . 'のフォロワー一覧')
 
 @include('commons.header')
 
