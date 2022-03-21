@@ -10,9 +10,13 @@ URL：https://travel-notes.online/
 #### ポートフォリオ開発の詳細をまとめております。
 
 ↓　↓<br/>
-https://qiita.com/yuuichimizuta/items/e8a8cf2bbecba7cba965
+- ポートフォリオ開発について : https://qiita.com/yuuichimizuta/items/e8a8cf2bbecba7cba965
 
-<img width="400" alt="スクリーンショット 2022-03-17 3 20 16" src="https://user-images.githubusercontent.com/71712059/158660279-50ff7fcb-4abe-416d-bffc-3bfc705859cb.png" >
+<img width="400" alt="スクリーンショット 2022-03-22 2 33 51" src="https://user-images.githubusercontent.com/71712059/159331521-85a907dc-e37d-4a10-87c7-a4da5f6ec4fe.png">
+
+- ポートフォリオの機能・画面の説明について : https://qiita.com/yuuichimizuta/items/8f0485da3262f55a35e6
+
+<img width="400" alt="スクリーンショット 2022-03-22 2 35 03" src="https://user-images.githubusercontent.com/71712059/159331395-9777e3a1-01bd-474c-9786-11fa051d7932.png">
 
 ## 画面遷移図
 
