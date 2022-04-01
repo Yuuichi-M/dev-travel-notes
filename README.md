@@ -3,7 +3,7 @@
 旅の思い出を投稿して、他ユーザーと共有できるWebアプリケーションです。
 URL：https://travel-notes.online/
 
-<img width="1471" alt="スクリーンショット 2022-03-06 13 59 20" src="https://user-images.githubusercontent.com/71712059/156978337-bcd49eec-7ae4-4935-bf72-da37c99c3cfe.png">
+<img width="1567" alt="スクリーンショット 2022-03-19 1 51 26" src="https://user-images.githubusercontent.com/71712059/161224803-6b7d0f6a-7d3f-472e-90d8-73e2805b7a03.png">
 
 ## 「Travel-notes」紹介記事
 
@@ -82,7 +82,7 @@ php artisan db:seed
 
 http://dev-travel-notes.online/
 
-<img width="850" alt="スクリーンショット 2022-03-07 15 26 02" src="https://user-images.githubusercontent.com/71712059/156979344-50f9f024-b06f-4418-8ff0-ad3ec09adc90.png">
+<img width="900" alt="スクリーンショット 2022-04-01 17 27 24" src="https://user-images.githubusercontent.com/71712059/161226003-581edd9d-df45-47f9-82aa-4e6d7b938861.png">
 
 - DB login
 
@@ -100,7 +100,7 @@ redis-cli -h redis
 
 ## 本番環境構成図
 
-<img width="1956" alt="スクリーンショット 2022-03-07 2 00 19" src="https://user-images.githubusercontent.com/71712059/156980168-0ca12a03-c1c6-44ed-b4a6-860674a8bfcd.png">
+<img width="800" alt="スクリーンショット 2022-04-01 17 08 08" src="https://user-images.githubusercontent.com/71712059/161224368-3d8e207a-6e40-4b5b-905d-78ee2331776f.png">
 
 ## 使用技術
 #### バックエンド
@@ -150,11 +150,13 @@ slack orb:：Slackデプロイ結果通知
 
 ## 機能・画面説明
 #### ホーム画面
-- ヘッダーから、ユーザー登録、ログイン画面遷移、ゲストログインができます
-- 中央の画像を左にフェードさせることで、簡単な機能説明を見ることができます
-- ４枚目の画像からもユーザー登録、ログイン画面遷移、ゲストログインができます
+- ヘッダーのメニューから、ユーザー登録、ログイン画面遷移、ゲストログインができます
+- 中央の画像を左右にフェードさせることができます
+- 3枚目の画像からもユーザー登録、ログイン画面遷移、ゲストログインができます
 
-<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/7cc37217-2f29-8717-a95c-67b1865d8100.gif">
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/1b7f3495-210b-f0e0-dbfb-fba8f3d68d01.png">
+
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/c094d89d-cc9c-a245-37b3-d6cbfcb24515.png">
 
 #### ユーザー登録・ログイン
 - Register(ユーザー登録)画面からユーザー登録ができる
@@ -168,13 +170,14 @@ slack orb:：Slackデプロイ結果通知
 - 検索フォームからカテゴリ検索、キーワード検索ができます
 - 投稿記事左上のプロフィール画像をクリックすることで、マイページに遷移できます
 - 投稿記事右上のメニューをクリックすることで、投稿編集画面・投稿削除画面に遷移できます
-- 「詳細を表示する」をクリックすると、投稿詳細画面に遷移できます
+- 画像、タイトル、本文をクリックすると、投稿詳細画面に遷移できます
 - タグをクリックすると、タグ検索ができます
 - ♥ボタンをクリックすると、いいねを残せます
 - 吹き出しボタンをクリックすると、投稿詳細画面のコメント入力に遷移します
 - 画面右下の紙飛行機ボタンをクリックすると、投稿画面に遷移します
+- 画面上部、画面下部のページネーションからページ移動ができます。
 
-<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/dd0c7843-b5ee-6242-9394-28bc2f5cd139.png">
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/85e91257-4cad-04dd-0076-7281f35fd453.png">
 
 #### 投稿画面・投稿編集画面
 - 画像(png, jpeg, gif)、タイトル、所在地(カテゴリ)、タグ、本文の入力し投稿ができる
@@ -221,6 +224,13 @@ slack orb:：Slackデプロイ結果通知
 - 「削除する」「退会する」ボタンをクリックすることで、削除・退会できます
 
 <img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/b5ae23b3-9f7d-3adb-4944-944c324312e3.png">
+
+#### レスポンシブ対応
+
+- メディアクエリを使い、レスポンシブ対応をしっかり考えて実装したので、スマホでもストレス無く利用できます。
+
+<img width="800" src="https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/891391/40a5e3d4-852c-c953-29f7-2887a8ac5277.png">
+
 
 ## 作者
 
