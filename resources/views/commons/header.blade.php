@@ -10,7 +10,7 @@
                 @guest
                 <li class="nav-item dropdown ml-2">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle deep-orange-text" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                        <i class="fas fa-bars" style="font-size: 28px;"></i>
+                        新規登録・ログイン</i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item deep-orange-text" href="{{ route('register') }}" role="button" title="アカウント登録">
