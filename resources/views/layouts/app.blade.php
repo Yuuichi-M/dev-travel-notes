@@ -12,7 +12,13 @@
     @else
     <title>{{ config('app.name') }}</title>
     @endif
+
+    @if(config('app.env') === 'production')
+    <link rel="shortcut icon" href="{{ secure_asset('/images/favicon.ico') }}">
+    @else
     <link rel="shortcut icon" href="{{ asset('/images/favicon.ico') }}">
+    @endif
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
@@ -23,6 +29,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <script src="{{ mix('js/app.js') }}"></script>
+
     <!-- Scripts -->
     @if(config('app.env') === 'production')
     <script src="{{ secure_asset('js/app.js') }}" defer></script>

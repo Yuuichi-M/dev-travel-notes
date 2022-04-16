@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'HOME')
+@section('title', 'ホーム')
 
 @include('commons.articleIndexHeader')
 
